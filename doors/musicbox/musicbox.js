@@ -1,5 +1,5 @@
 var masterVol = 0.0;
-var bg = new Audio('../../sounds/doors/musicbox/heaven.wav');
+var bg = new Audio('../../sounds/doors/musicbox/heaven.mp3');
 bg.loop = true;
 bg.load();
 var audio = new Audio;
@@ -61,7 +61,7 @@ async function loop() {
       img.style.opacity = "1";
       await sleep(100);
 
-      audio.src = ('../../sounds/doors/musicbox/' + Math.floor(Math.random() * 17) + ".wav");
+      audio.src = ('../../sounds/doors/musicbox/' + Math.floor(Math.random() * 17) + ".mp3");
       audio.load();
       audio.play();
 
