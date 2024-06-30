@@ -2,19 +2,20 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Noto Sans Mono'>
         <link rel="stylesheet" href="../../styles/otherseas.css">
         <title>Music box</title> 
     </head>
     <body style="background-image: url(../../images/doors/musicbox/sky.gif); background-size: 100vw 100vh"></body>
     <div id = "lifeimage">
     </div>
-    <div class="button" style="font-size:20px; bottom:6%; right:1%; position: absolute" id="mute">[Unmute]</div>
-    <div class="button" style="font-size:20px; bottom:2%; right:1%; position: absolute" id="openInfo">[?]</div>
+    <a class="button" style="font-size:20px; bottom:2%; right:1%; position: absolute" href="../../index.html">[🏡]</a>
+    <div class="button" style="font-size:20px; bottom:10%; right:1%; position: absolute" id="mute">[Unmute]</div>
+    <div class="button" style="font-size:20px; bottom:6%; right:1%; position: absolute" id="openInfo">[?]</div>
     <img id="musicbox" style="width: 10%; position: absolute; transform: translate(-50%, -50%); left: 50%; top: 50%" src="../../images/doors/musicbox/1.png">
-    <div class="popup" style="width: 0px" id="thesis">
+    <div class="popup" id="thesis">
       <a style="color: #616161">[Information]<span class="button" style="float:right;" id="closeInfo">[X]</span><br> <br></a>
       <img style="width: 100%" src="../../images/doors/musicbox/musicboxinfo.png">
     </div>
+    <script type="text/javascript" src="../../script/popup.js"></script>
     <script type="text/javascript" src="musicbox.js"></script>
 </html>

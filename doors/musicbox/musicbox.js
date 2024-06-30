@@ -7,26 +7,6 @@ var tick = 0;
 audio.muted = true;
 bg.muted = true;
 
-function popup() {
-	elt = document.getElementById('thesis');
-	if (thesis.style.width != '0px') {
-	  thesis.style.width = '0px';
-	  thesis.style.height = '0px';
-	  thesis.style.fontSize = '0%';
-	  thesis.style.left = '100%';
-	  thesis.style.top = '100%';
-	} else {
-	  thesis.style.width = '25%';
-	  thesis.style.height = '25%';
-	  thesis.style.fontSize = '100%';
-	  thesis.style.left = '50%';
-	  thesis.style.top = '50%';
-	}
-}
-
-document.getElementById("openInfo").addEventListener("click", popup);
-document.getElementById("closeInfo").addEventListener("click", popup);
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }

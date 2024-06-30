@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../styles/otherseas.css">
+        <title>Doors</title> 
+    </head>
+    <body style="background-color: black;">
+        <div style="text-align: center">
+            <img class="door" style="--img2: url(../images/doors/door1_2.png);" src="../images/doors/door1_1.png">
+            <img class="door" style="--img2: url(../images/doors/door2_2.png);" src="../images/doors/door2_1.png">
+            <a href="../doors/musicbox/musicbox.html"><img class="door" style="--img2: url(../images/doors/door3_2.png);" src="../images/doors/door3_1.png"></a>
+        </div>
+    </body>
+    
+    <a class="button" style="font-size:20px; bottom:2%; right:1%; position: absolute" href="../index.html">[🏡]</a>
+    <div class="button" style="font-size:20px; bottom:6%; right:1%; position: absolute" id="openInfo">[?]</div>
+    <div class="popup" id="thesis">
+      <a style="color: #616161">[Information]<span class="button" style="float:right;" id="closeInfo">[X]</span><br> <br></a>
+      <a>In this room there are a lot of <span id="desc"></span> doors.</a>
+    </div>
+    <script src="../script/popup.js"></script>
+    <script src="doors.js"></script>
+
+</html>
