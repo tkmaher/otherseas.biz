@@ -12,6 +12,7 @@ body {
     overflow: hidden; /* Hide scrollbars */
     margin: 0px;
     padding: 0px;
+    transition: background-color 1000ms linear;
 }
 
 .door {
@@ -101,3 +102,28 @@ body {
     text-decoration: none;
     display: block;
   }
+
+.piece {
+    position: absolute;
+    max-width: 30%;
+    top: 5%;
+    left:40%;
+    scale: 0;
+    transition: all 1s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    filter: drop-shadow(30px 10px 4px black);
+}
+
+.shake:hover {
+    transition: opacity 0.5s;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(0px, 5px);}
+    33% { transform: translate(0px, -5px);}
+    66% { transform: translate(0px, 5px);}
+    100% { transform: translate(0px, 5px);}
+}
