@@ -2,10 +2,10 @@ function popup() {
 	elt = document.getElementById('thesis');
 	if (elt.style.opacity != '1') {
 	  elt.style.opacity = '1';
-    elt.style.pointerEvents = 'auto';
+      elt.style.pointerEvents = 'auto';
 	} else {
 	  elt.style.opacity = '0';
-    elt.style.pointerEvents = 'none';
+      elt.style.pointerEvents = 'none';
 	}
 }
 

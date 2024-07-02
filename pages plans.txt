@@ -1,0 +1,5 @@
+-Shoppe: black background with purple fixtures, items arranged in grid of squares with 4 items per row
+-Art pages.music pages: just draggable images that show text when clicked, images are in squares with roudned edges on black background
+-video and real life: includes videos ive made and the discs also
+-insane: a black tattered pamphlet i take pictures of that you flip through
+-links: in the style of https://speculativescent.com/offerings
