@@ -93,7 +93,7 @@ body {
     transform: translate(-50%, -50%);
     opacity: 0;
     pointer-events: none;
-    top: 45%;
+    top: 50%;
     left: 50%;
 }
 
@@ -127,4 +127,28 @@ body {
     33% { transform: translate(0px, -5px);}
     66% { transform: translate(0px, 5px);}
     100% { transform: translate(0px, 5px);}
+}
+
+.card {
+    background: var(--url) 50% 50% no-repeat;
+    background-size: var(--w) var(--h);
+    border-radius: 10%;
+    width: 300px;
+    height: 300px;
+    display: block;
+    filter: drop-shadow(0px 0px 10px gray);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: background-size 0.5s;
+}
+
+.card:hover {
+    background-size: var(--zoom);
+}
+
+.zoom {
+    width: 20%;
+    height: 20%;
+    font-size: 50px;
+    float: right;
 }

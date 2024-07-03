@@ -232,7 +232,7 @@ class GridSystem {
 			["mirage", new Tile(["🌫️"], false, "Shimmering air. A mirage.")],
 			["papyrus", new Tile(["🌾"], true, "A papyrus plant.")],
 			["cactus", new Tile(["🌵"], true, "A cactus.", {}, 1)],
-			["hut", new Tile(["🛖"], true, "An abandoned hut.", {}, 1)],
+			["hut", new Tile(["🛖"], true, "An abandoned hut.", hut, 1)],
 			["floor", new Tile(["🏷️"], false, "Nondescript floor.")],
 			["door", new Tile(["🚪"], false, "A wooden door.")],
 			["chair", new Tile(["🪑"], false, "A simple wooden chair.")],
@@ -1158,7 +1158,7 @@ const empty = [[
 	["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
 ]];
 const gridSystem = new GridSystem();
-hut(empty[0]);
+init(empty[0]);
 var tick = 0;
 var paused = true;
 

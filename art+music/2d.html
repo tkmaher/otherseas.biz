@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../styles/otherseas.css">
+        <title>2dart</title> 
+        <script src="../script/squarize.js"></script>
+        <script src="drawingsURL.txt"></script>
+    </head>
+    <body style="background-color: white;">
+        <div id="parent" draggable="false"></div>
+        <script>
+            squarize(text);
+        </script>
+    </body>
+    <div class="popup" id="imgzoom"style="max-width: 100vh;">
+        <a style="background-color: rgb(237, 237, 237); color: #616161">[Zoom]<span class="button" style="float:right;" id="closeimg">[X]</span><br> <br></a>
+        <a style="background-color: rgb(237, 237, 237);"><img draggable="false" style="max-width: 100%; max-height: 80vh;" id="enlarged"></a>
+    </div>
+
+
+    <a class="button" style="font-size:20px; bottom:2%; right:1%; position: absolute" href="../index.html">[🏡]</a>
+    <div class="button" style="font-size:20px; bottom:6%; right:1%; position: absolute" id="openInfo">[?]</div>
+    <div class="popup" id="thesis" style="z-index: -1;">
+        <a style="color: #616161">[Information]<span class="button" style="float:right;" id="closeInfo">[X]</span><br> <br></a>
+        <a>The 2d drawings</a>
+    </div>
+    <div id ='fade' style="pointer-events: none; position: relative; width: auto; height: 10000px; background: white; opacity: 1; transition: all 1s;"></div>
+    <script src="../script/popup.js"></script>
+
+</html>
