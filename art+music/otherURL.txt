@@ -1,3 +1,4 @@
+var text = `
 https://i.ibb.co/F4bys33/IMG-20231028-155204-723.webp
 https://i.ibb.co/Wv7NG8j/dc11261e76149dcbdf8bf97b5e58eac8-sticker.png
 https://i.ibb.co/cxYv8cY/annoying-guy.png
@@ -15,3 +16,4 @@ https://i.ibb.co/vXMpt12/Screenshot-2024-07-02-at-3-46-03-PM.png
 https://i.ibb.co/0Ym72qR/Screenshot-2024-07-02-at-3-46-08-PM.png
 https://i.ibb.co/Qf67W9p/test.png
 https://i.ibb.co/kGjcYF3/3-3-png.png
+`
