@@ -1120,9 +1120,11 @@ function pause(e) {
 }
 
 document.getElementById("pause").addEventListener("click", pause);
-//document.getElementById("pause").addEventListener("keyup", pause); ???????
+//document.getElementById("pause").addEventListener("keyup", pause); space bar config
 
 //Main game script
+const isMobile = (/Mobi|Android|iPhone/i.test(navigator.userAgent));
+
 const empty = [[
 	["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
 	["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
@@ -1176,14 +1178,14 @@ async function loop() {
 	gridSystem.history.push(JSON.parse(JSON.stringify(gridSystem.matrix)));
 	gridSystem.NPChistory.push([]);
 	while(true) {
-		if(parent) {
+		if(parent && !isMobile) {
 			c = document.createElement("canvas");
 			c.id = "emoji" + loadingTick % 40;
 			c.className += "emojiParticle";
 			var speed = Math.random() * 5 + 2;
 			c.style.transition = "top " + speed + "s linear, opacity " + speed + "s";
 			c.style.top = window.innerHeight + "px"
-			c.style.left = (Math.random() * window.innerWidth) + "px";
+			c.style.left = (Math.random() * 100) + "%";
 			parent.appendChild(c);    
 			var ctx = c.getContext("2d");
 			ctx.font = (Math.random() * 50 + 50 - (speed * 4)) + "px serif";

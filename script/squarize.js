@@ -50,8 +50,8 @@ async function squarize(arr, num, info) {
 		card.className = "card";
 		card.id = i;
 		card.style = "--url:url(" + out[index] + "); --h:" + h + "; --w:" + w + "; --zoom:" + zoom + ';';
-		card.style.top = (50 + (-(num/2 - 0.5) + i) * 5) + '%';
-		card.style.left = (50 + (-(num/2 - 0.5) + i) * 5) + '%';
+		card.style.top = (50 + (-(num/2 - 0.5) + i) * 5) + 'vh';
+		card.style.left = (50 + (-(num/2 - 0.5) + i) * 5) + 'vw';
 
 		parent.appendChild(card);
 

@@ -6,31 +6,33 @@
         <title>about</title> 
     </head>
 
+    <body>
+      <div style="left: 20%; top: 50%; position: absolute; transform: translate(-50%, -50%);">
+        <iframe src="https://player.vimeo.com/video/972586638?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="200" height="356" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="leaf"></iframe>
+      </div>
+      <div style="right: 20%; top: 50%; position: absolute; transform: translate(50%, -50%);">
+        <iframe src="https://player.vimeo.com/video/972586638?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="200" height="356" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="leaf"></iframe>
+      </div>
 
-    <div style="left: 20%; top: 50%; position: absolute; transform: translate(-50%, -50%);">
-      <iframe src="https://player.vimeo.com/video/972586638?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="200" height="356" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="leaf"></iframe>
-    </div>
-    <div style="right: 20%; top: 50%; position: absolute; transform: translate(50%, -50%);">
-      <iframe src="https://player.vimeo.com/video/972586638?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="200" height="356" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="leaf"></iframe>
-    </div>
+      <div>
+        <img class="piece" id="1" src="../images/about/puzzle1.png">
+        <img class="piece" id="2" src="../images/about/puzzle2.png">
+        <img class="piece" id="3" src="../images/about/puzzle3.png">
+        <img class="piece" id="4" src="../images/about/puzzle4.png">
+      </div>
+      <a><img class="shake" id="cloud" src="../images/about/cloud.png" style="text-align: middle; max-width: 100vh; margin-left: auto; margin-right: auto; display: block;"></a>
 
-    <div>
-      <img class="piece" id="1" src="../images/about/puzzle1.png">
-      <img class="piece" id="2" src="../images/about/puzzle2.png">
-      <img class="piece" id="3" src="../images/about/puzzle3.png">
-      <img class="piece" id="4" src="../images/about/puzzle4.png">
-    </div>
-    <a><img class="shake" id="cloud" src="../images/about/cloud.png" style="text-align: middle; max-width: 20%; left: 40%; top:5%; position: absolute;"></a>
+      <div style="text-align: center; font-family:'Helvetica Neue'; color:#393939; bottom:5%; position: absolute; left:50%; transform: translate(-50%, -50%);">"To let everybody have fun if they want"</div>
 
-    <div style="font-family:'Helvetica Neue'; color:#393939; bottom:5%; position: absolute; left:50%; transform: translate(-50%, -50%);">"To let everybody have fun if they want"</div>
+      <script src="about.js"></script>
 
-    <script src="about.js"></script>
-
-    <a class="button" style="font-size:20px; bottom:2%; right:1%; position: absolute" href="../index.html">[🏡]</a>
-    <div class="button" style="font-size:20px; bottom:6%; right:1%; position: absolute" id="openInfo">[?]</div>
-    <div class="popup" id="thesis">
-      <a style="color: #616161">[Information]<span class="button" style="float:right;" id="closeInfo">[X]</span><br> <br></a>
-      <a>You are here 📍</a>
-    </div>
+      <a class="button" style="bottom:2%; right:1%; position: absolute" href="../index.html">[🏡]</a>
+      <div class="button" style="bottom:6%; right:1%; position: absolute" id="openInfo">[?]</div>
+      <div class="popup" id="thesis">
+        <a style="color: #616161">[Information]<span class="button" style="float:right;" id="closeInfo">[X]</span><br> <br></a>
+        <a>You are here 📍</a>
+      </div>
+    </body>
+    
     <script src="../script/popup.js"></script>
 </html>
