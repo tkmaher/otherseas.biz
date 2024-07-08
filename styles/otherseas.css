@@ -165,3 +165,7 @@ mark {
     background: gray!important;
     color: white;
 }
+
+.sidebar {
+    transition: 0.5s all ease;
+}

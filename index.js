@@ -1,16 +1,19 @@
-var dancers = document.getElementById("dancers");
-var tick = 0;
+const isMobile = (/Mobi|Android|iPhone/i.test(navigator.userAgent));
+var sidebar = document.getElementById("sidebar");
+var openButton = document.getElementById("openButton");
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function loop() {
-    while (true) {
-      dancers.style.backgroundPositionY = tick + "%";
-      tick--;
-      await sleep(20);
+function open(e) {
+    if (sidebar.style.left == "-100%") {
+      openButton.innerHTML = "𖣯";
+      sidebar.style.left = "-10vh";
+    } else {
+      openButton.innerHTML = "🗺️";
+      sidebar.style.left = "-100%";
     }
 }
 
-loop();
+if(isMobile) {
+  sidebar.hidden = "true";
+}
+
+openButton.addEventListener("click", open);
