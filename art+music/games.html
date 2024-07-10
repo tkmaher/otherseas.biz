@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../styles/otherseas.css">
+        <title>--</title> 
+        <script src="../script/squarize.js"></script>
+        <script src="gamesURL.txt"></script>
+    </head>
+    <body style="background-color: white; color: #616161;">
+        <div id="parent" draggable="false"></div>
+        <script>
+            squarize(text, 5, desc);
+        </script>
+    </body>
+
+    <div class="popup" id="imgzoom"style="max-width: 100vh; color: #616161">
+        <a style="background-color: rgb(237, 237, 237)"><span id="title">[img]</span><span class="button" style="float:right; color: #616161" id="closeimg">[X]</span><br> <br></a>
+        <a style="background-color: rgb(237, 237, 237);"><img draggable="false" style="max-width: 100%; max-height: 80vh;" id="enlarged"></a>
+        <a class="button" style="background-color: rgb(237, 237, 237);" id="link" target="_blank" href="link">blah blah</a>
+    </div>
+
+    <div style="text-align:center; font-family:'Garamond'; font-style: italic; bottom:2.5vh; position: absolute; left:50%; transform: translate(-50%, -50%);">
+        <a style="color:rgb(187, 187, 187);">Old games for everybody</a> <br>
+    </div>
+
+    <a class="button" style="bottom:2vh; right:1vh; position: absolute" href="../index.html">[🏡]</a>
+    <!--<div id ='fade' style="pointer-events: none; position: relative; width: auto; height: 10000px; background: white; opacity: 1; transition: all 1s;">
+        <img draggable="false" style="margin: auto; display: block;" src="../images/loading.gif">
+    </div>-->
+
+</html>

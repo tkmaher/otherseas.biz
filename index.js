@@ -23,7 +23,7 @@ openButton.addEventListener("click", open);
 $(document).ready(function() {
 
   if(isMobile) {
-    items.style.marginLeft = "1vh";
+    items.style.marginLeft = "2vh";
     sidebar.hidden = "true";
   }
 

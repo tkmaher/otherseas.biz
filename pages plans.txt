@@ -4,3 +4,5 @@
 -insane: a black tattered pamphlet i take pictures of that you flip through
 -links: in the style of https://speculativescent.com/offerings
 -lost and found: lost has pics and found has random pics
+-strawberry house: a rpgmaker style tilegrid thats cute and has strawberries
+-bridges: a schoolhouse you can explore point and click style

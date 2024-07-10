@@ -23,7 +23,7 @@ function zoomimg(e) {
 	document.getElementById("link").href = e.target.style.getPropertyValue("--link");
 }
 
-async function load(url, iter, num, info, index) {
+async function load(url, iter, num, info, title, link) {
 	let parent = document.getElementById('parent');
 	var img = new Image();
 	img.src = url;
@@ -53,9 +53,8 @@ async function load(url, iter, num, info, index) {
 	zoom.innerHTML = '🔍';
 	zoom.style.setProperty("--url", url);
 	if (info) {
-		zoom.style.setProperty("--title", description[index * 2]);
-		zoom.style.setProperty("--link", description[(index * 2)+1]);
-		description.splice(index*2, 2);
+		zoom.style.setProperty("--title", title);
+		zoom.style.setProperty("--link", link);
 	}
 	card.appendChild(zoom);
 
@@ -76,15 +75,21 @@ async function load(url, iter, num, info, index) {
 }
 
 async function squarize(arr, num, info) {
-	var index, card, w, h, zoom;
+	var index, url, title, link;
 	const out = arr.split('\n').filter(x => x.length);
 	if (info) {
 		description = info.split('\n').filter(x => x.length);
 	}
 	for (let i = 0; i < num; i++) {
 		index = Math.floor(Math.random() * out.length);
-		load(out[index], i, num, info, index);
+		url = out[index];
 		out.splice(index, 1);
+		if (info) {
+			title = description[index * 2];
+			link = description[(index * 2) + 1];
+			description.splice(index*2, 2);
+		}
+		load(url, i, num, info, title, link);
 	}
 	await sleep(1000);
 

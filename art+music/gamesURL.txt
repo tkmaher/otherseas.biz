@@ -1,0 +1,20 @@
+var text = `
+https://i.ibb.co/ngzR8Qg/seaborg.png
+https://i.ibb.co/0q7y80d/harvest.png
+https://i.ibb.co/6gXxw9S/eyeball.png
+https://i.ibb.co/HBX9pWd/archipelago.png
+https://i.ibb.co/zs8sBn9/titans.png
+`
+
+var desc = `
+Seaborg's Manor, 2020
+../games/seaborg/index.html
+Harvest Day, 2020
+../games/harvest/index.html
+Eyeball's Garden, 2019
+../games/eyeball.html
+Archipelago Casanova, 2020
+../games/archipelago_casanova/index.html
+Titans, 2020
+../games/titans/index.html
+`
