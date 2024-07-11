@@ -1,8 +1,8 @@
 -Shoppe: black background with purple fixtures, items arranged in grid of squares with 4 items per row
--Art pages.music pages: just draggable images that show text when clicked, images are in squares with roudned edges on black background
 -video and real life: includes videos ive made and the discs also
 -insane: a black tattered pamphlet i take pictures of that you flip through
 -links: in the style of https://speculativescent.com/offerings
--lost and found: lost has pics and found has random pics
 -strawberry house: a rpgmaker style tilegrid thats cute and has strawberries
 -bridges: a schoolhouse you can explore point and click style
+
+incorporate more dumb ass videos that i took from phone

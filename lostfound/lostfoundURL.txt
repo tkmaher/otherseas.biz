@@ -63,6 +63,7 @@ https://i.ibb.co/W50vnxg/Screenshot-2024-02-16-at-1-33-30-PM.png
 `
 
 var desc = `
+0 x Impurities 
 1 x Unknown world
 1 x Dog's room
 1 x Billion's 
@@ -93,7 +94,7 @@ var desc = `
 500 x cords underground
 0 x Good memorie
 1 x Virtue accumulator
-209 x Prison points
+1000 x Value points
 2 x broken void machine parts
 1 x Into the mirror
 1 x Burnign world
@@ -108,4 +109,10 @@ var desc = `
 1 x tragedy comedy mask
 2 x My idea
 1 x Simple ideal
+1 x The Core
+1 x gain
+1 x A giant me
+5 x Faded regrets...
+1 x Invert Orchard
+1 x Smile and laughter
 `
