@@ -104,4 +104,8 @@ var desc = `
 1 x Perceptions
 1 x Associations
 5 x GmbH
+1 x Travesties
+1 x tragedy comedy mask
+2 x My idea
+1 x Simple ideal
 `

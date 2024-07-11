@@ -7,14 +7,14 @@ https://i.ibb.co/q1XvnZx/titans.gif
 `
 
 var desc = `
-Seaborg's Manor, 2020 - Playtime: 20mins
+Seaborg's Manor, 2020
 ../games/seaborg/index.html
-Harvest Day, 2020 - Playtime: 1min
+Harvest Day, 2020
 ../games/harvest/index.html
-Eyeball's Garden, 2019 - Playtime: 1min
+Eyeball's Garden, 2019
 ../games/eyeball.html
-Archipelago Casanova, 2020 - Playtime: 30mins
+Archipelago Casanova, 2020
 ../games/archipelago_casanova/index.html
-Titans, 2020 - Playtime: 1min
+Titans, 2020
 ../games/titans/index.html
 `

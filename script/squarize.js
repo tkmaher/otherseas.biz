@@ -19,7 +19,6 @@ function zoomimg(e) {
 	document.getElementById("enlarged").src = e.target.style.getPropertyValue("--url");
 	imgzoom.style.pointerEvents = "auto";
 	document.getElementById("title").innerHTML = e.target.style.getPropertyValue("--title");
-	document.getElementById("link").innerHTML = e.target.style.getPropertyValue("--link");
 	document.getElementById("link").href = e.target.style.getPropertyValue("--link");
 }
 
