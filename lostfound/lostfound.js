@@ -9,33 +9,24 @@ function itemize(lost, found, desc) {
 	const outLost = lost.split('\n').filter(x => x.length);
     const outFound = found.split('\n').filter(x => x.length);
     const outDesc = desc.split('\n').filter(x => x.length);
-    for (let i = 0; i < 5; i++) {
-        img = document.createElement("img");
-        index = Math.floor(Math.random() * outLost.length);
-        img.src = outLost[index];
-        img.className = "lostFoundImg";
-        lostParent.appendChild(img);
-        outLost.splice(index, 1);
+    populate(lostParent, Math.random() * 6, outLost, outDesc);
+    populate(foundParent, Math.random() * 6, outFound, outDesc);
+}
 
+function populate(parent, iter, arr, desc) {
+    for (let i = 0; i < iter; i++) {
+        img = document.createElement("img");
+        index = Math.floor(Math.random() * arr.length);
+        img.src = arr[index];
+        img.className = "lostFoundImg";
+        parent.appendChild(img);
+        arr.splice(index, 1);
+    
         txt = document.createElement("div");
         txt.style= "text-align: center";
-        index = Math.floor(Math.random() * outDesc.length);
-        txt.innerHTML = outDesc[index] + "<br><br>";
-        outDesc.splice(index, 1);
-        lostParent.appendChild(txt);
-
-        img = document.createElement("img");
-        index = Math.floor(Math.random() * outFound.length);
-        img.src = outFound[index];
-        img.className = "lostFoundImg";
-        foundParent.appendChild(img);
-        outFound.splice(index, 1);
-
-        txt = document.createElement("div");
-        txt.style= "text-align: center";
-        index = Math.floor(Math.random() * outDesc.length);
-        txt.innerHTML = outDesc[index] + "<br><br>";
-        outDesc.splice(index, 1);
-        foundParent.appendChild(txt);
+        index = Math.floor(Math.random() * desc.length);
+        txt.innerHTML = desc[index] + "<br><br>";
+        desc.splice(index, 1);
+        parent.appendChild(txt);
     }
 }

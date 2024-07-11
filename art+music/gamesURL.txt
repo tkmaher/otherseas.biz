@@ -1,20 +1,20 @@
 var text = `
-https://i.ibb.co/ngzR8Qg/seaborg.png
-https://i.ibb.co/0q7y80d/harvest.png
+https://i.ibb.co/Kyx2B5y/seaborg.gif
+https://i.ibb.co/1TSrrML/harvest.gif
 https://i.ibb.co/6gXxw9S/eyeball.png
-https://i.ibb.co/HBX9pWd/archipelago.png
-https://i.ibb.co/zs8sBn9/titans.png
+https://i.ibb.co/Rpk6CX9/archipelago.gif
+https://i.ibb.co/q1XvnZx/titans.gif
 `
 
 var desc = `
-Seaborg's Manor, 2020
+Seaborg's Manor, 2020 - Playtime: 20mins
 ../games/seaborg/index.html
-Harvest Day, 2020
+Harvest Day, 2020 - Playtime: 1min
 ../games/harvest/index.html
-Eyeball's Garden, 2019
+Eyeball's Garden, 2019 - Playtime: 1min
 ../games/eyeball.html
-Archipelago Casanova, 2020
+Archipelago Casanova, 2020 - Playtime: 30mins
 ../games/archipelago_casanova/index.html
-Titans, 2020
+Titans, 2020 - Playtime: 1min
 ../games/titans/index.html
 `
