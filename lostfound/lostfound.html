@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../styles/otherseas.css">
+        <title>lost && found</title> 
+        <script src="lostfound.js"></script>
+        <script src="lostfoundURL.txt"></script>
+    </head>
+    <body style="background-color: white; color: #616161; margin: 5vh; overflow: auto;">
+        <div style="position: absolute; text-align: center; left: 50%; scale: 1; font-family: 'Garamond';"> 
+            <div style="position: absolute; right:5vw;" id="lostParent" draggable="false"><a style="font-size: 5vh;">Lost:</a><br></div>
+            <div style="position: absolute; left:5vw;" id="foundParent" draggable="false"><a style="font-size: 5vh;">Found:</a> <br></div>
+        </div>
+        <script>
+            itemize(lost, found, desc);
+        </script>
+    </body>
+
+    <a class="button" style="bottom:2vh; right:1vh; position: fixed" href="../index.html">[🏡]</a>
+
+    <div class="button" style="bottom:6vh; right:1vh; position: fixed" id="openInfo">[?]</div>
+    <div class="popup" id="thesis">
+      <a style="color: #616161">[Information]<span class="button" style="float:right;" id="closeInfo">[X]</span><br> <br></a>
+      <a style="color:white">Important reminder</a>
+    </div>
+    <script src="../script/popup.js"></script>
+
+</html>
