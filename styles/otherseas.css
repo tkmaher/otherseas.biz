@@ -234,4 +234,5 @@ mark {
     animation: pulse;
     animation-duration: 1s;
     animation-iteration-count: infinite;
+    filter: drop-shadow(5px 0px 2px white);
 }
