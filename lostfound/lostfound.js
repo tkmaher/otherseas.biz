@@ -1,16 +1,38 @@
+async function fetchA(channel) {
+	var returnal = "";
+	await fetch('https://api.are.na/v2/channels/' + channel + '/contents?per=500', {
+		signal: AbortSignal.timeout(10000)
+	})
+    .then(response => response.json())
+    .then(data => {
+        // reverse so the latest ones first
+        const posts = data.contents.reverse()        
+        
+        posts.forEach(post => {        
+            returnal += post.image.original.url + "\n";
+        })
+    })
+	return returnal;
+}
 
+async function arenaFetch(channel) {
+    return(await fetchA(channel));
+}
 
-function itemize(lost, found, desc) {
+async function itemize(returnal, desc, channel) {
+    if (channel != undefined) {
+        returnal = await arenaFetch(channel);
+    }
+
     var lostParent = document.getElementById("lostParent");
     var foundParent = document.getElementById("foundParent");
 
     var txt, img;
     var index = 0;
-	const outLost = lost.split('\n').filter(x => x.length);
-    const outFound = found.split('\n').filter(x => x.length);
+	const out = returnal.split('\n').filter(x => x.length);
     const outDesc = desc.split('\n').filter(x => x.length);
-    populate(lostParent, Math.random() * 6, outLost, outDesc);
-    populate(foundParent, Math.random() * 6, outFound, outDesc);
+    populate(lostParent, Math.random() * 6, out, outDesc);
+    populate(foundParent, Math.random() * 6, out, outDesc);
 }
 
 function populate(parent, iter, arr, desc) {

@@ -1,3 +1,33 @@
+async function fetchA(channel) {
+	var returnal = "";
+	var recur = [];
+	await fetch('https://api.are.na/v2/channels/' + channel + '/contents?per=500', {
+		signal: AbortSignal.timeout(10000)
+	})
+    .then(response => response.json())
+    .then(data => {
+        // reverse so the latest ones first
+        const posts = data.contents.reverse()        
+        
+        posts.forEach(post => {   
+			if (post.class == "Channel") {
+				recur.push(post.slug);
+			} else if (post.class == "Image") {
+				returnal += post.image.original.url + "\n";
+
+			}
+        })
+    })
+	for (let i = 0; i < recur.length; i++) {
+		returnal += (await fetchA(recur[i]));
+	}
+	return returnal;
+}
+
+async function arenaFetch(channel) {
+    return(await fetchA(channel));
+}
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -73,10 +103,14 @@ async function load(url, iter, num, info, title, link) {
 	zoom.addEventListener("click", zoomimg);
 }
 
-async function squarize(arr, num, info) {
+async function squarize(arr, num, info, channel) {
 	var index, url, title, link;
+    if (channel != undefined) {
+        arr = await arenaFetch(channel);
+    }
+
 	const out = arr.split('\n').filter(x => x.length);
-	if (info) {
+	if (info != undefined) {
 		description = info.split('\n').filter(x => x.length);
 	}
 	for (let i = 0; i < num; i++) {
