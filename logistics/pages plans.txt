@@ -1,8 +1,8 @@
 -Shoppe: black background with purple fixtures, items arranged in grid of squares with 4 items per row
 -video and real life: includes videos ive made and the discs also
--insane: a black tattered pamphlet i take pictures of that you flip through
 -links: in the style of https://speculativescent.com/offerings
 -strawberry house: a rpgmaker style tilegrid thats cute and has strawberries
--bridges: a schoolhouse you can explore point and click style
+-the hall of Orphicleide: a schoolhouse you can explore point and click style
+-poetics: writings that flash through a window as if the user is imprisioned behind the window
 
 incorporate more dumb ass videos that i took from phone
