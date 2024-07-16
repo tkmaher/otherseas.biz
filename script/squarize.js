@@ -105,6 +105,7 @@ async function load(url, iter, num, info, title, link) {
 
 async function squarize(arr, num, info, channel) {
 	var index, url, title, link;
+	
     if (channel != undefined) {
         arr = await arenaFetch(channel);
     }
