@@ -3,9 +3,7 @@ var sidebar = document.getElementById("sidebar");
 var openButton = document.getElementById("openButton");
 var items = document.getElementById("items");
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+
 
 function open(e) {
     if (sidebar.style.left == "-100%") {

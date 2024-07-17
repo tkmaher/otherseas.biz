@@ -94,7 +94,7 @@ body {
 
 .popup {
     transition: opacity 0.5s;
-    position: absolute;
+    position: fixed;
     left: -50%;
     max-width: 50vh; 
     border: 0px; 
@@ -236,3 +236,17 @@ mark {
     animation-iteration-count: infinite;
     filter: drop-shadow(5px 0px 2px white);
 }
+
+.marquee {
+    color: white;
+    position: absolute;
+    animation: my-animation 50s linear;
+}
+
+@keyframes my-animation {
+    from {
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
