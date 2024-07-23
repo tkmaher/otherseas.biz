@@ -1,4 +1,5 @@
--Shoppe: black background with purple fixtures, items arranged in grid of squares with 4 items per row
+-Shoppe:
+    -Make images magnify on mouseover
 -video and real life: includes videos ive made and the discs also
 -strawberry house: a rpgmaker style tilegrid thats cute and has strawberries
 -minotaur: a foreboding schoolhouse you can explore point and click style

@@ -44,6 +44,7 @@ var quotes = ['“I have drawn things since I was six. All that I made before th
 'The twicefold noise tone indicates the end of the loop. This allows the user to know when the sounds end and where they begin again.',
 '“Fearsome... heart of... His... healing hand. Road ofhealing... Not a long... Take sword... A man... but dew. Heal, O... water-grass! ... O winter... ...falls... snow. That... heal... snow. Take... in hand... heal.“',
 'The lingering echoes of sleep and this raining morning',
+'The fallen raindrops are the diary of the sky',
 ]
 var colors = ['#94c2e5','#808684', '#615756', '#000011', '#539cd8'];
 

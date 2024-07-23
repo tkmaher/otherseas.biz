@@ -1,0 +1,4 @@
+var text = `
+--name: Windup WaterToy sticker {gray}; --price: 4; --type: sticker; --img1: ../images/shoppe/stickertoy1.png; --img2: ../images/shoppe/stickertoy1.png; --date: 20240720; --link: items/windupStickerGray.html
+--name: Windup WaterToy sticker {b&w}; --price: 4; --type: sticker; --img1: ../images/shoppe/stickertoybw1.png; --img2: ../images/shoppe/stickertoybw1.png; --date: 20240720; --link: items/windupStickerBW.html
+`

@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../styles/otherseas.css">
+        <title>store</title> 
+        <script src="items.txt"></script>
+        <script src="shoppepopulator.js"></script>
+    </head>
+
+    <body style="background-color: white; color: #616161; overflow: auto; margin: 5vh; overflow-x: hidden;">
+
+      <div style="z-index: -1; font-family: 'Snell Roundhand', cursive; position: fixed; width: 100vh; max-height: 80vw; font-size: 350px; opacity: 20%; top:50%; left:-10%; pointer-events: none;">
+        Shoppe
+      </div>
+
+      <a id="headpic" href="shoppe.html"><img src="../images/random/4.png" style="position: fixed; width: 20vh; max-width: 20%;"></a>
+
+      <div class="sorter" id="checkboxes" style="opacity: 100; position: fixed; bottom: 5%; font-size: 2vh; border: 2px dotted gray; background-color: white; padding: 10px;">
+        <a>[Sort]<span class="button" style="float:right;" id="closeSort">[X]</span><br> <br></a>
+        <label>Item types</label>
+        <ul>
+          <li><input class="typesort" type="checkbox" id="sticker" checked>Sticker</li>
+          <li><input class="typesort" type="checkbox" id="clothes" checked>Clothes</li>
+          <li><input class="typesort" type="checkbox" id="music" checked>Music</li>
+        </ul>
+        <label>Item sort</label>
+        <ul>
+          <li><input class="listsort" type="checkbox" id="new" checked >Newest</li>
+          <li><input class="listsort" type="checkbox" id="old">eldest</li>
+          <li><input class="listsort" type="checkbox" id="asc">Price (ascending)</li>
+          <li><input class="listsort" type="checkbox" id="desc">Price (descending)</li>
+          <li><input class="listsort" type="checkbox" id="az">Alphabetical (a-z)</li>
+          <li><input class="listsort" type="checkbox" id="za">Alphabetical (z-a)</li>
+        </ul>
+      </div>
+
+      <div id="itemsParent" style="position: absolute; right:10vh">
+
+      </div>
+      <div id="allhidden" style="position: absolute; right:10vh; top:50%" hidden="true">
+        There's nothing left :'(
+      </div>
+
+      <a class="button" style="bottom:6vh; right:1vh; position: fixed" id="openSort">[Menu]</a>
+      <a class="button" style="bottom:2vh; right:1vh; position: fixed" href="../index.html">[Home]</a>
+      <!--<a class="button" style="top:5vh; left:5vh; position: fixed" href="cart.html">[Cart(<span id="cartItems"></span>)]</a>-->
+    </body>
+
+    <!--<script>
+      if (localStorage.getItem("cartcount") == null) {
+        localStorage.setItem("cartcount", "0");
+      }
+      document.getElementById("cartItems").innerHTML = localStorage.getItem("cartcount");
+    </script>-->
+
+    <script>itemize(text)</script>
+    <script src="sorter.js"></script>
+</html>

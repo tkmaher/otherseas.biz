@@ -8,12 +8,13 @@ function collapse(target) {
             break;
         }
     }
-    if (target.innerHTML == "[+]") {
+    if (target.innerHTML.slice(-3) == "[+]") {
+        
         next.style.display = "block";
-        target.innerHTML = "[-]";
+        target.innerHTML = target.innerHTML.replace("+","-");
     } else {
         next.style.display = "none";
-        target.innerHTML = "[+]";
+        target.innerHTML = target.innerHTML.replace("-","+");
     }
 }
 
@@ -22,7 +23,7 @@ function collapseHandler(e) {
     collapse(target);
     if (target.id != current) {
         let other = document.getElementById(current);
-        if (other.innerHTML == "[-]") {
+        if (other.innerHTML.slice(-3) == "[-]") {
             collapse(other);
         }
         current = target.id;
