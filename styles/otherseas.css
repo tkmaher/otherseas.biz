@@ -244,7 +244,6 @@ mark {
     animation: pulse;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-    filter: drop-shadow(5px 0px 2px white);
 }
 
 .marquee {
@@ -298,4 +297,22 @@ hr {
 
 .sorter {
     transition: opacity 0.5s;
+}
+
+
+
+.archaicPic {
+    position: absolute; 
+    max-width: 20%; 
+    width: 40vh;
+    animation: backandforth ease;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes backandforth {
+    0% {}
+    33% {transform: translateX(-50%);}
+    66% {transform: translateX(50%);}
+    100% {transform: translateX(0%);}
 }

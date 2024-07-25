@@ -179,27 +179,25 @@ class GridSystem {
 		*/
 
 		this.dictionary = new Map([
+			//space stuff
 			["star", new Tile(["⭐", "🌟"], true, "A twinkling star.", star)],
 			["spark", new Tile(["🎇", "❤️‍🔥"], true, "Burning plasma.")],
 			["flame", new Tile(["🔥"], true, "Burning plasma.")],
 			["galaxy", new Tile(["🌌"], true, "A distant galaxy.", galaxy)],
 			["comet", new Tile(["☄️"], false, "A flaming comet.")],
-
 			["saturn", new Tile(["🪐"], true, "A gaseous planet.", saturn)],
 			["smoke", new Tile(["🌫️", "☁️"], true, "A dense layer of clouds.")],
 			["ring", new Tile(["💎", "✨"], false, "A ring of fine dust.")],
-
 			["void", new Tile(["⬛"], false, "An empty void.")],
 			["world", new Tile(["🌏", "🌎", "🌍"], true, "An empty planet.", world)],
+
+			//desert biome
 			["ocean", new Tile(["🌊"], true, "A section of ocean.", ocean)],
 			["oceanwave", new Tile(["🌊"], true, "A great wave.", underwater)],
 			["oceanwater", new Tile(["🟦"], true, "Salt water.", underwater)],
 			["freshwater", new Tile(["🟦"], true, "Fresh water.")],
 			["sand", new Tile(["🏷️"], true, "Fine sand.")],
-			["bubbles", new Tile(["🫧", "🏷️"], true, "Underwater bubbles.")],
-			["coral", new Tile(["🪸"], true, "Coral. Part of a coral reef.")],
-			["whalefall", new Tile(["🐋"], true, "The corpse of a whale.")],
-
+			["bubbles", new Tile(["🫧", "🏷️"], false, "Underwater bubbles.")],
 			["island", new Tile(["🏝️"], true, "A tiny tropical island.", island, 1)],
 			["palm", new Tile(["🌴"], true, "A palm tree.", {}, 1)],
 			["mango", new Tile(["🥭"], true, "A fallen mango.", {}, 1)],
@@ -207,8 +205,10 @@ class GridSystem {
 			["shell", new Tile(["🐚"], false, "A washed-up shell.", {}, 1)],
 			["rockisland", new Tile(["🪨"], true, "A rocky, barren island.", rockisland, 1)],
 
+			//deciduous biome
 			["land", new Tile(["🥬"], true, "A fertile continent.")],
 
+			//desert biome
 			["desert", new Tile(["🌵"], true, "An arid continent.", desert)],
 			["mountain", new Tile(["⛰️"], true, "A mountain range.", mountain, 1)],
 			["stream", new Tile(["🟦", "🌊"], false, "A small stream.", {}, 2)],
@@ -218,15 +218,13 @@ class GridSystem {
 			["snowymountain", new Tile(["🏔️"], true, "A snowy peak.", snowymountain)],
 			["pine", new Tile(["🌲"], true, "An evergreen.")],
 			["snow", new Tile(["❄️"], true, "A snowdrift.")],
-			["snowman", new Tile(["⛄"], true, "A snowman. Its builder is unknown.")],
+			["snowman", new Tile(["⛄"], false, "A snowman. Its builder is unknown.")],
 			["desertsand", new Tile(["🏷️"], true, "A dune in the desert.", desertzoom)],
 			["oasis", new Tile(["🌴"], true, "A desert oasis.", desertzoom)],
 			["savannah", new Tile(["🍂"], true, "A desert savannah.", savannah)],
-			
 			["desertgrass1", new Tile(["🍂"], true, "A dry plain.")],
 			["desertgrass2", new Tile(["🌿"], true, "A dry plain.")],
 			["deserttree", new Tile(["🌳"], true, "A sparse savannah tree.", {}, 1)],
-
 			["oasiswater", new Tile(["🟦"], true, "A desert oasis.", desertzoom)],
 			["oasiswater2", new Tile(["🟦"], true, "Water in an oasis.")],
 			["mirage", new Tile(["🌫️"], false, "Shimmering air. A mirage.")],
@@ -245,6 +243,7 @@ class GridSystem {
 			["templedoor", new Tile(["🕳️"], true, "The entrance to the temple.", {}, 1)],
 			["anthill", new Tile(["🕳️"], true, "The entrance to an anthill.", {}, 1)],
 
+			//radiactive biome
 			["falloutzone", new Tile(["⬛"], true, "An irradiated area.", falloutzone)],
 			["falloutwall", new Tile(["🧱"], false, "A wall. The wall serves no apparent purpose.", {}, 1)],
 			["wall", new Tile(["🧱"], false, "A wall.", {}, 1)],
@@ -252,43 +251,53 @@ class GridSystem {
 			["fallout", new Tile(["⬛"], true, "Irradiated earth.")],
 			["radiation", new Tile(["☢️"], true, "Irradiated air particles.")],
 
+			//arctic biome
 			["arctic", new Tile(["🧊"], true, "An arctic continent.", arctic)],
 			["ice", new Tile(["🧊"], true, "An ice shelf.")],
 			["tundra", new Tile(["🟫"], true, "Arctic tundra.")],
 
+			//3 rock types
 			["igneous", new Tile(["🪨"], true, "Igneous rock.", {}, 1)],
 			["sedimentary", new Tile(["🪨"], true, "Sedimentary rock.", {}, 1)],
 			["metamorphic", new Tile(["🪨"], true, "Metamorphic rock.", {}, 1)],
 
-			["leopard", new Tile(["🐆"], true, "A leopard.")],
-			["elephant", new Tile(["🐘"], true, "An elephant.")],
-			["rhino", new Tile(["🦏"], true, "A rhinoceros.")],
-			["giraffe", new Tile(["🦒"], true, "A tall giraffe.")],
-			["gazelle", new Tile(["🦌"], true, "A gazelle.")],
-			["camel", new Tile(["🐪"], true, "A camel, or maybe a dromedary.")],
-			["scorpion", new Tile(["🦂"], true, "A stinging scorpion.")],
-			["hippo", new Tile(["🦛"], true, "A hippopotamus.")],
-			["beetle", new Tile(["🪲"], true, "A tiny beetle.")],
-			["ant", new Tile(["🐜"], true, "An ant.")],
-			["worm", new Tile(["🪱"], true, "An earthworm.", {}, 1)],
-			["lizard", new Tile(["🦎"], true, "A cold-blooded lizard.")],
-			["snake", new Tile(["🐍"], true, "A slithering snake.")],
-			["crocodile", new Tile(["🐊"], true, "A crocodile.")],
-			["fish", new Tile(["🐟"], true, "A regular fish.")],
-			["tropicalfish", new Tile(["🐠"], true, "An angelfish.")],
-			["blowfish", new Tile(["🐡"], true, "A spiny blowfish.")],
-			["shark", new Tile(["🦈"], true, "A shark.")],
-			["octopus", new Tile(["🐙"], true, "An 8-legged octopus.")],
-			["lobster", new Tile(["🦞"], true, "A lobster.")],
-			["shrimp", new Tile(["🦐"], true, "A shrimp.")],
-			["mouse", new Tile(["🐀"], true, "A small rodent.", {}, 1)],
-			["ibex", new Tile(["🦌"], true, "An ibex.", {}, 1)],
-			["eagle", new Tile(["🦅"], true, "An eagle.", {}, 2)],
-			["squid", new Tile(["🦑"], true, "A squid.")],
-			["oyster", new Tile(["🦪"], true, "An oyster.")],
-			["crab", new Tile(["🦀"], true, "A crab, a small crustacean.", {}, 1)],
-			["dolphin", new Tile(["🐬"], true, "A dolphin, an aquatic mammal.")],
-			["whale", new Tile(["🐋"], true, "A blue whale, the largest mammal.")],
+			//animals
+			["leopard", new Tile(["🐆"], true, "A leopard."), animalbody],
+			["elephant", new Tile(["🐘"], true, "An elephant."), animalbody],
+			["rhino", new Tile(["🦏"], true, "A rhinoceros."), animalbody],
+			["giraffe", new Tile(["🦒"], true, "A tall giraffe."), animalbody],
+			["gazelle", new Tile(["🦌"], true, "A gazelle."), animalbody],
+			["camel", new Tile(["🐪"], true, "A camel, or maybe a dromedary."), animalbody],
+			["scorpion", new Tile(["🦂"], true, "A stinging scorpion."), animalbody],
+			["hippo", new Tile(["🦛"], true, "A hippopotamus."), animalbody],
+			["beetle", new Tile(["🪲"], true, "A tiny beetle."), animalbody],
+			["ant", new Tile(["🐜"], true, "An ant."), animalbody],
+			["worm", new Tile(["🪱"], true, "An earthworm.", {}, 1), animalbody],
+			["lizard", new Tile(["🦎"], true, "A cold-blooded lizard."), animalbody],
+			["snake", new Tile(["🐍"], true, "A slithering snake."), animalbody],
+			["crocodile", new Tile(["🐊"], true, "A crocodile."), animalbody],
+			["fish", new Tile(["🐟"], true, "A regular fish."), animalbody],
+			["tropicalfish", new Tile(["🐠"], true, "An angelfish."), animalbody],
+			["blowfish", new Tile(["🐡"], true, "A spiny blowfish."), animalbody],
+			["shark", new Tile(["🦈"], true, "A shark."), animalbody],
+			["octopus", new Tile(["🐙"], true, "An 8-legged octopus."), animalbody],
+			["lobster", new Tile(["🦞"], true, "A lobster."), animalbody],
+			["shrimp", new Tile(["🦐"], true, "A shrimp."), animalbody],
+			["mouse", new Tile(["🐀"], true, "A small rodent.", {}, 1), animalbody],
+			["ibex", new Tile(["🦌"], true, "An ibex.", {}, 1), animalbody],
+			["eagle", new Tile(["🦅"], true, "An eagle.", {}, 2), animalbody],
+			["squid", new Tile(["🦑"], true, "A squid."), animalbody],
+			["oyster", new Tile(["🦪"], true, "An oyster."), animalbody],
+			["crab", new Tile(["🦀"], true, "A crab, a small crustacean.", {}, 1), animalbody],
+			["dolphin", new Tile(["🐬"], true, "A dolphin, an aquatic mammal."), animalbody],
+			["whale", new Tile(["🐋"], true, "A blue whale, the largest mammal."), animalbody],
+			["coral", new Tile(["🪸"], true, "Coral. Part of a coral reef."), animalbody],
+			["whalefall", new Tile(["🐋"], true, "The corpse of a whale."), animalbody],
+
+			//sub-visible things
+			["interstitialFluid", new Tile(["🌀"], false, "Interstitial fluid, the fluid between cells.")],
+			["cell", new Tile(["🧬"], true, "A microscopic cell.")],
+			["bacteria", new Tile(["🦠"], true, "A microscopic bacterium.")],
 		]);
 	}
 
@@ -1067,6 +1076,14 @@ function arctic(frame, tile) {
 		fuzz(frame, "tundra", "tundra", 0.1, 1, -1);
 	}
 }
+
+function animalbody(frame, tile) {
+	fill(frame, "interstitialFluid", 1, -1);
+	fill(frame, "cell", 0.8, -1);
+	randPoint(empty[1], "bacteria", 10, -1);
+	NPCify(empty[1], "bacteria", "wander", 0.25);
+}
+
 /*end generation functions*/
 
 //EventListeners
@@ -1117,7 +1134,7 @@ function pause(e) {
 		paused = false
 		p.innerHTML = "[Pause]";
 	}
-}
+} 
 
 document.getElementById("pause").addEventListener("click", pause);
 //document.getElementById("pause").addEventListener("keyup", pause); space bar config
@@ -1160,7 +1177,7 @@ const empty = [[
 	["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
 ]];
 const gridSystem = new GridSystem();
-init(empty[0]);
+animalbody(empty[0]);
 var tick = 0;
 var paused = true;
 

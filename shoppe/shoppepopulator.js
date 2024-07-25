@@ -35,7 +35,8 @@ function itemize(text) {
   }
 
   if (isMobile) {
-    parent.style.right = "auto";
+    parent.style.right = "50%";
+    parent.style.transform = "translate(50%, 0%)";
     document.getElementById("headpic").hidden = true;
   }
 }
