@@ -1,8 +1,8 @@
--Shoppe:
-    -Make images magnify on mouseover
--video and real life: includes videos ive made and the discs also
+-video and real life: includes the discs also
 -strawberry house: a rpgmaker style tilegrid thats cute and has strawberries
 -minotaur: a foreboding schoolhouse you can explore point and click style
+
+-finish temple
 
 incorporate more dumb ass videos that i took from phone
 

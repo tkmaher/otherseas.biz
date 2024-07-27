@@ -206,7 +206,10 @@ class GridSystem {
 			["rockisland", new Tile(["🪨"], true, "A rocky, barren island.", rockisland, 1)],
 
 			//deciduous biome
-			["land", new Tile(["🥬"], true, "A fertile continent.")],
+			["land", new Tile(["🥬"], true, "A fertile continent.", land)],
+			["forest", new Tile(["🌳"], true, "A deciduous forest.")],
+			["plain", new Tile(["🟩"], true, "A grassy plain.")],
+			["freshlake", new Tile(["🟦"], true, "A large freshwater lake.")],
 
 			//desert biome
 			["desert", new Tile(["🌵"], true, "An arid continent.", desert)],
@@ -1101,6 +1104,26 @@ function plantbody(frame, tile) {
 	drawGrid(frame, "cell", 2, -1);
 	randPoint(empty[1], "bacteria", 10, -1);
 	NPCify(empty[1], "bacteria", "wander", 0.25);
+}
+
+function land(frame, tile) {
+	fill(frame, "plain", 1, -1);
+	if (Math.random() > 0.5) {
+		randPoint(frame, "freshlake", 1, -1);
+		fuzz(frame, "freshlake", "freshlake", 0.5, 2, -1);
+	}
+	if (Math.random() > 0.5) {
+		var x1 = Math.floor(Math.random() * frame.length);
+		var x2 = Math.floor(Math.random() * frame.length);
+		randLine(frame, "snowymountain", x1, 0, x2, frame.length, 2, 3, -1);
+		fuzz(frame, "mountain", "snowymountain", 0.75, 1, -1);
+	}
+	for (let i = 0; i < Math.random() * 4; i++) {
+		let y = Math.floor(Math.random() * frame.length);
+		let x = Math.floor(Math.random() * frame.length);
+		circle(frame, "forest", Math.random() * 3, x, y, -1);
+	}
+	fuzz(frame,"forest", "forest", 0.2, 1, -1);
 }
 
 /*end generation functions*/
