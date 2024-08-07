@@ -181,8 +181,8 @@ class GridSystem {
 		this.dictionary = new Map([
 			//space stuff
 			["star", new Tile(["⭐", "🌟"], true, "A twinkling star.", star)],
-			["spark", new Tile(["🎇", "❤️‍🔥"], true, "Burning plasma.")],
-			["flame", new Tile(["🔥"], true, "Burning plasma.")],
+			["spark", new Tile(["🎇", "❤️‍🔥"], true, "Burning plasma.", atom)],
+			["flame", new Tile(["🔥"], true, "Burning plasma.", atom)],
 			["galaxy", new Tile(["🌌"], true, "A distant galaxy.", galaxy)],
 			["comet", new Tile(["☄️"], false, "A flaming comet.")],
 			["saturn", new Tile(["🪐"], true, "A gaseous planet.", saturn)],
@@ -191,12 +191,11 @@ class GridSystem {
 			["void", new Tile(["⬛"], false, "An empty void.")],
 			["world", new Tile(["🌏", "🌎", "🌍"], true, "An empty planet.", world)],
 
-			//desert biome
+			//ocean biome
 			["ocean", new Tile(["🌊"], true, "A section of ocean.", ocean)],
 			["oceanwave", new Tile(["🌊"], true, "A great wave.", underwater)],
 			["oceanwater", new Tile(["🟦"], true, "Salt water.", underwater)],
-			["freshwater", new Tile(["🟦"], true, "Fresh water.")],
-			["sand", new Tile(["🏷️"], true, "Fine sand.")],
+			["sand", new Tile(["🏷️"], true, "Fine sand.", atom)],
 			["bubbles", new Tile(["🫧", "🏷️"], false, "Underwater bubbles.")],
 			["island", new Tile(["🏝️"], true, "A tiny tropical island.", island, 1)],
 			["palm", new Tile(["🌴"], true, "A palm tree.", plantbody, 1)],
@@ -207,19 +206,45 @@ class GridSystem {
 
 			//deciduous biome
 			["land", new Tile(["🥬"], true, "A fertile continent.", land)],
-			["forest", new Tile(["🌳"], true, "A deciduous forest.")],
-			["plain", new Tile(["🟩"], true, "A grassy plain.")],
-			["freshlake", new Tile(["🟦"], true, "A large freshwater lake.")],
+			["forest", new Tile(["🌳"], true, "A deciduous forest.", forest)],
+			["tree", new Tile(["🌳"], true, "A deciduous tree.", plantbody, 1)],
+			["plain", new Tile(["🟩"], true, "A grassy plain.", plain)],
+			["river", new Tile(["🟦"], true, "A river.", river)],
+			["freshlake", new Tile(["🟦"], true, "A large freshwater lake.", lake)],
+			["city", new Tile(["🏙️"], true, "An empty city.")],
+			["wheatfield", new Tile(["🌾"], true, "A field of grain.")],
+			["meadowgrass", new Tile(["🌿"], true, "Dry meadow grass.", plantbody)],
+			["forestfloor", new Tile(["🍂"], true, "The forest floor.", plantbody)],
+			["sapling", new Tile(["🌱"], true, "A burgeoning sapling.", plantbody)],
+			["flower1", new Tile(["🥀"], true, "A wilting flowerbud.", plantbody)],
+			["flower2", new Tile(["🌼"], true, "A blooming blossom.", plantbody)],
+			["flower3", new Tile(["🌹"], true, "A rosebush.", plantbody)],
+			["flower4", new Tile(["🌺"], true, "A hibuscus.", plantbody)],
+			["hyacinth", new Tile(["🪻"], true, "A hyacinth.", plantbody)],
+			["sunflower", new Tile(["🌻"], true, "A sunflower.", plantbody)],
+			["tulip", new Tile(["🌷"], true, "A tulip.", plantbody)],
+			["lotus", new Tile(["🪷"], true, "A lotus on a lily pad.", plantbody)],
+			["lakewater", new Tile(["🟦"], true, "Fresh lake water.", underlake)],
+			["riverwater", new Tile(["🟦"], true, "Fresh river water.", underground)],
+			["driftwood", new Tile(["🪵"], true, "Some driftwood.")],
+			["algae", new Tile(["🌿"], true, "Green algae.", plantbody)],
+			["leaf", new Tile(["🍃"], true, "A floating leaf.", plantbody)],
+			["tunnel", new Tile(["⬛"], false, "A tunnel in the soil.")],
 
 			//desert biome
 			["desert", new Tile(["🌵"], true, "An arid continent.", desert)],
 			["mountain", new Tile(["⛰️"], true, "A mountain range.", mountain, 1)],
 			["stream", new Tile(["🟦", "🌊"], false, "A small stream.", {}, 2)],
 			["lake", new Tile(["🟦"], true, "A clear lake.", underground, 2)],
-			["dirt", new Tile(["🟫"], true, "Soil.", {}, 1)],
+			["dirt", new Tile(["🟫"], true, "Soil.", underground, 1)],
+			["magma", new Tile(["🔥","🟥"], true, "Intensely hot magma.", magma, 1)],
+			["demon", new Tile(["👺"], true, "Some kind of stange red creature.", animalbody, 1)],
+			["devil", new Tile(["👿"], true, "Some kind of stange evil creature.", animalbody, 1)],
+			["bones", new Tile(["🦴"], true, "Dried bones.", animalbody, 1)],
+			["skull", new Tile(["☠️"], true, "Dried bones.", animalbody, 1)],
 			["shrub", new Tile(["🌱"], true, "A small shrub.", plantbody)],
 			["snowymountain", new Tile(["🏔️"], true, "A snowy peak.", snowymountain)],
-			["pine", new Tile(["🌲"], true, "An evergreen.", plantbody)],
+			["pine", new Tile(["🌲"], true, "An evergreen.", plantbody, 1)],
 			["snow", new Tile(["❄️"], true, "A snowdrift.")],
 			["snowman", new Tile(["⛄"], false, "A snowman. Its builder is unknown.")],
 			["desertsand", new Tile(["🏷️"], true, "A dune in the desert.", desertzoom)],
@@ -229,7 +254,8 @@ class GridSystem {
 			["desertgrass2", new Tile(["🌿"], true, "A dry plain.", plantbody)],
 			["deserttree", new Tile(["🌳"], true, "A sparse savannah tree.", plantbody, 1)],
 			["oasiswater", new Tile(["🟦"], true, "A desert oasis.", desertzoom)],
-			["oasiswater2", new Tile(["🟦"], true, "Water in an oasis.")],
+			["oasiswater2", new Tile(["🟦"], true, "Water in an oasis.", underground)],
+			["freshwater", new Tile(["🟦"], true, "Fresh water.")],
 			["mirage", new Tile(["🌫️"], false, "Shimmering air. A mirage.")],
 			["papyrus", new Tile(["🌾"], true, "A papyrus plant.", plantbody)],
 			["cactus", new Tile(["🌵"], true, "A cactus.", plantbody, 1)],
@@ -244,15 +270,15 @@ class GridSystem {
 			["temple1", new Tile(["🪨"], false, "An ancient temple made of stone.", {}, 1)],
 			["temple2", new Tile(["🛕"], false, "An ancient temple made of stone.", {}, 1)],
 			["templedoor", new Tile(["🕳️"], true, "The entrance to the temple.", {}, 1)],
-			["anthill", new Tile(["🕳️"], true, "The entrance to an anthill.", {}, 1)],
+			["anthill", new Tile(["🕳️"], true, "The entrance to an anthill.", anthill, 1)],
 
 			//radiactive biome
 			["falloutzone", new Tile(["⬛"], true, "An irradiated area.", falloutzone)],
 			["falloutwall", new Tile(["🧱"], false, "A wall. The wall serves no apparent purpose.", {}, 1)],
 			["wall", new Tile(["🧱"], false, "A wall.", {}, 1)],
-			["radioactive", new Tile(["☢️"], true, "A radioactive ion.")],
-			["fallout", new Tile(["⬛"], true, "Irradiated earth.")],
-			["radiation", new Tile(["☢️"], true, "Irradiated air particles.")],
+			["radioactive", new Tile(["☢️"], true, "A radioactive ion.", atom)],
+			["fallout", new Tile(["⬛"], true, "Irradiated earth.", underground)],
+			["radiation", new Tile(["☢️"], true, "Irradiated air particles.", atom)],
 
 			//arctic biome
 			["arctic", new Tile(["🧊"], true, "An arctic continent.", arctic)],
@@ -260,9 +286,9 @@ class GridSystem {
 			["tundra", new Tile(["🟫"], true, "Arctic tundra.")],
 
 			//3 rock types
-			["igneous", new Tile(["🪨"], true, "Igneous rock.", {}, 1)],
-			["sedimentary", new Tile(["🪨"], true, "Sedimentary rock.", {}, 1)],
-			["metamorphic", new Tile(["🪨"], true, "Metamorphic rock.", {}, 1)],
+			["igneous", new Tile(["🪨"], true, "Igneous rock.", atom, 1)],
+			["sedimentary", new Tile(["🪨"], true, "Sedimentary rock.", atom, 1)],
+			["metamorphic", new Tile(["🪨"], true, "Metamorphic rock.", atom, 1)],
 
 			//animals
 			["leopard", new Tile(["🐆"], true, "A leopard.", animalbody)],
@@ -275,11 +301,13 @@ class GridSystem {
 			["hippo", new Tile(["🦛"], true, "A hippopotamus.", animalbody)],
 			["beetle", new Tile(["🪲"], true, "A tiny beetle.", animalbody)],
 			["ant", new Tile(["🐜"], true, "An ant.", animalbody)],
+			["queenant", new Tile(["👸"], true, "A queen ant.", animalbody)],
 			["worm", new Tile(["🪱"], true, "An earthworm.", animalbody, 1)],
 			["lizard", new Tile(["🦎"], true, "A cold-blooded lizard.", animalbody)],
 			["snake", new Tile(["🐍"], true, "A slithering snake.", animalbody)],
 			["crocodile", new Tile(["🐊"], true, "A crocodile.", animalbody)],
 			["fish", new Tile(["🐟"], true, "A regular fish.", animalbody)],
+			["salmon", new Tile(["🐟", "🟦"], true, "A salmon, swimming upstream.", animalbody)],
 			["tropicalfish", new Tile(["🐠"], true, "An angelfish.", animalbody)],
 			["blowfish", new Tile(["🐡"], true, "A spiny blowfish.", animalbody)],
 			["shark", new Tile(["🦈"], true, "A shark.", animalbody)],
@@ -296,11 +324,30 @@ class GridSystem {
 			["whale", new Tile(["🐋"], true, "A blue whale, the largest mammal.", animalbody)],
 			["coral", new Tile(["🪸"], true, "Coral. Part of a coral reef.", animalbody)],
 			["whalefall", new Tile(["🐋"], true, "The corpse of a whale.", animalbody)],
+			["deer", new Tile(["🦌"], true, "A white-tailed deer.", animalbody)],
+			["rabbit", new Tile(["🐇"], true, "A rabbit.", animalbody)],
+			["bison", new Tile(["🦬"], true, "A large bison.", animalbody)],
+			["fox", new Tile(["🦊"], true, "A quick fox.", animalbody)],
+			["wolf", new Tile(["🐺"], true, "A wolf.", animalbody)],
+			["turkey", new Tile(["🦃"], true, "A wild turkey.", animalbody)],
+			["turtle", new Tile(["🐢"], true, "A land tortoise.", animalbody)],
+			["duck", new Tile(["🦆"], true, "A duck.", animalbody)],
+			["goose", new Tile(["🪿"], true, "A white goose.", animalbody)],
 
 			//sub-visible things
 			["interstitialFluid", new Tile(["🌀"], false, "Interstitial fluid, the fluid between cells.")],
-			["cell", new Tile(["🧬"], true, "A microscopic cell.")],
-			["bacteria", new Tile(["🦠"], true, "A microscopic bacterium.")],
+			["cell", new Tile(["🧬"], true, "A microscopic cell.", cell)],
+			["bacteria", new Tile(["🦠"], true, "A microscopic bacterium.", cell)],
+			["virus", new Tile(["🤖"], false, "A microscopic virus.", atom)],
+			["dna", new Tile(["🧬"], true, "A clump of DNA.", atom)],
+
+			["mitochondria", new Tile(["🦠"], true, "A mitochondrium.")],
+			["string", new Tile(["🔗"], true, "A string, the fundamental building block of the universe.")],
+			["atom", new Tile(["⚛️"], true, "An atom.", subatomic)],
+			["atominside", new Tile(["🤍"], true, "The inside of an atom.", strings)],
+			["radioactiveatom", new Tile(["☢️"], true, "A radioactive particle.", subatomic)],
+			["proton", new Tile(["🍎"], true, "A cluster of protons and neutrons.", strings)],
+			["electron", new Tile(["🎾"], true, "An electron.", strings)],
 		]);
 	}
 
@@ -804,7 +851,7 @@ function underwater(frame, tile) {
 		fuzz(frame, "coral", "coral", 0.5, 1, -1);
 	}
 	if (Math.random() > 0.5) {
-		randPoint(empty[1], "fish", -1);
+		randPoint(empty[1], "fish", 1, -1);
 		fuzz(empty[1], "fish", "fish", 0.5, Math.ceil(Math.random() * 2), -1);
 		NPCify(empty[1], "fish", "wander", 0.25, 0, Math.floor((Math.random() - 0.5) * 2));
 	}
@@ -1047,14 +1094,48 @@ function mountain(frame, tile) {
 function underground(frame, tile) {
 	fill(frame, "dirt", 1.0, -1);
 	fill(frame, "sedimentary", 0.2, -1);
-	randPoint(empty[1], "worm", Math.random() * 5, -1);
-	if (tile == "lake") {
+	if (tile == "lake" || tile =="oasiswater2") {
 		var center = Math.floor(frame.length / 2);
 		circle(frame, "freshwater", Math.random() * 7, center, center, -1);
 		randPoint(empty[1], "fish", Math.random() * 8, -1);
 		NPCifyAndMask(empty[1], frame, "freshwater", "fish", "wander", 0.5);
 	}
-	NPCifyAndMask(empty[1], frame, "dirt", "worm", "wander", 0.25);
+	if (tile == "riverwater") {
+		box(frame, "freshwater", frame.length, 5, 7, 7, -1);
+		fuzz(frame, "freshwater", "freshwater", 0.4, 2, -1);
+		randPoint(empty[1], "fish", Math.random() * 8, -1);
+		NPCifyAndMask(empty[1], frame, "freshwater", "fish", "wander", 0.5);
+		fill(frame, "algae", 0.3, "freshwater");
+	}
+	
+	if (tile == "dirt") {
+		if (Math.random() > 0.4) {
+			randPoint(empty[1], "worm", Math.random() * 5, -1);
+			NPCifyAndMask(empty[1], frame, "dirt", "worm", "wander", 0.25);
+		} else {
+			fill(frame, "magma", 1.0, -1);
+			if (Math.random() > 0.5) {
+				randPoint(empty[1], "demon", Math.random() * 5, -1);
+				NPCify(empty[1], "demon", "paceXY", 2, 1, 0);
+				randPoint(empty[1], "devil", Math.random() * 2, -1);
+				NPCify(empty[1], "devil", "paceXY", 2, 1, 0);
+			}
+		}
+	}
+	if (Math.random() > 0.4) {
+		randPoint(frame, "skull", Math.random() * 3, -1);
+		fuzz(frame, "bones", "skull", 0.6, 1, -1);
+	}
+}
+
+function magma(frame, tile) {
+	fill(frame, "magma", 1.0, -1);
+	if (Math.random() > 0.5) {
+		randPoint(empty[1], "demon", Math.random() * 5, -1);
+		NPCify(empty[1], "demon", "paceXY", 2, 1, 0);
+		randPoint(empty[1], "devil", Math.random() * 2, -1);
+		NPCify(empty[1], "devil", "paceXY", 2, 1, 0, 5);
+	}
 }
 
 function snowymountain(frame, tile) {
@@ -1106,6 +1187,17 @@ function plantbody(frame, tile) {
 	NPCify(empty[1], "bacteria", "wander", 0.25);
 }
 
+function cell(frame, tile) {
+	fill(frame, "void", 1, -1);
+	var center = Math.floor(frame.length / 2);
+	circle(frame, "interstitialFluid", 2, center, center, -1);
+	frame[center][center] = "dna";
+	fuzz(frame, "dna", "dna", 0.5, 1, -1);
+	randPoint(frame, "mitochondria", 1, "interstitialFluid");
+	randPoint(empty[1], "virus", Math.random() * 5, -1);
+	NPCify(empty[1], "virus", "wander", 0.25);
+}
+
 function land(frame, tile) {
 	fill(frame, "plain", 1, -1);
 	if (Math.random() > 0.5) {
@@ -1118,12 +1210,208 @@ function land(frame, tile) {
 		randLine(frame, "snowymountain", x1, 0, x2, frame.length, 2, 3, -1);
 		fuzz(frame, "mountain", "snowymountain", 0.75, 1, -1);
 	}
+	if (Math.random() > 0.5) {
+		var x1 = Math.floor(Math.random() * frame.length);
+		var x2 = Math.floor(Math.random() * frame.length);
+		randLine(frame, "river", 0, x1, frame.length, x2, 2, 3, -1);
+		fuzz(frame, "mountain", "snowymountain", 0.1, 1, -1);
+	}
 	for (let i = 0; i < Math.random() * 4; i++) {
 		let y = Math.floor(Math.random() * frame.length);
 		let x = Math.floor(Math.random() * frame.length);
 		circle(frame, "forest", Math.random() * 3, x, y, -1);
 	}
 	fuzz(frame,"forest", "forest", 0.2, 1, -1);
+	if (Math.random() > 0.5) {
+		let y = Math.floor(Math.random() * frame.length);
+		let x = Math.floor(Math.random() * frame.length);
+		circle(frame, "city", Math.random() * 1, x, y, -1);
+		fuzz(frame, "city", "city", 0.5, 1, -1);
+		if (Math.random() > 0.4) {
+			fuzz(frame, "wheatfield", "city", 1, 1, -1);
+		}
+	}
+}
+
+function plain(frame, tile) {
+	fill(frame, "meadowgrass", 1, -1);
+	fill(frame, "shrub", 0.2, -1);
+	fill(frame, "sapling", 0.1, -1);
+	if (Math.random() > 0.3) {
+		if (Math.random() > 0.3) {
+			fill(frame, "flower1", 0.1, -1);
+			fill(frame, "flower2", 0.1, -1);
+			fill(frame, "flower3", 0.1, -1);
+			fill(frame, "flower4", 0.1, -1);
+		} else if (Math.random() > 0.5) {
+			fill(frame, "sunflower", 0.5, -1);
+		} else {
+			if (Math.random() > 0.5) {
+				fill(frame, "tulip", 0.5, -1);
+			} else {
+				fill(frame, "hyacinth", 0.5, -1);
+			}
+		}
+	}
+	if (Math.random() > 0.5) {
+		fill(frame, "sedimentary", 0.05, -1);
+	}
+	if (Math.random() > 0.7) {
+		randPoint(empty[1], "fox", 1, -1);
+		NPCify(empty[1], "fox", "wander", 0.25);
+	}
+	if (Math.random() > 0.5) {
+		randPoint(empty[1], "deer", 1, -1);
+		fuzz(empty[1], "deer", "deer", 1, 1, -1);
+		if (Math.random() > 0.5) {
+			randPoint(empty[1], "wolf", 1, -1);
+			fuzz(empty[1], "wolf", "wolf", 1, 1, -1);
+			NPCify(empty[1], "wolf", "chaseXY", 1, frame.length + 5, 0, 1);
+		}
+		NPCify(empty[1], "deer", "wander", 1, 1);
+	}
+	if (Math.random() > 0.9) {
+		randPoint(empty[1], "turkey", 1, -1);
+		fuzz(empty[1], "turkey", "turkey", 0.75, 1, -1)
+		NPCify(empty[1], "turkey", "wander", 0.5, 0, 1);
+	}
+	if (Math.random() > 0.9) {
+		randPoint(empty[1], "bison", 3, -1);
+		NPCify(empty[1], "bison", "wander", 0.5, 1);
+	}
+	if (Math.random() > 0.7) {
+		randPoint(empty[1], "mouse", Math.floor(Math.random() * 3), -1);
+		NPCify(empty[1], "mouse", "wander", 0.25);
+	}
+	if (Math.random() > 0.9) {
+		randPoint(empty[1], "turtle", Math.floor(Math.random() * 3), -1);
+		NPCify(empty[1], "turtle", "wander", 0.25);
+	}
+	if (Math.random() > 0.8) {
+		randPoint(frame, "anthill", 1, -1);
+		fuzz(frame, "ant", "anthill", 0.5, 1, -1);
+	}
+	if (Math.random() > 0.7) {
+		randPoint(empty[1], "rabbit", Math.floor(Math.random() * 3), -1);
+		NPCify(empty[1], "rabbit", "wander", 0.5);
+	}
+}
+
+function lake(frame, tile) {
+	fill(frame, "lakewater", 1, -1);
+	if (Math.random() > 0.6) {
+		fill(frame, "lotus", 0.3, -1);
+	}
+	if (Math.random() > 0.7) {
+		randPoint(empty[1], "duck", 1, -1);
+		fuzz(empty[1], "duck", "duck", 0.75, 1, -1)
+		NPCify(empty[1], "duck", "wander", 0.5, 0, -1);
+	}
+	if (Math.random() > 0.7) {
+		randPoint(empty[1], "goose", 1, -1);
+		NPCify(empty[1], "goose", "wander", 1);
+	}
+	randPoint(empty[1], "driftwood", Math.random() * 5, -1);
+	NPCify(empty[1], "driftwood", "wander", 0.25);
+}
+
+function underlake(frame, tile) {
+	fill(frame, "sand", 1, -1);
+	fill(frame, "sedimentary", 0.3, -1);
+	fill(frame, "algae", 0.3, -1);
+	randPoint(frame, "driftwood", Math.random() * 5, -1);
+	if (Math.random() > 0.0) {
+		randPoint(empty[1], "fish", 1, -1);
+		fuzz(empty[1], "fish", "fish", 0.5, Math.ceil(Math.random() * 2), -1);
+		NPCify(empty[1], "fish", "wander", 0.25, 0, Math.floor((Math.random() - 0.5) * 2));
+	}
+}
+
+function river(frame, tile) {
+	fill(frame, "meadowgrass", 1, -1);
+	fill(frame, "shrub", 0.2, -1);
+	fill(frame, "sapling", 0.1, -1);
+	box(frame, "riverwater", frame.length, 5, 7, 7, -1);
+	fuzz(frame, "riverwater", "riverwater", 0.7, 2, -1);
+	if (Math.random() > 0.6) {
+		randPoint(empty[1], "salmon", Math.random() * 5, -1);
+		NPCifyAndMask(empty[1], frame, "riverwater", "salmon", "down", 0.5);
+	}
+	if (Math.random() > 0.6) {
+		randPoint(empty[1], "leaf", Math.random() * 10, -1);
+		NPCifyAndMask(empty[1], frame, "riverwater", "leaf", "down", 0.5);
+	}
+}
+
+function forest(frame, tile) {
+	fill(frame, "forestfloor", 1, -1);
+	fill(frame, "shrub", 0.2, -1);
+	fill(frame, "sapling", 0.1, -1);
+	fill(frame, "tree", 0.3, -1);
+	if (Math.random() > 0.3) {
+		fill(frame, "pine", 0.2, -1);
+	}
+	if (Math.random() > 0.7) {
+		randPoint(empty[1], "fox", 1, -1);
+		NPCify(empty[1], "fox", "wander", 0.25);
+	}
+	if (Math.random() > 0.5) {
+		randPoint(empty[1], "deer", 1, -1);
+		fuzz(empty[1], "deer", "deer", 1, 1, -1);
+		if (Math.random() > 0.5) {
+			randPoint(empty[1], "wolf", 1, -1);
+			fuzz(empty[1], "wolf", "wolf", 1, 1, -1);
+			NPCify(empty[1], "wolf", "chaseXY", 1, frame.length + 5, 0, 1);
+		}
+		NPCify(empty[1], "deer", "wander", 1, 1);
+	}
+	if (Math.random() > 0.8) {
+		randPoint(frame, "anthill", 1, -1);
+		fuzz(frame, "ant", "anthill", 0.5, 1, -1);
+	}
+	if (Math.random() > 0.7) {
+		randPoint(empty[1], "rabbit", Math.floor(Math.random() * 3), -1);
+		NPCify(empty[1], "rabbit", "wander", 0.5);
+	}
+}
+
+function anthill(frame, tile) {
+	fill(frame, "dirt", 1, -1);
+	fill(frame, "sedimentary", 0.1, -1);
+	for (let i = 0; i < Math.random() * 10 + 5; i++) {
+		let rand = Math.floor(frame.length * Math.random());
+		let rand1 = Math.floor(frame.length * Math.random());
+		let rand2 = Math.floor(frame.length * Math.random());
+		if (i % 2 == 0) {
+			line(frame, "tunnel", rand, rand1, rand, rand2, -1)
+		} else {
+			line(frame, "tunnel", rand1, rand, rand2, rand, -1)
+		}
+	}
+	randPoint(frame, "queenant", 1, "tunnel");
+	randPoint(empty[1], "ant", Math.random() * 50, -1);
+	NPCifyAndMask(empty[1], frame, "tunnel", "ant", "wander", 0.25);
+}
+
+function atom(frame, tile) {
+	fill(frame, "void", 1, -1);
+	fill(empty[1], "atom", Math.random(), -1);
+	fill(empty[1], "radioactiveatom", 0.05, -1);
+	NPCify(empty[1], "radioactiveatom", "wander", 2);
+}
+
+function subatomic(frame, tile) {
+	fill(frame, "void", 1, -1);
+	var center = Math.floor(frame.length / 2);
+	circle(frame, "atominside", 2, center, center, -1);
+	frame[center][center] = "proton";
+	fuzz(frame, "proton", "proton", 0.5, 1, -1);
+	empty[1][7][7] = "electron";
+	NPCify(empty[1], "electron", "paceXY", 1, 1, 1, 3);
+}
+
+function strings(frame, tile) {
+	fill(frame, "string", 1, -1);
 }
 
 /*end generation functions*/
