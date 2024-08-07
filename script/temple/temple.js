@@ -1395,7 +1395,7 @@ function anthill(frame, tile) {
 
 function atom(frame, tile) {
 	fill(frame, "void", 1, -1);
-	fill(empty[1], "atom", Math.random(), -1);
+	fill(frame, "atom", Math.random(), -1);
 	fill(empty[1], "radioactiveatom", 0.05, -1);
 	NPCify(empty[1], "radioactiveatom", "wander", 2);
 }
