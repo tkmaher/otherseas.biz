@@ -141,23 +141,7 @@ class GridSystem {
 		this.cellSize = 40;
 		this.length = 15;
 		this.padding = 6;
-		this.heatmap = [
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-			[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-		];
+		this.highlight = [0,0];
 		this.npcLayer = [];
 		this.history = [];
 		this.NPChistory = [];
@@ -186,9 +170,13 @@ class GridSystem {
 			["galaxy", new Tile(["🌌"], true, "A distant galaxy.", galaxy)],
 			["comet", new Tile(["☄️"], false, "A flaming comet.")],
 			["saturn", new Tile(["🪐"], true, "A gaseous planet.", saturn)],
-			["smoke", new Tile(["🌫️", "☁️"], true, "A dense layer of clouds.")],
+			["smoke", new Tile(["🌫️", "☁️"], true, "A dense layer of clouds.", gasplanet)],
+			["storm", new Tile(["🌀"], true, "A swirling storm.", atom)],
+			["lightning", new Tile(["🌀", "⚡"], true, "An electromagnetic burst.", atom)],
+			["clouds", new Tile(["🌫️", "☁️"], true, "Clouds.", atom)],
 			["ring", new Tile(["💎", "✨"], false, "A ring of fine dust.")],
 			["void", new Tile(["⬛"], false, "An empty void.")],
+			["voidwall", new Tile(["⬛"], false, "An empty void.", {}, 1)],
 			["world", new Tile(["🌏", "🌎", "🌍"], true, "An empty planet.", world)],
 
 			//ocean biome
@@ -211,8 +199,65 @@ class GridSystem {
 			["plain", new Tile(["🟩"], true, "A grassy plain.", plain)],
 			["river", new Tile(["🟦"], true, "A river.", river)],
 			["freshlake", new Tile(["🟦"], true, "A large freshwater lake.", lake)],
-			["city", new Tile(["🏙️"], true, "An empty city.")],
-			["wheatfield", new Tile(["🌾"], true, "A field of grain.")],
+			["city", new Tile(["🏙️"], true, "An empty city.", city)],
+			["road", new Tile(["⬛"], false, "A road.")],
+			["park", new Tile(["🌳"], true, "A park.", park)],
+			["graveyard", new Tile(["🪦"], true, "A cemetary.", park)],
+			["gravestone", new Tile(["🪦"], false, "A headstone.")],
+			["leaves", new Tile(["🍂"], true, "Fallen leaves.", plantbody)],
+			["bouquet", new Tile(["💐"], true, "A bouquet of flowers.", plantbody)],
+			["ghost", new Tile(["👻"], false, "A phantasm.")],
+
+			["house", new Tile(["🏚️"], true, "An empty house.", building)],
+			["laboratory", new Tile(["🏫"], true, "A strange laboratory.", building)],
+			["note", new Tile(["📃"], false, "A note. Some kind of grave apology is written here.")],
+			["note2", new Tile(["📃"], false, "Hieroglyphs. They speak loftily of some kind of higher symbolic world.")],
+			["alembic", new Tile(["⚗️"], true, "An alembic.", microbe)],
+			["petri", new Tile(["🧫"], true, "A petri dish.", microbe)],
+			["beaker", new Tile(["🧪"], true, "A test tube.", atom)],
+			["skyscraper", new Tile(["🏢"], true, "A skyscraper.", building)],
+			["stairs", new Tile(["📶"], true, "Stairs leading up and down.", building)],
+			["rooftop", new Tile(["⬛"], false, "A skyscraper roof.")],
+			["antenna", new Tile(["📡"], false, "A satellite antenna.")],
+			["cubicle", new Tile(["📦"], false, "A cubicle.")],
+			["school", new Tile(["🏫"], true, "A school.", building)],
+			["bank", new Tile(["🏦"], true, "A bank.", building)],
+			["lock", new Tile(["🔒"], false, "A locked vault door.")],
+			["moneybag", new Tile(["💰"], false, "A bag of money.")],
+			["coin", new Tile(["🪙"], false, "A coin.")],
+			["creditcard", new Tile(["💳"], false, "A credit cart.")],
+			["diamond", new Tile(["💎", "✨"], true, "A shining gem.", atom)],
+			["euro", new Tile(["💶"], false, "A banknote.")],
+			["factory", new Tile(["🏭"], true, "A factory.", building)],
+			["machine", new Tile(["📠"], false, "A strange machine.")],
+			["wrench", new Tile(["🔧"], false, "A wrench.")],
+			["toolbox", new Tile(["🧰"], false, "A toolbox.")],
+			["gear", new Tile(["⚙️"], false, "Metal scraps.")],
+			["oilbarrel", new Tile(["🛢️"], true, "A drum of oil.", oil)],
+			["oil", new Tile(["⬛", "👁️"], true, "Dark oil.", atom)],
+			["robot", new Tile(["🤖"], false, "A roaming machine.")],
+			["conveyorbelt", new Tile(["🟰"], false, "A conveyor belt.")],
+			["church", new Tile(["⛪"], true, "A place of worship.", building)],
+			["candle", new Tile(["🕯️"], false, "A candle.")],
+			["cross", new Tile(["✝️", "✡️", "☪️", "⛩️", "🕋", "☦️", "☸️", "🕎", "☯️", "🕉️", "🪯"], true, "A symbol of worship.", reset)],
+			["hotel", new Tile(["🏩"], true, "A hotel.", building)],
+			["castle", new Tile(["🏰"], true, "An ancient castle.", plain)],
+			["courtyard", new Tile(["🌹"], true, "The castle courtyard.", plantbody)],
+			["crown", new Tile(["👑"], false, "An ancient crown.")],
+			["museum", new Tile(["🏛️"], true, "A museum.", building)],
+			["statue1", new Tile(["🗽"], false, "A statue.")],
+			["statue2", new Tile(["🗿"], false, "An ancient statue.")],
+			["painting", new Tile(["🖼️"], true, "A painting.", plain)],
+
+			["construction", new Tile(["🏗️"], false, "A building under construction.")],
+			["apple", new Tile(["🍎"], true, "An apple.", plantbody)],
+			["scarecrow", new Tile(["👨🏻‍🌾"], false, "A scarecrow.")],
+			["sky", new Tile(["🟦"], false, "Open sky.")],
+			["cloud", new Tile(["☁️"], true, "A cloud.", atom)],
+
+			["wheatfield", new Tile(["🌾"], true, "A field of grain.", wheatfield)],
+			["scarecrow", new Tile(["👨🏻‍🌾"], false, "A scarecrow.")],
+			["wheat", new Tile(["🌾"], true, "A stalk of wheat.", plantbody)],
 			["meadowgrass", new Tile(["🌿"], true, "Dry meadow grass.", plantbody)],
 			["forestfloor", new Tile(["🍂"], true, "The forest floor.", plantbody)],
 			["sapling", new Tile(["🌱"], true, "A burgeoning sapling.", plantbody)],
@@ -226,14 +271,19 @@ class GridSystem {
 			["lotus", new Tile(["🪷"], true, "A lotus on a lily pad.", plantbody)],
 			["lakewater", new Tile(["🟦"], true, "Fresh lake water.", underlake)],
 			["riverwater", new Tile(["🟦"], true, "Fresh river water.", underground)],
-			["driftwood", new Tile(["🪵"], true, "Some driftwood.")],
+			["driftwood", new Tile(["🪵"], true, "Some driftwood.", plantbody)],
 			["algae", new Tile(["🌿"], true, "Green algae.", plantbody)],
 			["leaf", new Tile(["🍃"], true, "A floating leaf.", plantbody)],
 			["tunnel", new Tile(["⬛"], false, "A tunnel in the soil.")],
+			["pipe", new Tile(["⬛"], false, "An underground pipe.")],
+			["excrement", new Tile(["💩"], false, "Some kind of waste.")],
+			["drain", new Tile(["🕳"], true, "A drain.", sewer)],
+			["dam", new Tile(["🪵"], true, "A beaver dam.", plantbody)],
 
 			//desert biome
 			["desert", new Tile(["🌵"], true, "An arid continent.", desert)],
 			["mountain", new Tile(["⛰️"], true, "A mountain range.", mountain, 1)],
+			["volcano", new Tile(["🌋"], true, "An active volcano.", volcano, 1)],
 			["stream", new Tile(["🟦", "🌊"], false, "A small stream.", {}, 2)],
 			["lake", new Tile(["🟦"], true, "A clear lake.", underground, 2)],
 			["dirt", new Tile(["🟫"], true, "Soil.", underground, 1)],
@@ -245,7 +295,7 @@ class GridSystem {
 			["shrub", new Tile(["🌱"], true, "A small shrub.", plantbody)],
 			["snowymountain", new Tile(["🏔️"], true, "A snowy peak.", snowymountain)],
 			["pine", new Tile(["🌲"], true, "An evergreen.", plantbody, 1)],
-			["snow", new Tile(["❄️"], true, "A snowdrift.")],
+			["snow", new Tile(["❄️"], true, "A snowdrift.", atom)],
 			["snowman", new Tile(["⛄"], false, "A snowman. Its builder is unknown.")],
 			["desertsand", new Tile(["🏷️"], true, "A dune in the desert.", desertzoom)],
 			["oasis", new Tile(["🌴"], true, "A desert oasis.", desertzoom)],
@@ -255,36 +305,46 @@ class GridSystem {
 			["deserttree", new Tile(["🌳"], true, "A sparse savannah tree.", plantbody, 1)],
 			["oasiswater", new Tile(["🟦"], true, "A desert oasis.", desertzoom)],
 			["oasiswater2", new Tile(["🟦"], true, "Water in an oasis.", underground)],
-			["freshwater", new Tile(["🟦"], true, "Fresh water.")],
+			["freshwater", new Tile(["🟦"], true, "Fresh water.", atom)],
 			["mirage", new Tile(["🌫️"], false, "Shimmering air. A mirage.")],
 			["papyrus", new Tile(["🌾"], true, "A papyrus plant.", plantbody)],
 			["cactus", new Tile(["🌵"], true, "A cactus.", plantbody, 1)],
 			["hut", new Tile(["🛖"], true, "An abandoned hut.", hut, 1)],
-			["floor", new Tile(["🏷️"], false, "Nondescript floor.")],
-			["door", new Tile(["🚪"], false, "A wooden door.")],
-			["chair", new Tile(["🪑"], false, "A simple wooden chair.")],
-			["fire", new Tile(["🔥", "❤️‍🔥"], true, "A small fire.")],
-			["wood", new Tile(["🪵"], true, "Some logs.")],
-			["amphora", new Tile(["🏺"], true, "An urn, used for storage.")],
+			["floor", new Tile(["⬜"], false, "Nondescript floor.")],
+			["door", new Tile(["🚪"], false, "A wooden door.", {}, 1)],
+			["chair", new Tile(["🪑"], false, "A wooden chair.")],
+			["table", new Tile(["🟰"], false, "A table.")],
+			["toilet", new Tile(["🚽"], true, "A toilet.", sewer)],
+			["faucet", new Tile(["🚰"], true, "A sink.", sewer)],
+			["desk", new Tile(["🟰"], false, "A schooldesk.")],
+			["bed", new Tile(["🛏️"], false, "A bed.")],
+			["fire", new Tile(["🔥", "❤️‍🔥"], true, "A small fire.", atom)],
+			["wood", new Tile(["🪵"], true, "Some logs.", plantbody)],
+			["amphora", new Tile(["🏺"], false, "An urn, used for storage.")],
 			["temple", new Tile(["🛕"], true, "An ancient temple made of stone.", desertzoom, 1)],
 			["temple1", new Tile(["🪨"], false, "An ancient temple made of stone.", {}, 1)],
 			["temple2", new Tile(["🛕"], false, "An ancient temple made of stone.", {}, 1)],
-			["templedoor", new Tile(["🕳️"], true, "The entrance to the temple.", {}, 1)],
+			["templedoor", new Tile(["🕳️"], true, "The entrance to the temple.", temple, 1)],
 			["anthill", new Tile(["🕳️"], true, "The entrance to an anthill.", anthill, 1)],
 
 			//radiactive biome
 			["falloutzone", new Tile(["⬛"], true, "An irradiated area.", falloutzone)],
 			["falloutwall", new Tile(["🧱"], false, "A wall. The wall serves no apparent purpose.", {}, 1)],
 			["wall", new Tile(["🧱"], false, "A wall.", {}, 1)],
+			["window", new Tile(["🪟"], false, "A glass window.")],
 			["radioactive", new Tile(["☢️"], true, "A radioactive ion.", atom)],
 			["fallout", new Tile(["⬛"], true, "Irradiated earth.", underground)],
 			["radiation", new Tile(["☢️"], true, "Irradiated air particles.", atom)],
 
 			//arctic biome
 			["arctic", new Tile(["🧊"], true, "An arctic continent.", arctic)],
-			["ice", new Tile(["🧊"], true, "An ice shelf.")],
-			["tundra", new Tile(["🟫"], true, "Arctic tundra.")],
-
+			["iceberg", new Tile(["🧊"], false, "The underside of an iceberg.")],
+			["ice", new Tile(["🧊"], true, "An ice shelf.", ice)],
+			["arcticwater", new Tile(["🟦"], true, "Freezing water.", underwater)],
+			["tundra", new Tile(["🟫"], true, "Arctic tundra.", tundra)],
+			["moss", new Tile(["🥗"], true, "Tundra moss.", plantbody)],
+			["tundraflower", new Tile(["🪻"], true, "A tundra flower.", plantbody)],
+			
 			//3 rock types
 			["igneous", new Tile(["🪨"], true, "Igneous rock.", atom, 1)],
 			["sedimentary", new Tile(["🪨"], true, "Sedimentary rock.", atom, 1)],
@@ -315,6 +375,8 @@ class GridSystem {
 			["lobster", new Tile(["🦞"], true, "A lobster.", animalbody)],
 			["shrimp", new Tile(["🦐"], true, "A shrimp.", animalbody)],
 			["mouse", new Tile(["🐀"], true, "A small rodent.", animalbody, 1)],
+			["rat", new Tile(["🐀"], true, "A large rat.", animalbody, 0)],
+			["cockroach", new Tile(["🪳"], true, "A cockroach.", animalbody, 0)],
 			["ibex", new Tile(["🦌"], true, "An ibex.", animalbody, 1)],
 			["eagle", new Tile(["🦅"], true, "An eagle.", animalbody, 2)],
 			["squid", new Tile(["🦑"], true, "A squid.", animalbody)],
@@ -333,21 +395,30 @@ class GridSystem {
 			["turtle", new Tile(["🐢"], true, "A land tortoise.", animalbody)],
 			["duck", new Tile(["🦆"], true, "A duck.", animalbody)],
 			["goose", new Tile(["🪿"], true, "A white goose.", animalbody)],
+			["beaver", new Tile(["🦫"], true, "A beaver.", animalbody)],
+			["cormorant", new Tile(["🐦‍⬛"], true, "A cormorant.", animalbody)],
+			["penguin", new Tile(["🐧"], true, "A penguin.", animalbody)],
+			["polarbear", new Tile(["🐻‍❄️"], true, "A polar bear.", animalbody)],
+			["pigeon", new Tile(["🕊️"], true, "A pigeon.", animalbody)],
+			["chipmunk", new Tile(["🐿️"], true, "A scampering chipmunk.", animalbody)],
 
 			//sub-visible things
 			["interstitialFluid", new Tile(["🌀"], false, "Interstitial fluid, the fluid between cells.")],
 			["cell", new Tile(["🧬"], true, "A microscopic cell.", cell)],
 			["bacteria", new Tile(["🦠"], true, "A microscopic bacterium.", cell)],
-			["virus", new Tile(["🤖"], false, "A microscopic virus.", atom)],
+			["virus", new Tile(["🤖"], false, "A microscopic virus.")],
 			["dna", new Tile(["🧬"], true, "A clump of DNA.", atom)],
 
-			["mitochondria", new Tile(["🦠"], true, "A mitochondrium.")],
-			["string", new Tile(["🔗"], true, "A string, the fundamental building block of the universe.")],
+			["mitochondria", new Tile(["🦠"], true, "A mitochondrium.", atom)],
+			["string", new Tile(["〰️"], true, "A one-dimensional string.", reset)],
 			["atom", new Tile(["⚛️"], true, "An atom.", subatomic)],
 			["atominside", new Tile(["🤍"], true, "The inside of an atom.", strings)],
 			["radioactiveatom", new Tile(["☢️"], true, "A radioactive particle.", subatomic)],
 			["proton", new Tile(["🍎"], true, "A cluster of protons and neutrons.", strings)],
 			["electron", new Tile(["🎾"], true, "An electron.", strings)],
+			["symbol", new Tile(["🤍", "✨", "🚡", "🕕", "🇷🇸", "🉑", "📂","🌧️", "👽", "🍋", "🤒", "🤡", "🍫", "🦋", "💐", "🤸", "🕳️", "🗯", "💭", "💣", "💥", "💫", "🤣", "😇", "😵‍💫", "❤️", "👩‍🚀", "🌕", "🎭", "👾", "🍳", "🏵️", "🍧", "🔗", "🕋"], true, "A pure symbol.", multiverse)],
+			["universe", new Tile(["🌌"], true, "A universe.", init)],
+			["nothing", new Tile(["💟"], false, "The space between universes.")],
 		]);
 	}
 
@@ -370,6 +441,8 @@ class GridSystem {
 	}
 
 	render(matrix, tick) {
+		let offset = (this.cellSize + this.padding);
+
 		this.matrix = matrix;
 		this.ctx.canvas.width = this.w;
 		this.ctx.canvas.height = this.h;
@@ -377,7 +450,7 @@ class GridSystem {
 		for (let row = 0; row < this.length; row ++) {
 			for (let col = 0; col < this.length; col ++) {
 				level = matrix.length - 1;
-				this.ctx.font = this.heatmap[row][col] + 10 + "px serif";
+				this.ctx.font = "40px serif";
 
 				while (matrix[level][row][col] == "" && level > 0) {
 					level--;
@@ -387,11 +460,12 @@ class GridSystem {
 				frame = anim[(tick + ((row ^ 3) * (col ^ 3))) % anim.length];
 				
                 this.ctx.fillText(frame, 
-				col * (this.cellSize + this.padding),
-                row * (this.cellSize + this.padding) + (this.cellSize - this.padding),
-				(this.padding + this.cellSize));
+				col * offset, row * offset + (this.cellSize - this.padding),
+				offset);
 			}
 		}
+		this.ctx.strokeStyle = "white";
+		this.ctx.strokeRect(this.highlight[0] * offset, this.highlight[1] * offset, this.cellSize, this.cellSize);
 	}
 
 	updateNPCS() {
@@ -426,17 +500,9 @@ class GridSystem {
 	}
 }
 
-function updateHeatmap(e) {
-	var proximityX, proximityY, proximity;
-	var size = gridSystem.cellSize;
-	for (let row = 0; row < gridSystem.heatmap.length; row ++) {
-		for (let col = 0; col < gridSystem.heatmap[row].length; col ++) {
-			proximityX = Math.abs((e.clientX - gridSystem.margX) - (col * (size + gridSystem.padding) + size - gridSystem.padding));
-			proximityY = Math.abs((e.clientY - gridSystem.margY) - (row * (size + gridSystem.padding) + size - gridSystem.padding));
-			proximity = Math.sqrt(proximityX * proximityX + proximityY * proximityY) / 8;
-			gridSystem.heatmap[row][col] = Math.max(size / 3, size - proximity);
-		}
-	}
+function updateHighlight(e) {
+	gridSystem.highlight[0] = getClickX(e);
+	gridSystem.highlight[1] = getClickY(e);
 	gridSystem.render(gridSystem.matrix, tick);
 }
 
@@ -452,8 +518,8 @@ function hover(e) {
 	var tile = gridSystem.dictionary.get(getClickPosition(e));
 	var infoPane = document.getElementById('info');
 	var info = document.getElementById('infoTxt');
-	infoPane.style.top = e.clientY + "px";
-	infoPane.style.left = e.clientX + "px";
+	infoPane.style.top = e.clientY + 20 + "px";
+	infoPane.style.left = e.clientX + 20 + "px";
 	if (tile.info != info.innerHTML) {
 		var clickable = document.getElementById('clickable');
 		var icon = document.getElementById('icon');
@@ -466,7 +532,7 @@ function hover(e) {
 		info.innerHTML = tile.info;
 	}
 
-	updateHeatmap(e);
+	updateHighlight(e);
 }
 
 /*generation functions*/
@@ -740,12 +806,45 @@ function box(frame, tile, height, width, centerX, centerY, mask) {
 	}
 }
 
-function drawGrid(frame, tile, spacing, mask) {
+function spiral(frame, tile, width, centerX, centerY, mask) {
+	for (var i = 0; i < width; i++) {
+		if (i == width - 1) {
+			temp = i - 2;
+		} else {
+			temp = i;
+		}
+		if (i % 4 == 0) {
+			line(frame, tile, centerX, centerY, centerX+temp, centerY, mask);
+			centerX += i;
+		} else if (i % 4 == 1) {
+			line(frame, tile, centerX, centerY, centerX, centerY+temp, mask);
+			centerY += i;
+		} else if (i % 4 == 2) {
+			line(frame, tile, centerX, centerY, centerX-temp, centerY, mask);
+			centerX -= i;
+		} else {
+			line(frame, tile, centerX, centerY, centerX, centerY-temp, mask);
+			centerY -= i;
+		}
+				
+	}
+}
+
+//Draws a grid of items with the size between items variated by spacing.
+function drawGrid(frame, tile, spacing, mask, connected) {
 	for (let i = 0; i < frame.length; i++) {
 		for (let j = 0; j < frame[0].length; j++) {
-			if (j % spacing == i % spacing) {
-				if (frame[i][j] == mask || mask < 0) {
-					frame[i][j] = tile;
+			if (connected) {
+				if (j % spacing == 0 || i % spacing == 0) {
+					if (frame[i][j] == mask || mask < 0) {
+						frame[i][j] = tile;
+					}
+				}
+			} else {
+				if (j % spacing == 0 && i % spacing == 0) {
+					if (frame[i][j] == mask || mask < 0) {
+						frame[i][j] = tile;
+					}
 				}
 			}
 		}
@@ -806,6 +905,13 @@ function saturn(frame, tile) {
 	fill(frame, "star", 0.05, "void");
 }
 
+function gasplanet(frame, tile) {
+	fill(frame, "clouds", 1, -1);
+	randPoint(frame, "storm", Math.random() * 6 + 3, -1);
+	fuzz(frame, "storm", "storm", 0.8, 2, -1);
+	randPoint(frame, "lightning", Math.random() * 10, "storm");
+}
+
 function ocean(frame, tile) {
 	fill(frame, "oceanwater", 1.0, -1);
 	var y1 = Math.floor((Math.random() - 0.5) * frame.length);
@@ -845,10 +951,36 @@ function underwater(frame, tile) {
 		fuzz(frame, "igneous", "igneous", 0.5, 1);
 	}
 	randPoint(frame, "igneous", Math.random() * 5, -1);
-	randPoint(frame, "oyster", Math.floor(Math.random() * 5), -1);
-	if (Math.random() > 0.5) {
-		randLine(frame, "coral", 0, Math.floor(gridSystem.length * Math.random()), gridSystem.length, Math.floor(gridSystem.length * Math.random()), 2, 3, -1);
-		fuzz(frame, "coral", "coral", 0.5, 1, -1);
+	if (tile == "arcticwater") {
+		randPoint(frame, "iceberg", Math.random() * 4, -1);
+		fuzz(frame, "iceberg", "iceberg", 0.6, 2, -1);
+	} else {
+		randPoint(frame, "oyster", Math.floor(Math.random() * 5), -1);
+		if (Math.random() > 0.5) {
+			randLine(frame, "coral", 0, Math.floor(gridSystem.length * Math.random()), gridSystem.length, Math.floor(gridSystem.length * Math.random()), 2, 3, -1);
+			fuzz(frame, "coral", "coral", 0.5, 1, -1);
+		}
+		if (Math.random() > 0.7) {
+			randPoint(empty[1], "shark", 1, -1);
+			NPCify(empty[1], "shark", "wander", 2);
+		}
+		if (Math.random() > 0.8) {
+			randPoint(empty[1], "squid", 1, -1);
+			NPCify(empty[1], "squid", "wander", 1);
+		}
+		if (Math.random() > 0.6) {
+			randPoint(empty[1], "octopus", 1, -1);
+			NPCify(empty[1], "octopus", "right", 0.25);
+		}
+		if (Math.random() > 0.95) {
+			randPoint(empty[1], "blowfish", 1, -1);
+			NPCify(empty[1], "blowfish", "paceXY", 1, -1, 2, 4);
+		}
+		if (Math.random() > 0.9) {
+			randPoint(frame, "whalefall", 1, -1);
+			fuzz(frame, "crab", "whalefall", 0.25, 1, -1);
+			fuzz(frame, "lobster", "whalefall", 0.25, 1, -1);
+		}
 	}
 	if (Math.random() > 0.5) {
 		randPoint(empty[1], "fish", 1, -1);
@@ -860,26 +992,11 @@ function underwater(frame, tile) {
 		fuzz(empty[1], "shrimp", "shrimp", 0.75, Math.ceil(Math.random() * 2), -1);
 		NPCify(empty[1], "shrimp", "wander", 1, 0, Math.floor((Math.random() - 0.5) * 2));
 	}
-	if (Math.random() > 0.7) {
-		randPoint(empty[1], "shark", 1, -1);
-		NPCify(empty[1], "shark", "wander", 2);
-	}
 	if (Math.random() > 0.8) {
-		randPoint(empty[1], "squid", 1, -1);
-		NPCify(empty[1], "squid", "wander", 1);
-	}
-	if (Math.random() > 0.6) {
-		randPoint(empty[1], "octopus", 1, -1);
-		NPCify(empty[1], "octopus", "right", 0.25);
-	}
-	if (Math.random() > 0.95) {
-		randPoint(empty[1], "blowfish", 1, -1);
-		NPCify(empty[1], "blowfish", "paceXY", 1, -1, 2, 4);
-	}
-	if (Math.random() > 0.9) {
-		randPoint(frame, "whalefall", 1, -1);
-		fuzz(frame, "crab", "whalefall", 0.25, 1, -1);
-		fuzz(frame, "lobster", "whalefall", 0.25, 1, -1);
+		var x1 = Math.floor(Math.random() * frame.length);
+		var x2 = Math.floor(Math.random() * frame.length);
+		randLine(frame, "magma", x1, 0, x2, frame.length, 2, 3, -1);
+		fuzz(frame, "igneous", "magma", 0.75, 1, -1);
 	}
 }
 
@@ -943,6 +1060,9 @@ function desert(frame, tile) {
 		var x2 = Math.floor(Math.random() * frame.length);
 		randLine(frame, "snowymountain", x1, 0, x2, frame.length, 2, 3, -1);
 		fuzz(frame, "mountain", "snowymountain", 0.75, 1, -1);
+		if (Math.random() > 0.5) {
+			randPoint(frame, "volcano", Math.random() * 3, "mountain");
+		}
 	}
 	if (Math.random() > 0.7) {
 		randPoint(frame, "oasiswater", 1, "desertsand")
@@ -1028,6 +1148,15 @@ function savannah(frame, tile) {
 	}
 }
 
+function temple(frame, tile) {
+	fill(frame, "voidwall", 1.0, -1);
+	spiral(frame, "sand", 10, 7, 7, -1);
+	frame[7][7] = "statue2";
+	randPoint(empty[1], "scorpion", 50, -1);
+	NPCifyAndMask(empty[1], frame, "sand", "scorpion", "wander", 2);
+	randPoint(frame, "note2", 1, "sand");
+}
+
 function oasis(frame, tile) {
 	fill(frame, "sand", 1, -1);
 	var center = Math.floor(frame.length / 2);
@@ -1057,7 +1186,6 @@ function falloutzone(frame, tile) {
 	var x = Math.ceil(Math.random() * 7 + 5);
 	var variation = Math.ceil((Math.random() - 0.5) * 10) + x; 
 	line(frame, "falloutwall", x, 0, variation, gridSystem.length, -1);
-	NPCify(empty[1], "scorpion", "left", 1);
 }
 
 function mountain(frame, tile) {
@@ -1165,12 +1293,54 @@ function hut(frame, tile) {
 }
 
 function arctic(frame, tile) {
-	fill(frame, "ice", 1, -1);
 	if (Math.random() > 0.5) {
-		randPoint(frame, "tundra", 1, -1);
-		fuzz(frame, "tundra", "tundra", 1.0, Math.floor(Math.random() * 4), -1);
-		fuzz(frame, "tundra", "tundra", 0.1, 1, -1);
+		fill(frame, "ice", 1, -1);
+		if (Math.random() > 0.2) {
+			randPoint(frame, "tundra", 1, -1);
+			fuzz(frame, "tundra", "tundra", 1.0, Math.floor(Math.random() * 4), -1);
+			fuzz(frame, "tundra", "tundra", 0.1, 1, -1);
+		}
+	} else {
+		fill(frame, "arcticwater", 1, -1)
+		randPoint(frame, "ice", 1, -1);
+		fuzz(frame, "ice", "ice", 1.0, Math.floor(Math.random() * 4), -1);
+		fuzz(frame, "ice", "ice", 0.1, 1, -1);
 	}
+}
+
+function ice(frame, tile) {
+	fill(frame, "snow", 1.0, -1);
+	if (Math.random() > 0.5) {
+		randPoint(empty[1], "polarbear", 1, -1);
+		NPCify(empty[1], "polarbear", "wander", 0.5);
+	}
+	if (Math.random() > 0.5) {
+		randPoint(empty[1], "cormorant", 1, -1);
+		fuzz(empty[1], "cormorant", "cormorant", 0.8, 1, -1);
+		NPCify(empty[1], "cormorant", "paceXY", 1, -1, 1, 20);
+	}
+	if (Math.random() > 0.5) {
+		randPoint(empty[1], "penguin", 1, -1);
+		fuzz(empty[1], "penguin", "penguin", 0.8, 1, -1);
+		NPCify(empty[1], "penguin", "chaseXY", 1, -5, 7, 1);
+	}
+}
+
+function tundra(frame, tile) {
+	fill(frame, "moss", 1, -1);
+	fill(frame, "tundraflower", 0.3, -1);
+	fill(frame, "shrub", 0.1, -1);
+	fill(frame, "sedimentary", 0.1, -1);
+	if (Math.random() > 0.7) {
+		randPoint(empty[1], "mouse", Math.floor(Math.random() * 3), -1);
+		NPCify(empty[1], "mouse", "wander", 0.25);
+	}
+}
+
+function microbe(frame, tile) {
+	fill(frame, "void", 1, -1);
+	fill(empty[1], "bacteria", 0.5, -1);
+	NPCify(empty[1], "bacteria", "wander", 0.25);
 }
 
 function animalbody(frame, tile) {
@@ -1182,7 +1352,7 @@ function animalbody(frame, tile) {
 
 function plantbody(frame, tile) {
 	fill(frame, "interstitialFluid", 1, -1);
-	drawGrid(frame, "cell", 2, -1);
+	drawGrid(frame, "cell", 2, -1, false);
 	randPoint(empty[1], "bacteria", 10, -1);
 	NPCify(empty[1], "bacteria", "wander", 0.25);
 }
@@ -1209,12 +1379,14 @@ function land(frame, tile) {
 		var x2 = Math.floor(Math.random() * frame.length);
 		randLine(frame, "snowymountain", x1, 0, x2, frame.length, 2, 3, -1);
 		fuzz(frame, "mountain", "snowymountain", 0.75, 1, -1);
+		if (Math.random() > 0.5) {
+			randPoint(frame, "volcano", Math.random() * 3, "mountain");
+		}
 	}
 	if (Math.random() > 0.5) {
 		var x1 = Math.floor(Math.random() * frame.length);
 		var x2 = Math.floor(Math.random() * frame.length);
 		randLine(frame, "river", 0, x1, frame.length, x2, 2, 3, -1);
-		fuzz(frame, "mountain", "snowymountain", 0.1, 1, -1);
 	}
 	for (let i = 0; i < Math.random() * 4; i++) {
 		let y = Math.floor(Math.random() * frame.length);
@@ -1231,6 +1403,187 @@ function land(frame, tile) {
 			fuzz(frame, "wheatfield", "city", 1, 1, -1);
 		}
 	}
+	if (Math.random() > 0.8) {
+		randPoint(frame, "castle", 1, -1);
+	}
+}
+
+function city(frame, tile) {
+	if (Math.random() > 0.5) {
+		fill(frame, "house", 1.0, -1);
+		drawGrid(frame, "road", 3, -1, true);
+		randPoint(frame, "park", Math.random() * 2, "house");
+		fuzz(frame, "park", "park", 1.0, 1, "house");
+		if (Math.random() > 0.5) {
+			randPoint(frame, "graveyard", 1, "house");
+			fuzz(frame, "graveyard", "graveyard", 1.0, 1, "house");
+		}
+		randPoint(frame, "school", 1, "house");
+		randPoint(frame, "church", Math.random() * 3, "house");
+	} else {
+		if (Math.random() > 0.7) {
+			fill(frame, "factory", 1.0, -1);
+			drawGrid(frame, "road", 3, -1, true);
+		} else {
+			fill(frame, "skyscraper", 1.0, -1);
+			drawGrid(frame, "road", 3, -1, true);
+			randPoint(frame, "school", 1, "skyscraper");
+			randPoint(frame, "church", Math.random() * 3, "skyscraper");
+			randPoint(frame, "bank", 1, "skyscraper");
+			randPoint(frame, "hotel", 1, "skyscraper");
+			randPoint(frame, "museum", 1, "skyscraper");
+			randPoint(frame, "construction", Math.random() * 5, "skyscraper");
+		}
+	}
+}
+
+function park(frame, tile) {
+	fill(frame, "void", 1, -1);
+	box(frame, "leaves", 11, 11, 7, 7, -1);
+	fuzz(frame, "wall", "leaves", 1.0, 1, -1);
+	fill(frame, "tree", 0.1, "leaves");
+	if (tile == "graveyard") {
+		drawGrid(frame, "gravestone", 2, "leaves");
+		randPoint(frame, "bouquet", Math.random() * 10, "leaves");
+		randPoint(frame, "gravestone", Math.random() * 20, "gravestone");
+		randPoint(empty[1], "ghost", Math.random() * 5, -1);
+		NPCify(empty[1], "ghost", "wander", 1);
+	}
+	if (Math.random() > 0.4) {
+		randPoint(empty[1], "chipmunk", Math.random() * 5, -1);
+		NPCify(empty[1], "chipmunk", "wander", 1);
+	}
+}
+
+function oil(frame, tile) {
+	fill(frame, "oil", 1.0, -1);
+}
+
+function building(frame, tile) {
+	fill(frame, "void", 1.0, -1);
+	box(frame, "floor", 9, 9, 7, 7, -1);
+	fuzz(frame, "wall", "floor", 1.0, 1, -1);
+	randPoint(frame, "door", 1, "wall");
+	switch (tile) {
+		default:
+			break;
+		case "school":
+			for (let i = 5; i < 11; i++) {
+				if (i % 2 == 1) {
+					line(frame, "desk", 4, i, 10, i, -1);
+				} else {
+					line(frame, "chair", 4, i, 10, i, -1);
+				}
+			}
+			randPoint(frame, "apple", 1, "floor");
+			drawGrid(frame, "window", 2, "wall");
+			break;
+		case "skyscraper":
+			fill(frame, "sky", 1.0, "void");
+			fill(frame, "cloud", 0.1, "sky");
+			fuzz(frame, "cloud", "cloud", 0.7, 1, "sky");
+			fill(frame, "window", 1.0, "wall");
+			fill(frame, "window", 1.0, "door");
+			drawGrid(frame, "cubicle", 2, "floor");
+			frame[3][3] = "stairs";
+			break;
+		case "stairs":
+			fill(frame, "sky", 1.0, "void");
+			fill(frame, "cloud", 0.1, "sky");
+			fuzz(frame, "cloud", "cloud", 0.7, 1, "sky");
+			fill(frame, "rooftop", 1.0, "wall");
+			fill(frame, "rooftop", 1.0, "door");
+			fill(frame, "rooftop", 1.0, "floor");
+			randPoint(frame, "antenna", Math.random() * 5, "rooftop");
+			randPoint(empty[1], "pigeon", 2, -1);
+			fuzz(empty[1], "pigeon", "pigeon", 0.2, 2, -1);
+			NPCifyAndMask(empty[1], frame, "rooftop", "pigeon", "wander", 0.25);
+			break;
+		case "museum":
+			drawGrid(frame, "window", 2, "wall");
+			drawGrid(frame, "painting", 2, "floor");
+			randPoint(frame, "statue1", 5, "painting");
+			randPoint(frame, "statue2", 5, "painting");
+			randPoint(frame, "amphora", 5, "painting");
+			break;
+		case "bank":
+			box(frame, "amphora", 5, 5, 7, 7, -1);
+			fuzz(frame, "wall", "amphora", 1.0, 1, -1);
+			randPoint(frame, "euro", 6, "amphora");
+			randPoint(frame, "diamond", 6, "amphora");
+			randPoint(frame, "moneybag", 6, "amphora");
+			randPoint(frame, "coin", 6, "amphora");
+			randPoint(frame, "creditcard", 6, "amphora");
+			frame[7][10] = "lock";
+			break;
+		case "hotel":
+			frame[7][6] = "bed";
+			frame[7][8] = "bed";
+			break;
+		case "church":
+			drawGrid(frame, "window", 2, "wall");
+			frame[4][7] = "cross";
+			for (let i = 5; i < 11; i++) {
+				if (i % 2 == 0) {
+					line(frame, "chair", 4, i, 10, i, -1);
+				}
+			}
+			randPoint(frame, "candle", Math.random() * 10, "floor");
+			break;
+		case "house":
+			drawGrid(frame, "window", 2, "wall");
+			randPoint(frame, "chair", 1, "floor");
+			randPoint(frame, "bed", 1, "floor");
+			randPoint(frame, "table", 1, "floor");
+			randPoint(frame, "toilet", 1, "floor");
+			randPoint(frame, "faucet", 1, "floor");
+			break;
+		case "factory":
+			fill(frame, "gear", 0.1, "floor");
+			fill(frame, "oilbarrel", 0.1, "floor");
+			fill(frame, "machine", 0.1, "floor");
+			fill(frame, "wrench", 0.05, "floor");
+			for (let i = 3; i < 11; i++) {
+				if (i % 2 == 0) {
+					line(frame, "conveyorbelt", 4, i, 10, i, -1);
+				}
+			}
+			randPoint(empty[1], "robot", Math.random() * 20, -1);
+			NPCifyAndMask(empty[1], frame, "floor", "robot", "wander", 0.5);
+			break;
+		case "laboratory":
+			for (let i = 3; i < 11; i++) {
+				if (i % 2 == 0) {
+					line(frame, "alembic", 4, i, 10, i, -1);
+				}
+			}
+			fill(frame, "beaker", 0.5, "alembic");
+			fill(frame, "petri", 0.5, "alembic");
+			randPoint(empty[1], "robot", Math.random() * 20, -1);
+			NPCifyAndMask(empty[1], frame, "floor", "robot", "wander", 0.5);
+			randPoint(frame, "note", 1, "floor");
+			break;
+	}
+}
+
+function sewer(frame, tile) {
+	fill(frame, "dirt", 1, -1);
+	for (let i = 0; i < Math.random() * 10 + 5; i++) {
+		let rand = Math.floor(frame.length * Math.random());
+		let rand1 = Math.floor(frame.length * Math.random());
+		let rand2 = Math.floor(frame.length * Math.random());
+		if (i % 2 == 0) {
+			line(frame, "pipe", rand, rand1, rand, rand2, -1)
+		} else {
+			line(frame, "pipe", rand1, rand, rand2, rand, -1)
+		}
+	}
+	randPoint(frame, "drain", Math.random() * 10, "pipe");
+	randPoint(frame, "excrement", Math.random() * 5, "pipe");
+	randPoint(empty[1], "rat", Math.random() * 50, -1);
+	randPoint(empty[1], "cockroach", Math.random() * 50, -1);
+	NPCifyAndMask(empty[1], frame, "pipe", "rat", "wander", 0.25);
+	NPCifyAndMask(empty[1], frame, "pipe", "cockroach", "wander", 0.25);
 }
 
 function plain(frame, tile) {
@@ -1295,6 +1648,11 @@ function plain(frame, tile) {
 		randPoint(empty[1], "rabbit", Math.floor(Math.random() * 3), -1);
 		NPCify(empty[1], "rabbit", "wander", 0.5);
 	}
+	if (tile == "castle") {
+		box(frame, "courtyard", 4, 4, Math.floor(Math.random() * 15),  Math.floor(Math.random() * 15), -1);
+		fuzz(frame, "wall", "courtyard", 1, 1, -1);
+		randPoint(frame, "crown", 1, "courtyard");
+	}
 }
 
 function lake(frame, tile) {
@@ -1340,6 +1698,11 @@ function river(frame, tile) {
 	if (Math.random() > 0.6) {
 		randPoint(empty[1], "leaf", Math.random() * 10, -1);
 		NPCifyAndMask(empty[1], frame, "riverwater", "leaf", "down", 0.5);
+	}
+	if (Math.random() > 0.7) {
+		line(frame, "dam", 3, 7, 12, 7, -1);
+		fuzz(frame, "dam", "dam", 0.7, 1, -1);
+		randPoint(frame, "beaver", Math.random() * 7, "dam");
 	}
 }
 
@@ -1412,6 +1775,34 @@ function subatomic(frame, tile) {
 
 function strings(frame, tile) {
 	fill(frame, "string", 1, -1);
+}
+
+function reset(frame,tile) {
+	fill(frame, "void", 1, -1);
+	frame[7][7] = "symbol";
+}
+
+function multiverse(frame,tile) {
+	fill(frame, "nothing", 1, -1);
+	fill(frame, "universe", 0.1, -1);
+}
+
+function volcano(frame,tile) {
+	fill(frame, "igneous", 1.0, -1);
+	circle(frame, "magma", 4, 7, 7, -1);
+}
+
+function wheatfield(frame, tile) {
+	fill(frame, "wheat", 1.0, -1);
+	fill(frame, "meadowgrass", 0.1, -1);
+	if (Math.random() > 0.7) {
+		randPoint(empty[1], "mouse", Math.floor(Math.random() * 3), -1);
+		NPCify(empty[1], "mouse", "wander", 0.25);
+	}
+	randPoint(frame, "scarecrow", 1, -1);
+	if (Math.random() > 0.3) {
+		randPoint(frame, "laboratory", 1, -1);
+	}
 }
 
 /*end generation functions*/
@@ -1507,6 +1898,7 @@ const empty = [[
 	["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
 ]];
 const gridSystem = new GridSystem();
+//replace with init()
 init(empty[0]);
 var tick = 0;
 var paused = true;

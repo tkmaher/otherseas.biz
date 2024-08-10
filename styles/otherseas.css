@@ -88,7 +88,7 @@ body {
 
 .dropdown {
     max-width: 25vh; 
-    transition: top 2s, left 2s;
+    transition: top 0.1s, left 0.1s;
     position: absolute;
     pointer-events: none;
     font-size: 100%;
