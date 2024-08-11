@@ -8,6 +8,7 @@ const queryString = window.location.search;
 console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 if (urlParams.has('pwd') == false) {
+  document.body.remove();
   while(true) {
     alert("Nice try loser");
   }
@@ -19,6 +20,7 @@ if (urlParams.has('pwd') == false) {
     }, 0);
   }
   if (hashCode(urlParams.get('pwd')) != -694358646) {
+    document.body.remove();
     while(true) {
       alert("Nice try loser");
     }
