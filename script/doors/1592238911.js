@@ -4,6 +4,22 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+
+hashCode = function(s) {
+  return s.split("").reduce(function(a, b) {
+    a = ((a << 5) - a) + b.charCodeAt(0);
+    return a & a;
+  }, 0);
+}
+if (hashCode(urlParams.get('pwd')) != -694358646) {
+  while(true) {
+    alert("Nice try loser");
+  }
+}
+
 
 async function loop() {
     while (true) {
