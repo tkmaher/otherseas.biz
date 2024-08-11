@@ -138,7 +138,7 @@ class GridSystem {
 	constructor(matrix) {
 		this.ctx = this.#getContext();
 		this.ctx.textAlign = "center";
-		this.cellSize = 40;
+		this.cellSize = 30;
 		this.length = 15;
 		this.padding = 6;
 		this.highlight = [0,0];
@@ -450,7 +450,7 @@ class GridSystem {
 		for (let row = 0; row < this.length; row ++) {
 			for (let col = 0; col < this.length; col ++) {
 				level = matrix.length - 1;
-				this.ctx.font = "40px serif";
+				this.ctx.font = this.cellSize + "px serif";
 
 				while (matrix[level][row][col] == "" && level > 0) {
 					level--;
@@ -460,7 +460,7 @@ class GridSystem {
 				frame = anim[(tick + ((row ^ 3) * (col ^ 3))) % anim.length];
 				
                 this.ctx.fillText(frame, 
-				col * offset, row * offset + (this.cellSize - this.padding),
+				col * offset, row * offset + (this.cellSize - this.padding + 2), //why these magic numbers are required i have no idea ':(((
 				offset);
 			}
 		}
@@ -520,6 +520,13 @@ function hover(e) {
 	var info = document.getElementById('infoTxt');
 	infoPane.style.top = e.clientY + 20 + "px";
 	infoPane.style.left = e.clientX + 20 + "px";
+	if (e.clientY + infoPane.getBoundingClientRect().height + 20 > window.innerHeight) {
+		infoPane.style.transform = "translate(0%,-100%)";
+	} else if (e.clientX + infoPane.getBoundingClientRect().width + 20 > window.innerWidth) {
+		infoPane.style.transform = "translate(-100%,0%)";
+	} else {
+		infoPane.style.transform = "translate(0%,0%)";
+	}
 	if (tile.info != info.innerHTML) {
 		var clickable = document.getElementById('clickable');
 		var icon = document.getElementById('icon');
@@ -582,6 +589,7 @@ function zoom(e) {
 		tile.generation(frame[0], name);
 		gridSystem.render(frame, tick);
 		gridSystem.logHistory();
+		hover(e);
 	}
 }
 
@@ -1858,7 +1866,18 @@ function pause(e) {
 } 
 
 document.getElementById("pause").addEventListener("click", pause);
-//document.getElementById("pause").addEventListener("keyup", pause); space bar config
+
+$(document).keyup(function(e) {
+	if (e.key === " ") { 
+		pause();
+    } else if (e.key === "ArrowLeft") {
+		historyBack();
+	} else if (e.key === "ArrowRight") {
+		historyFwd();
+	} else if (e.key === "Enter") {
+		gridSystem.canvas.click();
+	}
+});
 
 //Main game script
 const isMobile = (/Mobi|Android|iPhone/i.test(navigator.userAgent));
