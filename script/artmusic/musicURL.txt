@@ -1,13 +1,14 @@
 var text = `
+https://i.ibb.co/6Xj5X1K/a0466248625-10.jpg
 https://i.ibb.co/YZj6JKN/notebook.png
 https://i.ibb.co/vBLwjqQ/cover.png
 https://i.ibb.co/P6RbyM5/air.jpg
 https://i.ibb.co/kK6dq50/environ.jpg
-https://i.ibb.co/VM0k7R7/bun.jpg
-https://i.ibb.co/rGDRPB5/so.jpg
 `
 
 var desc = `
+Travel, 2024
+https://otherseas.bandcamp.com/album/travel
 21 years old, 2024
 https://otherseas.bandcamp.com/album/21-years-old
 Birthplace EP, 2023
@@ -16,8 +17,4 @@ AIR, 2022
 https://otherseas.bandcamp.com/album/air
 Environments for 12 Buildings, 2022
 https://otherseas.bandcamp.com/album/environments-for-12-buildings
-Universe EP, 2021
-https://otherseas.bandcamp.com/album/universe-ep
-Sea Objects, 2021
-https://otherseas.bandcamp.com/album/sea-objects
 `
