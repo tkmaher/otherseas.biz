@@ -1,5 +1,5 @@
 var text = `
-https://i.ibb.co/6Xj5X1K/a0466248625-10.jpg
+https://i.ibb.co/8z6SnXb/cover.png
 https://i.ibb.co/YZj6JKN/notebook.png
 https://i.ibb.co/vBLwjqQ/cover.png
 https://i.ibb.co/P6RbyM5/air.jpg
