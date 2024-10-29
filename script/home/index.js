@@ -25,7 +25,7 @@ $(document).ready(function() {
     sidebar.hidden = "true";
   }
 
-  $("#diary").load("../../diary/index.html");  
+  $("#diary").load("../../diary/index.html");
 });
 
 /* async function draw() {
