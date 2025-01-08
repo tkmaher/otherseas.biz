@@ -1,0 +1,35 @@
+geologic language
+
+a shell that considers language as the earth considers rocks
+
+synthetic:
+
+    metamorphize (-m) [word]: 'cool off' word  - decrease its complexity
+        metamorphize -r [word]: do opposite of above
+    igneousify (-i) [word]: 'pressurize' word - increase its complexity
+        igneousify -r [word]: do opposite of above
+    sedimentarize (-s) [word] [word] ... [word]: 'combine' words into a single semiotic average
+        sedimentarize -r [word] [num] : 'decompose' word into num consitutent parts
+    restore (-r) [word]: find last ancestor of a word. repeated calls go up the tree as far as possible
+    decompose (-d) [word]: find next descendant(s) of a word.
+
+analytic
+
+    rm [word]: date word 'RadioMetrically'. find oldest known use of it
+    pm [word]: use 'PaleoMagnetism' to find the country + language of word's origin
+    hd [word]: find word's 'hardness' on a scale of 1 to 10 -- its complexity
+    ls [word]: find word's 'luster' ???
+    tx [word]: find word's 'texture' ???
+
+    examine (-e) [word]: list words definition, and all of the above info
+
+utility:
+
+    help (-h)
+
+    clear
+
+    cmd autofill
+
+    up/down recall functionality
+    other keybinds and shortcuts?11

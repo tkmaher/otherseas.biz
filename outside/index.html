@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../styles/otherseas.css">
+        <title>outside</title> 
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    </head>
+    <body style="background-color: black;margin: 5vh; overflow-x: hidden; ">
+        <img style="position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%); max-height: 60%; z-index: -1;" src="../images/outside/rock.webp"></img>
+        <div style="position: absolute; top:50%; left: 50%; transform: translate(-50%,-50%)">
+            <br>
+            <textarea  type="text" id="output" name="fname" style="width: 20vh; height: 15vh; background-color: white;" disabled="true"></textarea>
+            <br>
+            <form action="javascript:;" onsubmit="call()">
+                <input type="text" id="textar" name="fname" style="width: 20vh"></form>
+                <input onclick="call()" type="submit" value="enter" style="font-family: 'Courier New', Courier, monospace;" >
+            </form> 
+        </div>
+        
+        <a class="button" style="bottom:2vh; right:1vh; position: fixed; color: white;" href="../index.html">[Home]</a>
+
+    </body>
+
+    <script src="../script/outside/outside.js"></script>
+
+</html>
