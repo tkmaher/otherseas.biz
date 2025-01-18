@@ -339,6 +339,7 @@ hr {
     padding: 10px;
     margin-right: 1vh;
     margin-top: 1vh;
+    margin-bottom: 1vh;
     word-wrap:break-word;
     transition: scale 100ms linear;
     position: relative;

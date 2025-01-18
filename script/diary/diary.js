@@ -97,13 +97,13 @@ function swap() {
         gridparent.style.display = "none"
         parent.style.display = "contents"
         scroller.style.display = "contents"
-        grid.innerHTML = "Grid view"
+        grid.innerText = "Grid view"
     } else {
         isgrid = true
         parent.style.display = "none"
         gridparent.style.display = "contents"
         scroller.style.display = "none"
-        grid.innerHTML = "Normal view"
+        grid.innerText = "Normal view"
     }
 }
 
