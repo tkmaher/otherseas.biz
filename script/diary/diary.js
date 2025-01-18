@@ -55,10 +55,10 @@ const entries = [
 
 function populateGrid() {
     for (i = 0; i < entries.length; i++) {
-        var n = document.createElement("p")
+        var n = document.createElement("div")
         gridparent.append(n)
-        n.innerHTML = "<em>" + entries[i].date + "</em><p><strong>" 
-                        + entries[i].title + "</strong></p>" 
+        n.innerHTML = "<a style='pointer-events:none'><em>" + entries[i].date + "</em><br><strong>" 
+                        + entries[i].title + "</strong></a>" 
         if (entries[i].img) {
             n.style.backgroundImage = 'url(' + entries[i].img + ')'
         }
@@ -121,9 +121,9 @@ $( ".blogBlock" ).on( "click", function(event) {
     init()
 } );
 
-```$( ".blogBlock" ).on( "mouseover", function(e) {
+$( ".blogBlock" ).on( "mouseover", function(e) {
     e.target.style.scale = "105%"
   } )
   .on( "mouseout", function(e) {
     e.target.style.scale = "100%"
-} );```
+} );

@@ -329,8 +329,8 @@ hr {
 
 .blogBlock {
     opacity: 100; 
-    width: 15vh;
-    height: 15vh;
+    width: 20vh;
+    height: 20vh;
     font-size: 2vh; 
     text-align: bottom;
     float: left;
@@ -341,8 +341,5 @@ hr {
     margin-top: 1vh;
     word-wrap:break-word;
     transition: scale 100ms linear;
-}
-
-.gridparent {
-    max-width: 45vh;
+    position: relative;
 }
