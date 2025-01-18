@@ -2,7 +2,7 @@ var text = `
 https://i.ibb.co/8z6SnXb/cover.png
 https://i.ibb.co/YZj6JKN/notebook.png
 https://i.ibb.co/vBLwjqQ/cover.png
-https://i.ibb.co/P6RbyM5/air.jpg
+https://i.ibb.co/jgs7ksc/cover.png
 https://i.ibb.co/kK6dq50/environ.jpg
 `
 
@@ -13,8 +13,8 @@ https://otherseas.bandcamp.com/album/travel
 https://otherseas.bandcamp.com/album/21-years-old
 Birthplace EP, 2023
 https://otherseas.bandcamp.com/album/birthplace-ep
-AIR, 2022
-https://otherseas.bandcamp.com/album/air
+Clockwork Memories, 2024
+https://otherseas.bandcamp.com/album/clockwork-memories
 Environments for 12 Buildings, 2022
 https://otherseas.bandcamp.com/album/environments-for-12-buildings
 `

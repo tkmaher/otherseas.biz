@@ -65,6 +65,7 @@ function populateGrid() {
         n.className = "blogBlock"
         n.id = i;
     }
+    gridparent.innerHTML +="<br><br>"
 }
 
 function init() {
