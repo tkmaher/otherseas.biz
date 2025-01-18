@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../styles/otherseas.css">
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <title>Diary</title> 
     </head>
 
@@ -12,14 +13,18 @@
         My Diary
       </div>
 
+      <br>
+      <div >[<a class="button" id="grid">Grid view</a>]</div>
+      <br>
+      <div id="scroller">[<a class="button" id="new">Newer</a> / <a class="button"  id="old">Older</a>]</div>
       <div id="parent">
+        
       </div>
 
-
-      <div style="bottom:6vh; right:1vh; position: fixed">[<a class="button" style="opacity: 50%;" id="new">Newer</a> / <a class="button" style="opacity: 50%;" id="old">Older</a>]</div>
+      <div id="gridparent" class="gridparent" style="display: none;">
+      </div>
 
       <a class="button" style="bottom:2vh; right:1vh; position: fixed" href="../index.html">[Home]</a>
-      <!--<a class="button" style="top:5vh; left:5vh; position: fixed" href="cart.html">[Cart(<span id="cartItems"></span>)]</a>-->
     </body>
 
     <script src="../script/diary/diary.js"></script>

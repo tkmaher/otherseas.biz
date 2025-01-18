@@ -1,7 +1,27 @@
 parent = document.getElementById("parent");
-entries = [
-    ["<em>10/28/2024</em><p><b>Song</b><br><br> \
-    When the statues have all crumbled<br> \
+gridparent = document.getElementById("gridparent");
+scroller = document.getElementById("scroller");
+
+isgrid = false;
+page = 0;
+
+
+class entry {
+    constructor(title, date, txt, img) {
+        this.title = title;
+        this.date = date;
+        this.txt = txt;
+        this.img = img;
+    }
+}
+
+const entries = [
+    new entry("Happy 2025!", "1/17/2025", 
+    "Édouard Manet. <i>The Execution of Emperor Maximilian</i>. 1868<br><br> \
+    I updated this blog to have an archive/index feature. Click \"Grid View\" at the top.", 
+    "https://d2w9rnfcy7mm78.cloudfront.net/33771627/original_f5e0d2dd6f956cc81092e57d537c68de.jpg?1737170219?bc=0"),
+    new entry("Song", "10/28/2024", 
+    "When the statues have all crumbled<br> \
     And the world is full of nothing<br> \
     And the rain is always running<br> \
     Down a weirdly giant mirror<br><br> \
@@ -24,37 +44,86 @@ entries = [
     Then a tremor split the heavens<br> \
     And a mirror fell from its mounting<br> \
     And within its broken pieces<br> \
-    I could only see my star"],
+    I could only see my star"),
 
-    ["<em>10/7/2024</em><p><a class='button' href=https://www.youtube.com/watch?v=zU1MUqD2q04>Listening to</a>"],
-    ["<em>10/7/2024</em><p><strong>Dear diary,</strong><p>Me testing my blog"],
+    new entry("Listening to", "10/7/2024", 
+    "<a class='button' href=https://www.youtube.com/watch?v=zU1MUqD2q04>Listening to</a>"),
+
+    new entry("Dear diary,", "10/7/2024", "Me testing my blog")
 ]
 
-page = 0;
+
+function populateGrid() {
+    for (i = 0; i < entries.length; i++) {
+        var n = document.createElement("p")
+        gridparent.append(n)
+        n.innerHTML = "<em>" + entries[i].date + "</em><p><strong>" 
+                        + entries[i].title + "</strong></p>" 
+        if (entries[i].img) {
+            n.style.backgroundImage = 'url(' + entries[i].img + ')'
+        }
+        n.className = "blogBlock"
+        n.id = i;
+    }
+}
 
 function init() {
     parent.innerHTML = ''
-    i = page*5;
-    while (i < ((page+1) * 5) && i < entries.length) {
-        var n = document.createElement("div")
-        parent.append(n)
-        n.innerHTML = entries[i]
-        n.className = "blogPost"
-        i++
+    i = page;
+    var n = document.createElement("div")
+    parent.append(n)
+    n.innerHTML = "<em'>" + entries[i].date + "</em><p><strong>" 
+                    + entries[i].title + "</strong></p><p>" 
+    if (entries[i].img) {
+        n.innerHTML += "<img style='max-width:100%' src='" + entries[i].img + "'>"
     }
+    n.innerHTML += entries[i].txt + "</p>"
+    n.className = "blogPost"
     if (page > 0) {
         document.getElementById("new").style.color = 'black';
     } else {
-        document.getElementById("new").style.color = '#616161';
+        document.getElementById("new").style.color = '#c7c7c7';
     }
-    if ((page+1) * 5 < entries.length) {
+    if ((page+1) < entries.length) {
         document.getElementById("old").style.color = 'black';
     } else {
-        document.getElementById("old").style.color = '#616161';
+        document.getElementById("old").style.color = '#c7c7c7';
+    }
+}
+
+function swap() {
+    if (isgrid) {
+        isgrid = false
+        gridparent.style.display = "none"
+        parent.style.display = "contents"
+        scroller.style.display = "contents"
+        grid.innerHTML = "Grid view"
+    } else {
+        isgrid = true
+        parent.style.display = "none"
+        gridparent.style.display = "contents"
+        scroller.style.display = "none"
+        grid.innerHTML = "Normal view"
     }
 }
 
 document.getElementById("new").addEventListener("click", function(){ if (page >0) {page--; init()} })
-document.getElementById("old").addEventListener("click", function(){ if ((page+1)*5 < entries.length) {page++; init()} })
+document.getElementById("old").addEventListener("click", function(){ if ((page+1) < entries.length) {page++; init()} })
+
+document.getElementById("grid").addEventListener("click", swap)
 
 init(0)
+populateGrid()
+
+$( ".blogBlock" ).on( "click", function(event) {
+    page = parseInt(event.target.id)
+    swap()
+    init()
+} );
+
+```$( ".blogBlock" ).on( "mouseover", function(e) {
+    e.target.style.scale = "105%"
+  } )
+  .on( "mouseout", function(e) {
+    e.target.style.scale = "100%"
+} );```

@@ -324,7 +324,25 @@ hr {
     border: 2px dotted gray; 
     background-color: white; 
     padding: 10px;
-    margin-top: 5%;
     word-wrap:break-word;
 }
 
+.blogBlock {
+    opacity: 100; 
+    width: 15vh;
+    height: 15vh;
+    font-size: 2vh; 
+    text-align: bottom;
+    float: left;
+    border: 2px dotted gray; 
+    background-color: white; 
+    padding: 10px;
+    margin-right: 1vh;
+    margin-top: 1vh;
+    word-wrap:break-word;
+    transition: scale 100ms linear;
+}
+
+.gridparent {
+    max-width: 45vh;
+}

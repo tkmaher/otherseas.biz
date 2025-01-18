@@ -4,6 +4,9 @@ p = document.getElementById("output")
 function format_settings(suffix) {
     const settings = {
         async: false,
+        error: function(jqXHR, exception) {
+            console.log('err')
+        },
         crossDomain: true,
         url: 'https://wordsapiv1.p.rapidapi.com/words/' + suffix,
         method: 'GET',
@@ -18,11 +21,13 @@ function format_settings(suffix) {
 
 function metamorphize(str) {
     syn = 'placeholder'
+    result = 'No further metamorphization is possible!'
     
     const settings = format_settings(str + '/synonyms')
     found = false
     
     $.ajax(settings).done(function (response) {
+
         console.log(response)
         response.synonyms.forEach(function(word) {
             if (word.length > str.length) {
@@ -31,12 +36,10 @@ function metamorphize(str) {
             }
         });
         if (found) {
-            return '"' + str + '" subjected to heat and pressure --> ' + syn 
-        } else {
-            return 'No further metamorphization is possible!'
+            result = str + ' --> ' + syn 
         }
     });
-
+    return result
 }
 
 function response(str_in) {
@@ -50,8 +53,7 @@ function response(str_in) {
 
     if (str[0] == 'metamorphize' || str[0] == '-m') {
         if (str.length  == 2) {
-            alert(5)
-            return metamorphize(str[1]);
+            return metamorphize(str[1])
         }
     }
 
@@ -61,7 +63,7 @@ function response(str_in) {
 async function print(isusr, str) {
     if (isusr) {
         p.innerHTML += "🌱: "
-    } else {
+    } else {4
         p.innerHTML += "🪨: "
     }
     for (let i = 0; i < str.length; i++) {
