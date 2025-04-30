@@ -16,6 +16,9 @@ class entry {
 }
 
 const entries = [
+    new entry("radio show", "4/30/2025",
+    "Listen to my radio show with faulkner on <a href=https://reduxrad.io/shows/loisirs>reduxrad.io</a>",
+    "https://s3.us-east-005.backblazeb2.com/redux-test-bucket/hostimages/Loisirs.png"),
     new entry("Happy 2025!", "1/17/2025", 
     "Édouard Manet. <i>The Execution of Emperor Maximilian</i>. 1868<br><br> \
     I updated this blog to have an archive/index feature. Click \"Grid View\" at the top.", 
