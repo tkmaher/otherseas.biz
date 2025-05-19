@@ -353,7 +353,6 @@ hr {
     color: black;
     font-size: 5000px; 
     font-family: Arial, Helvetica, sans-serif;
-    transition: all 10s;
     filter: drop-shadow(10px 10px 0px white);
 }
 
