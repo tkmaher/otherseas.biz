@@ -14,7 +14,7 @@ async function loading(arr, channel) {
   str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890±!@#$%^&*()_+-=§£™¡¢∞§¶•ªº–≠œ∑´®†¥¨ˆøπ“‘åß∂ƒ©˙˚¬…æ«`~Ω≈ç√∫˜µ≤≥÷₩ÈÀÆÃŠŸÛÎÔŒŌŁŽÇÑ"
   while (true) {
     txt.innerHTML = str[index % (str.length - 1)]
-    await sleep(50)
+    await sleep(100)
     index++
     if (Math.random() < 0.05) {
       txt.innerHTML = '' 
