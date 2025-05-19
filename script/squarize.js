@@ -112,7 +112,7 @@ async function squarize(arr, num, info, channel) {
 
 	const out = arr.split('\n').filter(x => x.length);
 	if (info != undefined) {
-		description = info.split('\n').filter(x => x.length);
+		description = info.split('\n').filter(x => x.length > 0);
 	}
 	for (let i = 0; i < num; i++) {
 		index = Math.floor(Math.random() * out.length);
@@ -133,8 +133,4 @@ async function squarize(arr, num, info, channel) {
 			imgzoom.style.opacity = 0;
 		}
 	)
-
-	//document.getElementById("fade").style.opacity = '0';
-	//await sleep(1000);
-	//document.getElementById("fade").remove();
 }

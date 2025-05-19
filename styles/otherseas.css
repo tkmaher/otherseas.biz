@@ -1,8 +1,12 @@
 
 @font-face {
-    font-family: 'Noto Sans Mono'; /*a name to be used later*/
-    src: url('https://fonts.googleapis.com/css?family=Noto Sans Mono'); /*URL to font*/
-}
+    font-family: 'nsm';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/notosansmono/v32/BngrUXNETWXI6LwhGYvaxZikqZqK6fBq6kPvUce2oAZcdthSBUsYck4-_FNJ09DdVWYVP8c9MMEL.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
 
 body {
     font-family: 'Courier New';
@@ -344,3 +348,24 @@ hr {
     transition: scale 100ms linear;
     position: relative;
 }
+
+.cycler {
+    color: black;
+    font-size: 5000px; 
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 10s;
+    filter: drop-shadow(10px 10px 0px white);
+}
+
+.invert {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    left: 0;
+    mix-blend-mode: difference;
+    pointer-events:none; 
+    opacity: 1;
+  }
