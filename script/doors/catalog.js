@@ -13,9 +13,11 @@ async function loading(arr, channel) {
   index = 0
   bg = document.getElementById('bg')
   txt = document.getElementById('parent')
-  
-  if (isMobile)
+
+  if (isMobile) {
     document.getElementById("cyclecontainer").style.maxWidth = "100%"
+  }
+    
 
   str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890±!@#$%^&*()_+-=§£™¡¢∞§¶•ªº–≠œ∑´®†¥¨ˆøπ“‘åß∂ƒ©˙˚¬…æ«`~Ω≈ç√∫˜µ≤≥÷₩ÈÀÆÃŠŸÛÎÔŒŌŁŽÇÑ"
   while (true) {
@@ -27,11 +29,11 @@ async function loading(arr, channel) {
       await sleep(500)
     }
     if (Math.random() < 0.01)
-      txt.style.fontSize = "1200vh"
+      txt.style.fontSize = "1200vw"
     if (Math.random() < 0.01)
-      txt.style.fontSize = "800vh"
+      txt.style.fontSize = "800vw"
     if (Math.random() < 0.01)
-      txt.style.fontSize = "1000vh"
+      txt.style.fontSize = "1000vw"
     if (Math.random() < 0.01) {
       if (bg.hidden) {
         high.load()
