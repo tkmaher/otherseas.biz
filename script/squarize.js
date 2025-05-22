@@ -32,105 +32,118 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-var dragging = false;
+var num = 0;
+var zoomed = false;
 var current;
 var top_z = 1;
 
-function drag(e) {
-	if (dragging && current == e.target.id) {
-		e.target.style.top = (e.clientY) + "px";
-		e.target.style.left = (e.clientX ) + "px";
-	}
+function zoomimg(e) {
+	zoomed = true;
+	display(e.target);
 }
 
-function zoomimg(e) {
+function display(target) {
+	current = target.id;
 	var imgzoom = document.getElementById("imgzoom");
 	imgzoom.style.opacity = 1;
-	document.getElementById("enlarged").src = e.target.style.getPropertyValue("--url");
+	var url = target.style.getPropertyValue("--url").toString();
+	url = url.slice(4).slice(0,-1);
+	document.getElementById("enlarged").src = url;
 	imgzoom.style.pointerEvents = "auto";
-	document.getElementById("title").innerHTML = e.target.style.getPropertyValue("--title");
-	document.getElementById("link").href = e.target.style.getPropertyValue("--link");
+	console.log(target.style)
+	document.getElementById("title").innerHTML = target.style.getPropertyValue("--title").toString();
+	document.getElementById("link").href = target.style.getPropertyValue("--link").toString();
 }
 
-async function load(url, iter, num, info, title, link) {
+function close() {
+	zoomed = false;
+	var imgzoom = document.getElementById("imgzoom");
+	imgzoom.style.pointerEvents = "none";
+	imgzoom.style.opacity = 0;
+}
+
+function right() {
+	current = ((parseInt(current) + 1) % num);
+	display(document.getElementById(current.toString()));
+}
+
+function left() {
+	current = (((parseInt(current) - 1) % num));
+	if (current < 0)
+		current = num + current;
+	display(document.getElementById(current.toString()));
+}
+
+document.addEventListener('keydown', function(event) {
+	if (zoomed) {
+		if (event.key === 'Escape') {
+			close();
+		} else if (event.key == 'ArrowRight') {
+			right();
+		} else if (event.key == 'ArrowLeft') {
+			left();
+		}
+	}
+	
+});
+
+async function load(url, iter, info, title, link) {
 	let parent = document.getElementById('parent');
 	var img = new Image();
 	img.src = url;
 	await img.decode();
 	if (img.height > img.width) {
-		w = '300px';
+		w = '30vw';
 		h = 'auto';
-		zoom = '400px auto';
+		zoom = '50vw auto';
 	} else {
 		w = 'auto';
-		h = '300px';
-		zoom = 'auto 400px';
+		h = '30vw';
+		zoom = 'auto 50vw';
 	}
 
 	card = document.createElement("div");
 	card.className = "card";
 	card.id = iter;
-	card.style = "--url:url(" + url + "); --h:" + h + "; --w:" + w + "; --zoom:" + zoom + ';';
-	card.style.top = (50 + (-(num/2 - 0.5) + iter) * 5) + 'vh';
-	card.style.left = (50 + (-(num/2 - 0.5) + iter) * 5) + 'vw';
-	card.style.zIndex = -1 * (num - iter);
+	card.style = "--h:" + h + "; --w:" + w + "; --zoom:" + zoom + ';';
 
 	parent.appendChild(card);
 
-	zoom = document.createElement("div");
-	zoom.className = "zoom";
-	zoom.innerHTML = '🔍';
-	zoom.style.setProperty("--url", url);
+	card.style.setProperty("--url", "url(" + url + ")");
+	card.id = iter.toString();
 	if (info) {
-		zoom.style.setProperty("--title", title);
-		zoom.style.setProperty("--link", link);
+		card.style.setProperty("--title", title);
+		card.style.setProperty("--link", link);
 	}
-	card.appendChild(zoom);
 
-	card.addEventListener("mousedown", (e) => {
-		if (dragging == false) {
-			dragging = true;
-			current = e.target.id;
-			e.target.style.zIndex = top_z;
-			top_z++;
-			drag(e);
-			imgzoom.style.zIndex = top_z;
-		}
-	})
-	card.addEventListener("mousemove", drag);
-	card.addEventListener("mouseup", (e) => {dragging = false;})
-
-	zoom.addEventListener("click", zoomimg);
+	card.addEventListener("click", zoomimg);
 }
 
-async function squarize(arr, num, info, channel) {
-	var index, url, title, link;
+async function squarize(arr, number, info, channel) {
+	var url, title, link;
 	
     if (channel != undefined) {
         arr = await arenaFetch(channel);
     }
-
+	
 	const out = arr.split('\n').filter(x => x.length);
 	if (info != undefined) {
 		description = info.split('\n').filter(x => x.length > 0);
 	}
-	for (let i = 0; i < num; i++) {
-		index = Math.floor(Math.random() * out.length);
-		url = out[index];
-		out.splice(index, 1);
-		if (info) {
-			title = description[index * 2];
-			link = description[(index * 2) + 1];
-			description.splice(index*2, 2);
-		}
-		load(url, i, num, info, title, link);
-	}
-	await sleep(1000);
+	//while (document.readyState != "complete") {}
 
-	document.getElementById("closeimg").addEventListener("click", (e) =>
-		{
-			imgzoom.style.pointerEvents = "none";
-			imgzoom.style.opacity = 0;
+	document.getElementById("closeimg").addEventListener("click", (e) =>{close()})
+	document.getElementById("left").addEventListener("click", (e) =>{left()})
+	document.getElementById("right").addEventListener("click", (e) =>{right()})
+
+	for (let i = 0; i < out.length; i++) {
+		num++;
+		url = out[i];
+		console.log(out.length)
+		if (info) {
+			title = description[i * 2];
+			link = description[(i * 2) + 1];
 		}
-	)
+		await load(url, i, info, title, link);
+	}
 }

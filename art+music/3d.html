@@ -6,31 +6,34 @@
         <title>3d</title> 
         <script src="../script/squarize.js"></script>
     </head>
-    <body style="background-color: white; color: #616161;">
-        <div id="parent" draggable="false"></div>
+    <body style="background-color: white; color: #616161;  overflow: auto;">
+        <div style="text-align: center;">
+            <iframe src="https://player.vimeo.com/video/974464815?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="200" height="356" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="leaf"></iframe>
+        </div>
+        <div id="parent" draggable="false" class="cardParent"></div>
+        <div style="text-align: center;">
+            <iframe src="https://player.vimeo.com/video/974455161?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="200" height="356" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="leaf"></iframe>
+        </div>
+    
         <script>
             squarize("", 5, "", "3d-ckiqbz7a14o");
         </script>
     </body>
+
+    
     <div class="popup" id="imgzoom"style="max-width: 100vh;">
         <a style="background-color: rgb(237, 237, 237); color: #616161">[img]<span class="button" style="float:right;" id="closeimg">[X]</span><br> <br></a>
         <a style="background-color: rgb(237, 237, 237);"><img draggable="false" style="max-width: 100%; max-height: 80vh;" id="enlarged"></a>
     </div>
 
-    <div style="text-align:center; font-family:'Garamond'; font-style: italic; bottom:2.5vh; position: absolute; left:50%; transform: translate(-50%, -50%);">
+    <div style="text-align:center; font-family:'Garamond'; font-style: italic; margin-bottom:5vh;">
         <a style="color:rgb(187, 187, 187);">Made in Blender and photoshop and Adobe After Effects</a> <br>
         <a class="button" style="color:rgb(187, 187, 187);" href="https://www.are.na/other-seas/3d-ckiqbz7a14o">https://www.are.na/other-seas/3d-ckiqbz7a14o</a> <br>
         <a class="button" style="color:rgb(187, 187, 187);" href="https://vimeo.com/user/222165897/folder/21426548">https://vimeo.com/user/222165897/folder/21426548</a>
     </div>
 
-    <div style="left: 20%; top: 50%; position: absolute; transform: translate(-50%, -50%);">
-        <iframe src="https://player.vimeo.com/video/974464815?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="200" height="356" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="leaf"></iframe>
-    </div>
-    <div style="right: 20%; top: 50%; position: absolute; transform: translate(50%, -50%);">
-        <iframe src="https://player.vimeo.com/video/974455161?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="200" height="356" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="leaf"></iframe>
-    </div>
-
-    <a class="button" style="bottom:2vh; right:1vh; position: absolute" href="../index.html">[Home]</a>
+    <div style="bottom:6vh; right:1vh; position: fixed;"><a class="button" id="left">[<]</a><a class="button" id="right">[>]</a></div>
+    <a class="button" style="bottom:2vh; right:1vh; position: fixed" href="../index.html">[Home]</a>
     <!--<div id ='fade' style="pointer-events: none; position: relative; width: auto; height: 10000px; background: white; opacity: 1; transition: all 1s;">
         <img draggable="false" style="margin: auto; display: block;" src="../images/loading.gif">
     </div>-->
