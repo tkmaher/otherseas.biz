@@ -333,7 +333,7 @@ hr {
 
 .blogPost {
     opacity: 100; 
-    max-width: 60vh; 
+    max-width: 100vh; 
     font-size: 2vh; 
     border: 2px dotted gray; 
     background-color: white; 

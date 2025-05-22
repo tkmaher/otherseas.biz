@@ -16,13 +16,34 @@ class entry {
 }
 
 const entries = [
+    new entry("Green Poem", "5/21/2025",
+    `On my way home I saw something green on the ground, it was your spine<br> \
+    I was surprised to see it on the ground<br> \
+    Ants and flies weaved vestigial buta on its surface<br><br> \
+    I picked up your spine very carefully, so that it wouldn’t crumble to dust, and looked everywhere for you<br> \
+    But you weren’t anywhere<br><br> \
+    When I got home I walked a careful path around clean piles of dirt<br> \
+    I carelessly tossed your fingers into a plastic bag and put it under the stairs<br> \
+    I figured that if you weren’t anywhere, you wouldn’t need them anyway<br> \
+    So it didn’t really matter where I put them<br><br> \
+    Ten years earlier you were sleeping. I was awake<br> \
+    I extended my arms upward, and slowly lifted myself out of the bed<br> \
+    I was basically hanging by the tips of my fingernails<br> \
+    But when it was time to move my feet, I went too hastily<br> \
+    With a loud sound of shattering concrete, I tripped over your eyelashes<br> \
+    You were mad but I knew we would end up laughing about it<br><br> \
+    The green moon draws facsimile legatos on the sky<br> \
+    Seven years have passed and it has yet to complete one stanza`),
+
     new entry("radio show", "4/30/2025",
     "Listen to my radio show with faulkner on <a href=https://reduxrad.io/shows/loisirs>reduxrad.io</a>",
     "https://s3.us-east-005.backblazeb2.com/redux-test-bucket/hostimages/Loisirs.png"),
+
     new entry("Happy 2025!", "1/17/2025", 
     "Édouard Manet. <i>The Execution of Emperor Maximilian</i>. 1868<br><br> \
     I updated this blog to have an archive/index feature. Click \"Grid View\" at the top.", 
     "https://d2w9rnfcy7mm78.cloudfront.net/33771627/original_f5e0d2dd6f956cc81092e57d537c68de.jpg?1737170219?bc=0"),
+    
     new entry("Song", "10/28/2024", 
     "When the statues have all crumbled<br> \
     And the world is full of nothing<br> \
@@ -50,7 +71,7 @@ const entries = [
     I could only see my star"),
 
     new entry("Listening to", "10/7/2024", 
-    "<a class='button' href=https://www.youtube.com/watch?v=zU1MUqD2q04>Listening to</a>"),
+    "<a href=https://www.youtube.com/watch?v=zU1MUqD2q04>Listening to</a>"),
 
     new entry("Dear diary,", "10/7/2024", "Me testing my blog")
 ]
@@ -79,7 +100,7 @@ function init() {
     n.innerHTML = "<em'>" + entries[i].date + "</em><p><strong>" 
                     + entries[i].title + "</strong></p><p>" 
     if (entries[i].img) {
-        n.innerHTML += "<img style='max-width:100%' src='" + entries[i].img + "'>"
+        n.innerHTML += "<img style='max-width:100%; width:70vh' src='" + entries[i].img + "'><br>"
     }
     n.innerHTML += entries[i].txt + "</p>"
     n.className = "blogPost"
