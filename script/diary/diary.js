@@ -111,10 +111,34 @@ function swap() {
     }
 }
 
-document.getElementById("new").addEventListener("click", function(){ if (page >0) {page--; init()} })
-document.getElementById("old").addEventListener("click", function(){ if ((page+1) < entries.length) {page++; init()} })
+function goNew() {
+    if (page >0) {
+        page--; 
+        init();
+    }
+}
+
+function goOld() {
+    if ((page+1) < entries.length) {
+        page++; 
+        init();
+    }
+}
+
+document.getElementById("new").addEventListener("click", goNew)
+document.getElementById("old").addEventListener("click", goOld)
 
 document.getElementById("grid").addEventListener("click", swap)
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        swap();
+    } else if (event.key == 'ArrowRight') {
+        goOld();
+    } else if (event.key == 'ArrowLeft') {
+        goNew();
+    }
+});
 
 init(0)
 populateGrid()
