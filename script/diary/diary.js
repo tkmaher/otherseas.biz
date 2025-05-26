@@ -16,6 +16,31 @@ class entry {
 }
 
 const entries = [
+    new entry("Law", "5/25/2025",
+    `Even then I could feel it<br>
+    Whispered in the flickering of the fluorescent lamp<br>
+    In the hesitation of the scalpel<br>
+    In the nervous darting of my patients’ eyes<br><br>
+    In my Eden, in my garden of first things<br>
+    Even there, I could feel the teeth of the law<br><br>
+    Shambling like a fucked-out parade<br>
+    The hooked beak of the judge<br>
+    His talons stroking the gavel<br>
+    The movement of restless wings under his darkening robe<br><br>
+    Sinking further in, rising up to efface my light, moreover:<br>
+    The jury, like so many rats<br>
+    Raping the air with their barbed words<br>
+    And the sentence —<br>
+    My face pressed up against cold glass <br>
+    Shaved heads and telephone wire-marks on our wrists<br>
+    Mountains of gravel ground down between our teeth <br>
+    And finally hoisted<br>
+    Skin stretched for leagues across a red lattice, linked together by strands of saliva<br>
+    Bodies piling up to challenge the sun<br><br>
+    Even then, the rushing noise of the deluge would build up in my ear<br>
+    Sometimes it would get so loud I couldn’t even think<br>
+    I’d force myself to ignore it, and call in the next patient`),
+    
     new entry("Green Poem", "5/21/2025",
     `On my way home I saw something green on the ground, it was your spine<br> \
     I was surprised to see it on the ground<br> \
