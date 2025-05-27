@@ -111,6 +111,9 @@ if (page == null) {
 } else if (page >= entries.length) {
     page = entries.length - 1;
     reload(page);
+} else if (page < 0) {
+    page = 0;
+    reload(page);
 }
 
 function populateGrid() {
