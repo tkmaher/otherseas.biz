@@ -109,6 +109,7 @@ if (page == null) {
     page = entries.length - 1;
 }
 const url = "https://www.otherseas1.com/diary/"
+reload(page);
 
 function populateGrid() {
     for (i = 0; i < entries.length; i++) {
@@ -165,11 +166,15 @@ function swap() {
     }
 }
 
+function reload(newpage) {
+    newUrl = url + "?p=" + newpage.toString();
+    window.location.href = newUrl;
+}
+
 function goNew() {
     if (page >0) {
         page--;
-        newUrl = url + "?p=" + page.toString();
-        window.location.href = newUrl;
+        reload(page);
         init();
     }
 }
@@ -177,8 +182,7 @@ function goNew() {
 function goOld() {
     if ((page+1) < entries.length) {
         page++; 
-        newUrl = url + "?p=" + page.toString();
-        window.location.href = newUrl;
+        reload(page);
         init();
     }
 }
