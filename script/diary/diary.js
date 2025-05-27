@@ -99,17 +99,19 @@ const entries = [
     new entry("Dear diary,", "10/7/2024", "Me testing my blog")
 ]
 
+const url = "https://www.otherseas1.com/diary/"
 const urlParams = new URLSearchParams(window.location.search);
 var page = parseInt(urlParams.get('p'));
 if (page == null) {
     page = 0;
+    reload(page);
 } else if (!Number.isInteger(page)) {
     page = 0;
+    reload(page);
 } else if (page >= entries.length) {
     page = entries.length - 1;
+    reload(page);
 }
-const url = "https://www.otherseas1.com/diary/"
-reload(page);
 
 function populateGrid() {
     for (i = 0; i < entries.length; i++) {
