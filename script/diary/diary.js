@@ -3,8 +3,6 @@ gridparent = document.getElementById("gridparent");
 scroller = document.getElementById("scroller");
 
 isgrid = false;
-page = 0;
-
 
 class entry {
     constructor(title, date, txt, img) {
@@ -101,6 +99,16 @@ const entries = [
     new entry("Dear diary,", "10/7/2024", "Me testing my blog")
 ]
 
+const urlParams = new URLSearchParams(window.location.search);
+var page = parseInt(urlParams.get('p'));
+if (page == null) {
+    page = 0;
+} else if (!Number.isInteger(page)) {
+    page = 0;
+} else if (page >= entries.length) {
+    page = entries.length - 1;
+}
+const url = "https://www.otherseas1.com/diary/"
 
 function populateGrid() {
     for (i = 0; i < entries.length; i++) {
@@ -159,7 +167,9 @@ function swap() {
 
 function goNew() {
     if (page >0) {
-        page--; 
+        page--;
+        newUrl = url + "?q=" + page.toString();
+        window.location.href = newUrl;
         init();
     }
 }
@@ -167,6 +177,8 @@ function goNew() {
 function goOld() {
     if ((page+1) < entries.length) {
         page++; 
+        newUrl = url + "?q=" + page.toString();
+        window.location.href = newUrl;
         init();
     }
 }
@@ -186,7 +198,8 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-init(0)
+
+init(page)
 populateGrid()
 
 $( ".blogBlock" ).on( "click", function(event) {
