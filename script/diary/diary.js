@@ -168,7 +168,7 @@ function swap() {
 function goNew() {
     if (page >0) {
         page--;
-        newUrl = url + "?q=" + page.toString();
+        newUrl = url + "?p=" + page.toString();
         window.location.href = newUrl;
         init();
     }
@@ -177,7 +177,7 @@ function goNew() {
 function goOld() {
     if ((page+1) < entries.length) {
         page++; 
-        newUrl = url + "?q=" + page.toString();
+        newUrl = url + "?p=" + page.toString();
         window.location.href = newUrl;
         init();
     }
