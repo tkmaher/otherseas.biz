@@ -162,6 +162,7 @@ function swap() {
         parent.style.display = "contents"
         scroller.style.display = "contents"
         grid.innerText = "Grid view"
+        reload(page);
     } else {
         isgrid = true
         parent.style.display = "none"
