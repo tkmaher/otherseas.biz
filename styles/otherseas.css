@@ -313,7 +313,10 @@ hr {
     transition: opacity 0.5s;
 }
 
-
+br {
+    display: block;
+    margin: 10px 0;
+ }
 
 .archaicPic {
     position: absolute; 
