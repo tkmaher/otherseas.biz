@@ -14,6 +14,71 @@ class entry {
 }
 
 const entries = [
+    new entry("Insect poem", "6/18/2025",
+    `In the cool shade of the Golden Pavilion, those insects who only come out under the cover of darkness held a tribunal<br>
+    To amend the rights of the dead and dying, and to deliver them<br>
+    Further into their strange dark world, and away from our own<br>
+    <br>
+    The defendant was a cold, emaciated photograph<br>
+    The photograph depicted two pears and an apple<br>
+    His bones, writhing under musculature, directed his canvas limbs to lurch and sway<br>
+    Silently signing treatise after treatise<br>
+    <br>
+    The juniper-bug began:<br>
+    “It is clear to all, that the body in question<br>
+    Has committed an offense so grievous,<br>
+    So indelibly atrocious,<br>
+    That even those twin maidens of virtue have been compelled to bow their heads in shame.<br>
+    In the face of such a heinous transgression,<br>
+    Our system of ideal law <br>
+    (Which has yet to fail)<br>
+    Has turned mute, and it becomes apparent<br>
+    That we lack the language to adequately address the usual questions, or to even ask them in the first place.<br>
+    Cross-examination becomes cannibalism<br>
+    Foreclosure of evidence becomes murder-suicide<br>
+    And even if we were to arrive at a verdict, its inadequacy might castrate us<br>
+    Or even drive us to madness.”<br>
+    <br>
+    “Hear, hear!”<br>
+    Said the giant mantis.<br>
+    “It is wholly the case,<br>
+    Preterite notwithstanding,<br>
+    That questions such as ‘Are they innocent?’ or<br>
+    ‘Are they guilty?’<br>
+    No longer have any cogency<br>
+    That their meanings have been stripped away, leaving only bare, indolent ululations <br>
+    Which pollute the air as if born from the mouth of a blind idiot.<br>
+    All I’m saying <br>
+    And I’m sure you will agree<br>
+    Is that the language of law is no longer our language.<br>
+    If we were to continue to use it<br>
+    We would only fall into the defendants’ grand design<br>
+    As they have twisted and expropriated our language to align with their own means<br>
+    (As they tend to do with anything that is pure).<br>
+    Gentlemen!<br>
+    We must not stoop to their level.”<br>
+    <br>
+    The spider-king chimed in:<br>
+    “Absolutely.<br>
+    I couldn’t agree more.<br>
+    Clearly, the best place to begin<br>
+    Is at the end.<br>
+    Let’s forgo the miseries of lawful procedure:<br>
+    Those only serve to alienate us from ourselves, anyway.<br>
+    Let us return our selves to ourselves<br>
+    And deliver a punishment of a strictly passionate nature.<br>
+    Punishment, if one can rightly call it that —<br>
+    What we promise is not punishment.<br>
+    It is a return to the natural order of things<br>
+    Prophecy made real<br>
+    And an overdue exorcism of the historical record<br>
+    Which has, up until now, been a veritable playground for devils and fiends.”<br>
+    <br>
+    All the bugs murmured in agreement<br>
+    The moon flickered in the sky, and they breathlessly spun up their ultimate verdict<br>
+    I was asleep<br>
+    I was deep under the ocean`),
+
     new entry("Law", "5/25/2025",
     `Even then I could feel it<br>
     Whispered in the flickering of the fluorescent lamp<br>
