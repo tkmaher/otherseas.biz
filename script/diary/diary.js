@@ -28,7 +28,7 @@ const entries = [
     “It is clear to all, that the body in question<br>
     Has committed an offense so grievous,<br>
     So indelibly atrocious,<br>
-    That even those twin maidens of virtue have been compelled to bow their heads in shame.<br>
+    That even those twin maidens of virtue ("Truth" and "Reason") have been compelled to bow their heads in shame.<br>
     In the face of such a heinous transgression,<br>
     Our system of ideal law <br>
     (Which has yet to fail)<br>
