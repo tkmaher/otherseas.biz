@@ -182,7 +182,7 @@ if (page == null) {
 }
 
 function populateGrid() {
-    for (i = 0; i < entries.length; i++) {
+    for (i = entries.length - 1; i >= 0; i--) {
         var n = document.createElement("div")
         gridparent.append(n)
         n.innerHTML = "<a style='pointer-events:none'><em>" + entries[i].date + "</em><br><strong>" 
@@ -208,12 +208,12 @@ function init() {
     }
     n.innerHTML += entries[i].txt + "</p>"
     n.className = "blogPost"
-    if (page > 0) {
+    if (page < (entries.length - 1)) {
         document.getElementById("new").style.color = 'black';
     } else {
         document.getElementById("new").style.color = '#c7c7c7';
     }
-    if ((page+1) < entries.length) {
+    if (page > 0) {
         document.getElementById("old").style.color = 'black';
     } else {
         document.getElementById("old").style.color = '#c7c7c7';
