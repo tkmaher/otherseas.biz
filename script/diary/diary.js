@@ -239,7 +239,8 @@ function swap() {
 
 function reload(newpage) {
     newUrl = url + "?p=" + newpage.toString();
-    window.location.href = newUrl;
+    window.history.pushState({}, "", newUrl);
+    document.title = "Diary | " + entries[newpage].title;
 }
 
 function goNew() {
