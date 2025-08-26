@@ -162,6 +162,31 @@ const entries = [
     The moon flickered in the sky, and they breathlessly spun up their ultimate verdict<br>
     I was asleep<br>
     I was deep under the ocean`),
+
+    new entry("Story", "8-26-2025",
+    `In a country far from here, in a place now distant, in a time without memory, there lived an emperor with a castle most majestic.
+    <br><br>
+    The walls of the castle were taller than the mountains. Its courtyards were swathed in every variety of flower, and were home to animals without name. Its gardens stretched to the horizon, and its battlements stretched to the sea. It was said that an anvil dropped from the highest parapet would fall seven days before reaching the Earth, and seven more before reaching the depths of the castle’s deepest dungeon. 
+    <br><br>
+    The wonders of the Emperor’s palace were kept in their eternal resplendence by an enchanted crown. Mystes aver that as long as the emperor wore it, no entropy could hope to possess his spires and courtyards. But it was whispered that, if he were to take it off, the entire kingdom would crumble to dust.
+    <br><br>
+    One day, a cloaked traveller from beyond the hills appeared at the gates of this great palace. The officer of the gate looked him up and down, and asked him his province. “I seek audience with the king,” said the traveller. The officer paused. “You may enter,” he replied, “but I cannot guarantee you will find that which you seek.”. With a snap of his fingers, the officer opened the gates and directed the stranger down a shining path encrusted with jewels. Without a word, the traveller walked through.
+    <br><br>
+    The traveller, driven by desire, hastened down the path. Certain ulterior motives had brought him to the castle. He had spent his years on Earth making a name for himself as a thief. Having heard whispers of the emperor’s wondrous crown, he had come to claim it as his own. The officer’s lack of suspicion at the palace gates had unnerved him. Still, he ventured further into the grounds.
+    <br><br>
+    After walking for hours and passing countless treasures, the traveller noticed that the sun was beginning to set. He still seemed no closer to the distant spires of the palace proper. So, he laid his supplies down on velvet grass and rested without dreams.
+    <br><br>
+    The next day, he spied a peacock in a bush. It turned away from him, showing a thousand open eyes. He realized that he had seen not one soul in these great gardens. Still, he pressed on.
+    <br><br>
+    The thief continued to walk. He lost track of the days. He felt as if he was walking backwards. His only companion was his mirrored reflection in the endless brilliant fountains. Flowers of many colors leered on every side. One day, looking down at his feet, he noticed that the grass had turned to brick. He had reached the foothills of the palace itself, a winding maze of alleys and outposts. Glancing up, he saw a small figure dart into a side street; when he gave chase, he found only a dead end.
+    <br><br>
+    He climbed up spiral staircases, through reverberant halls, across countless moats and bridges, and past stained glass windows most ornate. The moon above waxed and waned again and again, but the thief ignored his hunger and thirst. His mind was set on his quarry. 
+    <br><br>
+    With little strength left, he arrived at the base of the greatest tower. He climbed its great stone steps, hewn of obsidian, and passed through double doors taller than the tallest tree. Therein lay the throne room. A beam of light, flaked with dust, shone on the throne of the emperor, but the man himself was nowhere to be seen. Upon the throne instead lay the crown.
+    <br><br>
+    The thief rushed to pick it up, stumbling over his own ragged cloak. He looked down at his hands, and noticed for the first time how wizened and knotted their backs were. He took the crown off of the throne, placed it upon his head, and collapsed into the seat. His eyes closed like heavy doors. He felt that he would be sitting there for a long time to come.
+    <br><br>
+    <i>Written September 2024</i>`),
 ]
 
 const url = "https://www.otherseas1.com/diary"
@@ -252,7 +277,7 @@ function goNew() {
 }
 
 function goOld() {
-    if ((page-1) > 0) {
+    if (page > 0) {
         page--; 
         reload(page);
         init();
