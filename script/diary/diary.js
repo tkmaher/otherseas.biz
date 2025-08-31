@@ -182,11 +182,11 @@ const entries = [
     <br><br>
     He climbed up spiral staircases, through reverberant halls, across countless moats and bridges, and past stained glass windows most ornate. The moon above waxed and waned again and again, but the thief ignored his hunger and thirst. His mind was set on his quarry. 
     <br><br>
-    With little strength left, he arrived at the base of the greatest tower. He climbed its great stone steps, hewn of obsidian, and passed through double doors taller than the tallest tree. Therein lay the throne room. A beam of light, flaked with dust, shone on the throne of the emperor, but the man himself was nowhere to be seen. Upon the throne instead lay the crown.
+    With little strength left, he arrived at the base of the greatest tower. He climbed its great stone steps, hewn of obsidian, and passed through double doors taller than the tallest tree. Therein lay the throne room. A beam of light, flecked with dust, shone upon the throne of the emperor, but the man himself was nowhere to be seen. Upon the throne instead lay the crown.
     <br><br>
     The thief rushed to pick it up, stumbling over his own ragged cloak. He looked down at his hands, and noticed for the first time how wizened and knotted their backs were. He took the crown off of the throne, placed it upon his head, and collapsed into the seat. His eyes closed like heavy doors. He felt that he would be sitting there for a long time to come.
     <br><br>
-    <i>Written September 2024</i>`),
+    <i>September 2024</i>`),
 ]
 
 const url = "https://www.otherseas1.com/diary"
