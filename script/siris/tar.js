@@ -2,6 +2,7 @@ const canvas = document.getElementById('canv');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const context = canvas.getContext('2d');
+context.filter = 'blur(3px)';
 const centerX = canvas.width / 2;
 const centerY = canvas.height / 2;
 const radius = 20;
