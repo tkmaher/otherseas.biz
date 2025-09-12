@@ -391,7 +391,7 @@ br {
 
 
 
-@media only screen and (min-width: 768px) {
+  @media (any-pointer: fine) {
     .siris {
         display: flex;
         flex-direction: row;
@@ -411,7 +411,7 @@ br {
     }
 }
 
-@media only screen and (max-width: 769px) {
+@media (any-pointer:none), (any-pointer:coarse) {
     .siris {
         font-size: 2vh;
         display: flex;
@@ -423,7 +423,7 @@ br {
         width: 90%;
     
         .images {
-            max-width: 20vh;
+            max-width: 20vw;
             width: 100%;
             height: auto;
             margin-top: 2vh;
