@@ -398,36 +398,36 @@ br {
         font-size: 1.6vh;
     }
     .column {
-        padding: 5vh;
+        padding: 1.4vh;
         flex: 33%;
         width: 30vh;
     
         .images {
             max-width: 30%;
             height: auto;
-            margin-top: 2vh;
-            margin-bottom: 2vh;
+            margin-top: 1.4vh;;
+            margin-bottom: 1.4vh;;
         }
     }
 }
 
 @media (any-pointer:none), (any-pointer:coarse) {
     .siris {
-        font-size: 2vh;
+        font-size: 1.4vh;
         display: flex;
         flex-direction: column;
     }
     .column {
-        padding: 2vh;
+        padding: 1.4vh;
         flex: 50%;
-        width: 90%;
+        width: 100%;
     
         .images {
             max-width: 20vw;
             width: 100%;
             height: auto;
-            margin-top: 2vh;
-            margin-bottom: 2vh;
+            margin-top: 1.4vh;;
+            margin-bottom: 1.4vh;;
         }
     }
 }
