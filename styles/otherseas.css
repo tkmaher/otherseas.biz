@@ -420,7 +420,7 @@ br {
     .column {
         padding: 1.4vh;
         flex: 50%;
-        width: 100%;
+        width: auto;
     
         .images {
             max-width: 20vw;
