@@ -27,19 +27,7 @@ function sleep(ms) {
 
 var clouds = document.getElementById("clouds");
 var parent = document.getElementById("parent");
-var quotes = ['“I have drawn things since I was six. All that I made before the age of sixty-five is not worth counting. At seventy-three I began to understand the true construction of animals, plants, trees, birds, fishes, and insects. At ninety I will enter into the secret of things. At a hundred and ten, everything--every dot, every dash--will live\” ― Hokusai Katsushika',
-'An fruit that grows underground that sees neither night nor day and knows not suffering; a future of mediocre gray skies and boring nothings; a child born without eyes into a hostile world of Mario-style spike gauntlets.',
-'There is a Light burning that is leering and Snarling, it is intense, not-lovely, and insane. The Light glows in places where no other light would glow, it flickers without any wind, and refuses to go out even under the most-torrential-down-pour. It is insane; it eliminates thought and mind.',
-'~Otherseas1.com~',
-'The clockwork hours',
-'Blow through',
-'The amazing fighters',
-'Ontil',
-'Hero\'s village',
-'The rain song',
-'Wounded pylon',
-'The lingering echoes of sleep and this raining morning',
-'The fallen raindrops are the diary of the sky',
+var quotes = ['To', 'An', 'Echo', 'We', 'Bend', 'Wind', 'Dark', 'For', 'S', '@'
 ]
 var colors = ['#94c2e5','#808684', '#615756', '#000011', '#539cd8'];
 

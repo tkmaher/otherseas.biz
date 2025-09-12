@@ -388,3 +388,47 @@ br {
     pointer-events:none; 
     opacity: 1;
   }
+
+
+
+@media only screen and (min-width: 768px) {
+    .siris {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.6vh;
+    }
+    .column {
+        padding: 5vh;
+        flex: 33%;
+        width: 30vh;
+    
+        .images {
+            max-width: 30%;
+            height: auto;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+        }
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .siris {
+        font-size: 2vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .column {
+        padding: 2vh;
+        flex: 50%;
+        width: 90%;
+    
+        .images {
+            max-width: 20vh;
+            width: 100%;
+            height: auto;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+        }
+    }
+}
+
