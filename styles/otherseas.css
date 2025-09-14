@@ -409,6 +409,14 @@ br {
             margin-bottom: 1.4vh;;
         }
     }
+
+    .sirisvid {
+        flex: 100%; 
+        position: relative; 
+        aspect-ratio: 16 / 9; 
+        align-items: flex-start;
+        padding: 1.4vh;
+    }
 }
 
 @media (any-pointer:none), (any-pointer:coarse) {
@@ -429,13 +437,14 @@ br {
             margin-bottom: 1.4vh;;
         }
     }
+
+    .sirisvid {
+        flex: 100%; 
+        position: relative; 
+        aspect-ratio: 16 / 9; 
+        align-items: flex-start;
+    }
 }
 
 
-.sirisvid {
-    flex: 100%; 
-    position: relative; 
-    aspect-ratio: 16 / 9; 
-    align-items: flex-start;
-    padding: 1.4vh;
-}
+
