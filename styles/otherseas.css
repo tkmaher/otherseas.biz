@@ -420,7 +420,6 @@ br {
     .column {
         padding: 1.4vh;
         flex: 50%;
-        width: auto;
     
         .images {
             max-width: 20vw;
@@ -432,3 +431,11 @@ br {
     }
 }
 
+
+.sirisvid {
+    flex: 100%; 
+    position: relative; 
+    aspect-ratio: 16 / 9; 
+    align-items: flex-start;
+    padding: 1.4vh;
+}
