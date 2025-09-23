@@ -6,117 +6,75 @@
         <title>CV</title> 
     </head>
     
-    <div style="position: fixed; right: 5%; bottom: 5%;">
-        <video id="fish" width="240" height="160">
-            <source src="../images/cv/fishmov0001-0050.mp4" type="video/mp4">
-        </video>
-    </div>
 
-    <body style="background-color: black; overflow: auto; margin-bottom: 10vh;">
-        <div style="margin: 5vh;
-        background-image: url('../images/cv/paper.png'); background-repeat: no-repeat; background-size: auto auto;
-        color: white; height: 100vh; font-size: 2vh;">
+    <body>
+        <div id="sidebar"></div>
+        <div class="main">
             <mark>CV</mark>
             ​<br>
             <br>
 
-            <span class="collapse" id="0">Work Experience : [+]</span>
-            <br>
+            <span class="collapse">Professional Experience</span>
             <div class="collapseDiv" style="display:none;">
-                <p style="margin-left: 50px;"> 
-                : Visteon Corporation - Technical Design Intern (2023)
-                ​<br>
-                : Under-Inquisitor @ Flower Research Department (2002-present)
-                </p>
+                <br>
+                Visteon Corporation - Technical Design Intern (2023)
             </div>
-            
-            <span class="collapse" id="1">Projects : [+]</span>
             <br>
+            <span class="collapse">Projects</span>
             <div class="collapseDiv" style="display:none;">
-                <p style="margin-left: 50px;"> 
-                :  <a href="../proj/everything/index.html" class="button">Everything (2025)</a> - Audio visualizer for event
+                <br>
+                <a href="../proj/everything/index.html" class="button">Everything (2025)</a> - Audio visualizer for event
                 ​<br>
-                :  <a href="../proj/blenderDJ/index.html" class="button">BlenderDJ (2024)</a> - Audio visualizer for performance
+                <a href="../proj/blenderDJ/index.html" class="button">BlenderDJ (2024)</a> - Audio visualizer for performance
                 ​<br>
-                : <a href="../proj/tree-notation/index.html" class="button">Tree-notation I (2022)</a> - audiovisual music program
+                <a href="../proj/the ruined temple/index.html" class="button">The Ruined Temple (2024)</a> - Client-side world simulation
                 ​<br>
-                :  <a href="../proj/the ruined temple/index.html" class="button">The Ruined Temple (2024)</a> - JavaScript world simulation
-                </p>
+                <a href="../proj/tree-notation/index.html" class="button">Tree-notation I (2022)</a> - Audiovisual music program
+                
             </div>
-
-            <span class="collapse" id="2">Skills : [+]</span>
             <br>
+            <span class="collapse">Skills</span>
             <div class="collapseDiv" style="display:none">
-                <p style="margin-left: 50px;"> 
-                Technical :
-                <br>
-                <p style="margin-left: 100px;"> 
-                    : HTML & CSS & JavaScript
-                    <br>
-                    : C++
-                    <br>
-                    : C#
-                    <br>
-                    : Python programming environment
-                    <br>
-                    ​: SQL
-                </p>    
-                <p style="margin-left: 50px;"> 
-                    Software :
-                    <br>
-                    <p style="margin-left: 100px;"> 
-                    : Adobe Photoshop
-                    <br>
-                    : Blender 3.0 
-                    <br>
-                    : Ableton Live 
-                    <br>
-                    : Logic Pro X
-                    <br>
-                    : Microsoft Suite
-                    <br>
-                    : Unity game engine​
-                    </p>
-                </p>
+                <!--todo-->
             </div>
-
-            <span class="collapse" id="3">Education : [+]</span>
             <br>
+            <span class="collapse">Education</span>
             <div class="collapseDiv" style="display:none">
-                <p style="margin-left: 50px;"> 
-                    : University of Michigan - BS Computer Science (Grad. 2025)
-                </p>
+                <br>
+                University of Michigan - BS Computer Science (Grad. 2025)
             </div>
-
-            <span class="collapse" id="4">Associations : [+]</span>
             <br>
+            <span class="collapse">Associations</span>
             <div class="collapseDiv" style="display:none">
-                <p style="margin-left: 50px;"> 
-                : <a class="button" href="https://www.memco.club/" target="_blank">Michigan Electronic Music Collective</a> - President (2024/2025)
-                </p>
+                <br>
+                <a class="button" href="https://reduxrad.io/" target="_blank">Redux</a> - Front-end development (2025 - )
+                <br>
+                <a class="button" href="https://www.memco.club/" target="_blank">Michigan Electronic Music Collective</a> - President (2024/2025)
             </div>
-            <span class="collapse" id="5">See also : [+]</span>
             <br>
+            <span class="collapse">See also</span>
             <div class="collapseDiv" style="display:none">
-                <p style="margin-left: 50px;"> 
-                : <a href="../about/index.html" class="button">About</a>
                 <br>
-                : <a href="mailto:os@otherseas1.com" target="_blank" class="button">Contact</a>
+                <a href="../about/index.html" class="button">About</a>
                 <br>
-                : <a href="https://github.com/tkmaher?tab=repositories" target="_blank" class="button">GitHub</a>
+                <a href="mailto:os@otherseas1.com" target="_blank" class="button">Contact</a>
                 <br>
-                : <a href="../social/index.html" class="button">Social</a></a>
-                </p>
+                <a href="https://github.com/tkmaher?tab=repositories" target="_blank" class="button">GitHub</a>
+                <br>
+                <a href="../social/index.html" class="button">Social</a>
+                
             </div>
-            <br>
-            <br>
-            <br>
+            <br><br>
+            <div>
+                <video id="fish" style="width: 30vh; height: auto;">
+                    <source src="../images/cv/fishmov0001-0050.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
-
-        <a class="button" style="bottom:2vh; right:1vh; position: fixed" href="../index.html">[Home]</a>
     </body>
 
     <script src="../script/cv/cv.js"></script>
+    <script src="../script/sidebar.js"></script>
     <script src="../script/collapse.js"></script>
 
 </html>

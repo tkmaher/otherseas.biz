@@ -11,74 +11,12 @@
     </head>
     
 
-    <body style="background-color: white; color: #616161;">
-        <div style="pointer-events: none; width: 100%; height: 110%; top:-10%; position: absolute; background-size: 250vh auto; z-index: -1;"></div>
-        <div style="pointer-events: none; width: 100%; height: 110%; top:-10%; position: absolute; background-size: 2vh auto; z-index: -1;"></div>
-
-        <div id="items" style="margin: 2vh; text-align: left; background-color: white; width: 30vh; border: 2px dotted gray; padding: 10px; position: absolute; bottom: 0;">
-
-            <span class="collapse" id="1">Info : [+]</span> <br> 
-            <div class="collapseDiv" style="display:none; margin-left: 50px;">
-                <br>
-                <a class="button" href="about/index.html">: about</a> <br> 
-                <a class="button" href="cv/index.html">: CV</a> <br> 
-                <a class="button" href="halloffame/index.html">: Links</a> <br> 
-                <a class="button" href="poetics/index.html">: Poetic's</a> <br> 
-                <a class="button" href="putrescense/index.html">: putrescense</a> <br> 
-                <a class="button" href="lostfound/index.html">: lost && found</a> <br> 
-                <a class="button" href="diary/index.html">: Diaries</a> <br> 
-                <br>
-            </div>
-            <span class="collapse" id="2">Projects : [+]</span> <br> 
-            <div class="collapseDiv" style="display:none; margin-left: 50px;">
-                <br>
-                <a class="button" href="siris/index.html">: Siris</a> <br> 
-                <a class="button" href="proj/everything/index.html">: everything</a> <br> 
-                <a class="button" href="proj/blenderDJ/index.html">: BlenderDJ</a> <br> 
-                <a class="button" href="proj/the ruined temple/index.html">: the ruined temple</a> <br> 
-                <a class="button" href="proj/tree-notation/index.html">: Tree-notation I</a> <br> 
-                <a class="button" href="proj/doors/index.html">: doors</a> <br> 
-                <br>
-            </div>
-            <span class="collapse" id="3">Art : [+]</span> <br> 
-            <div class="collapseDiv" style="display:none; margin-left: 50px;">
-                <br><a class="button" href="art+music/2d.html">: Drawings</a> <br> 
-                <a class="button" href="art+music/3d.html">: Renders</a> <br> 
-                <a class="button" href="art+music/other.html">: other/real life</a> <br> 
-                <a class="button" href="art+music/games.html">: games</a> <br> 
-                <a class="button" href="art+music/Music.html">: Music</a> <br> 
-            </div>
-            <br>
-            <a class="button" href="shoppe/index.html">Shoppe</a><br><br>
-            <a class="button" href="mailto:os@otherseas1.com" target="_blank">Contact</a><br> 
-            <a class="button" href="https://github.com/tkmaher?tab=repositories" target="_blank">GitHub</a><br> 
-            <a class="button" href="social/index.html">SOCIAL</a> 
-
-        </div>
-
+    <body>
+        <div id="sidebar"></div>
     </body>
-
-
     
-   
-
-    <a class="button" style="bottom:2vh; right:1vh; position: absolute" id="home" href="index.html">[Home]</a>
-    <div class="button" style="bottom:6vh; right:1vh; position: absolute" id="openInfo">[?]</div>
-    <div class="popup" id="thesis">
-      <a style="color: #616161">[Information]<span class="button" style="float:right;" id="closeInfo">[X]</span><br> <br></a>
-      <a style="color:white">www.otherseas1.com<br>&<br>www.the otherseas1.com<br>& www the otherseas com</a>
-    </div>
-    <script src="script/popup.js"></script>
-    
+    <script src="./script/sidebar.js"></script>
     <script src="./script/collapse.js"></script>
 
-    <script>
-        
-        var fonts = ["Garamond, serif","Noto Sans Mono","'Courier New', monospace","'Brush Script MT', cursive","'Trebuchet MS', sans-serif", "'Helvetica', serif"];
-        addEventListener("mousemove", (event) => {
-            num = Math.floor((event.clientX + event.clientY) / 50) % fonts.length;
-            document.getElementById("home").style.fontFamily = fonts[num];
-            console.log(num);
-        });
-    </script>
+
 </html>

@@ -14,15 +14,48 @@ q {
     pointer-events: all;
 }
 
-body {
-    font-family: 'Courier New';
-    font-size: 2vh;
-    color: #e9eef0;
-    background-color:#393939;
-    overflow: hidden; /* Hide scrollbars */
-    margin: 0px;
-    padding: 0px;
-    transition: background-color 1000ms linear;
+@media (any-pointer:fine) {
+    body {
+        display: flex;
+        flex-direction: row;
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 300;
+        font-size: 2vh;
+        color: black;
+        background-color: white;
+
+        margin: 0px;
+        padding: 0px;
+        transition: background-color 1000ms linear;
+        margin: 2vh;
+    }
+}
+
+@media (any-pointer:none), (any-pointer:coarse) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 300;
+        font-size: 2vh;
+        color: black;
+        background-color: white;
+
+        margin: 0px;
+        padding: 0px;
+        transition: background-color 1000ms linear;
+        margin: 2vh;
+    }
+
+}
+
+.main {
+    flex: 1;
+}
+
+#sidebar {
+    flex: 0.1;
 }
 
 .door {
@@ -78,9 +111,31 @@ body {
     text-decoration: underline;
 }
 
+.home {
+    
+    bottom:0vh; 
+    left:2vh; 
+    position: fixed;
+
+}
+
+.home > a {
+    color: inherit;
+    text-decoration: none;
+}
+.home > a:hover {
+    text-decoration: underline;
+}
+
+
 .collapse {
     color: inherit;
     text-decoration: none;
+}
+
+.collapseDiv {
+    display:none; 
+    margin-left: 1vh;
 }
 
 .collapse:hover {
@@ -171,10 +226,8 @@ body {
     text-align: center;
     background: var(--url) 50% 50% no-repeat;
     background-size: var(--w) var(--h);
-    border-radius: 10%;
     width: 2vw;
     height: 2vw;
-    filter: drop-shadow(5px 5px 0px lightgray);
     transition: background-size 0.5s;
     will-change: filter;
 }
@@ -343,11 +396,8 @@ br {
 .blogPost {
     opacity: 100; 
     max-width: 100vh; 
-    font-size: 2vh; 
-    border: 2px dotted gray; 
-    background-color: white; 
-    padding: 10px;
     word-wrap:break-word;
+    
 }
 
 .blogBlock {
@@ -395,7 +445,6 @@ br {
     .siris {
         display: flex;
         flex-direction: row;
-        font-size: 1.6vh;
     }
     .column {
         padding: 1.4vh;
@@ -421,7 +470,6 @@ br {
 
 @media (any-pointer:none), (any-pointer:coarse) {
     .siris {
-        font-size: 1.4vh;
         display: flex;
         flex-direction: column;
     }
