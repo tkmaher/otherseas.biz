@@ -55,7 +55,7 @@ q {
 }
 
 #sidebar {
-    flex: 0.1;
+    flex: 0.15;
 }
 
 .door {
@@ -249,6 +249,7 @@ mark {
 
 .sidebar {
     transition: 0.5s all ease;
+    gap: 10px;
 }
 
 #game {
