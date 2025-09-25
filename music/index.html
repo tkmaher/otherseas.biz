@@ -3,46 +3,17 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../styles/otherseas.css">
-        <title>music</title> 
-        <script src="../script/squarize.js"></script>
-        <script src="../script/artmusic/musicURL.txt"></script>
+        <title>Music</title> 
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     </head>
-
-    <div class="popup" id="imgzoom"style="max-width: 100vh; color: #616161; z-index: 1000;">
-        <a style="background-color: rgb(237, 237, 237)"><span id="title"></span><span class="button" style="float:right; color: #616161" id="closeimg">[X]</span><br></a>
-        <a style="background-color: rgb(237, 237, 237);"><img draggable="false" style="max-width: 100%; max-height: 80vh;" id="enlarged"></a>
-        <a class="button" style="text-decoration: underline; background-color: rgb(237, 237, 237);" id="link" target="_blank" href="link">listen</a>
-    </div>
-
-    <div style="bottom:6vh; right:1vh; position: fixed;"><a class="button" id="left">[<]</a><a class="button" id="right">[>]</a></div>
-    <p class="home">
-    <a href="../index.html">[Home]</a>
-</a>
-
-
-    <body style="background-color: white; color: #616161; overflow: auto; margin-bottom:5vh;">
-        <div style="text-align: center;">
-            <iframe src="https://player.vimeo.com/video/975568249?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="200" height="356" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="leaf"></iframe>
+    <body>
+        <div id="sidebar"></div>
+        <div id="main">
+            <i>coming soon</i>
         </div>
-        <div id="parent" draggable="false" class="cardParent"></div>
-        <div style="text-align: center;">
-            <iframe src="https://player.vimeo.com/video/975568126?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="200" height="356" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="leaf"></iframe>
-        </div>
-        <script>
-            squarize(text, 5, desc);
-        </script>
     </body>
 
-
-
-    <div style="text-align:center; font-family:'Garamond'; font-style: italic;">
-        <a style="color:rgb(187, 187, 187);"></a> <br>
-        <a class="button" style="color:rgb(187, 187, 187);" href="https://otherseas.bandcamp.com/">https://otherseas.bandcamp.com/</a> <br>
-        <a class="button" style="color:rgb(187, 187, 187);" href="https://soundcloud.com/user-238041402">https://soundcloud.com/user-238041402</a> <br>
-        <a class="button" style="color:rgb(187, 187, 187);" href="https://vimeo.com/user222165897">music videos</a> 
-    </div>
-
-
+    <script src="../script/sidebar.js"></script>
 
 
 </html>

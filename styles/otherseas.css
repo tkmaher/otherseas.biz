@@ -491,11 +491,26 @@ li {
     flex: 0 0 30em;
     align-self: flex-start;
     aspect-ratio: 16 / 9;
-    max-width: 100vh; 
+    width: 80vh;
+    max-width: 100%; 
 }
 
+@media (any-pointer:none), (any-pointer:coarse) {
+    #sirisdesc {
+        margin-top: 2vh;
+    }
+}
+
+@media (any-pointer:fine) {
+    #sirisdesc {
+        margin-left: 2vh;
+    }
+}
+
+
+
 .images {
-    max-width: 8em;
+    max-width: 6em;
     height: auto;
 }
 

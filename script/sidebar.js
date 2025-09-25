@@ -1,5 +1,6 @@
 document.getElementById("sidebar").innerHTML = `
             <div id="9items">
+                <a class="button" href="/index.html">otherseas1.com</a> <br><br>
                 <span class="collapse">Info</span> <br> 
                 <div class="collapseDiv" style="display:none">
                     <a class="button" href="/about/index.html">about</a> <br> 
