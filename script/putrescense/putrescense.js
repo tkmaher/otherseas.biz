@@ -1,5 +1,7 @@
 var img = document.getElementById("src");
 var parent = document.getElementById("parent");
+var parentbook = document.getElementById("parentbook");
+
 var current = 0;
 
 function sleep(ms) {
@@ -19,7 +21,7 @@ async function spark() {
 }
 
 function pageturn(e) {
-  if (e.clientX > (window.innerWidth / 2)) {
+  if (e.offsetX > (parentbook.clientWidth / 2)) {
     var src = "../images/putrescense/" + (current + 1) + ".png";
     if (current < 11) {
       img.src = src;
