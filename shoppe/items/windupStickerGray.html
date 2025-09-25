@@ -6,40 +6,33 @@
         <title>Windup WaterToy sticker {gray}</title> 
     </head>
 
-    <body style="background-color: white; color: #616161; margin: 5vh; overflow-y: auto;">
-
-      <div style="z-index: -1; font-family: 'Snell Roundhand', cursive; position: fixed; width: 100vh; max-height: 80vw; font-size: 350px; opacity: 20%; bottom:10%; left:5%; pointer-events: none;">
-        Shoppe
+    <body>
+      <div id="sidebar">
+        <a class="button" href="../index.html">Back</a>
       </div>
+      <div id="main">
 
 
-      <div id="carousel" style="right: 0%; top:50%; width: 50vh; max-width: 100%; height: 50vh; float: right;">
-        <img id="spotlight" style="float: left; width:100%; height: auto; z-index: -1;" src="../../images/shoppe/stickertoy1.png">
-        <div class="carouselIMG" style="background-image: URL(../../images/shoppe/stickertoy1.png);"></div>
-        <div class="carouselIMG" style="background-image: URL(../../images/shoppe/stickertoy3.png);"></div>
-        <div class="carouselIMG" style="background-image: URL(../../images/shoppe/stickertoy2.png);"></div>
-      </div>
+        <div id="carousel">
+          <img id="spotlight" src="../../images/shoppe/stickertoy1.png">
+          <div class="carouselIMG" style="background-image: URL(../../images/shoppe/stickertoy1.png);"></div>
+          <div class="carouselIMG" style="background-image: URL(../../images/shoppe/stickertoy3.png);"></div>
+          <div class="carouselIMG" style="background-image: URL(../../images/shoppe/stickertoy2.png);"></div>
+        </div>
 
-      <span id="desc" style="height: 100%; text-align: left; justify-content:center;">
-        <p style="font-family: 'Helvetica Neue'; font-size: 5vh;"><b>Windup WaterToy Sticker <a style="color: lightgray">{gray}</a></b></p>
-        <p >A faded memory of a toy now distant</p>
-        <p><i>2" x 2.6" glossy</i></p>
-        <p>$<span id="price">4</span></p>
-        <!--<p>Qty: <a id="-qty" class="button">▼</a><span id="qty"> 1 </span><a id="+qty" class="button">▲</a></p>-->
-        <!--<a class="button" id="addtocart" style=" outline: 2px dotted gray; font-size: 3vh;">Add to cart</a><br><br>
-        <a class="button" style=" outline: 2px dotted gray; font-size: 3vh;" href="../checkout.html">Checkout</a>-->
-        <a style="outline: 2px dotted gray; font-size: 3vh;" class="button" href="https://www.paypal.com/ncp/payment/94GQ2AGLARLDW">Purchase</a>
-      </span>
+        <span id="shopdesc">
+          <p style="font-size: 5vh;"><b>Windup WaterToy Sticker <a style="color: lightgray">{gray}</a></b></p>
+          <p >A faded memory of a toy now distant.</p>
+          <p><i>2" x 2.6" glossy</i></p>
+          <p>$<span id="price">4</span></p>
+    
+          <a style="font-size: 3vh;" class="button" href="https://www.paypal.com/ncp/payment/94GQ2AGLARLDW">Purchase</a>
+        </span>
 
 
-      <a class="button" style="bottom:6vh; right:1vh; position: fixed" href="../index.html">[Back]</a>
-      <a class="button" style="bottom:2vh; right:1vh; position: fixed" href="../../index.html">[Home]</a>
-      <!--<a class="button" style="top:5vh; right:5vh; position: fixed" href="../cart.html">[Cart(<span id="cartItems"></span>)]</a>-->
+      </div>  
     </body>
-    <!--<script>
-      document.getElementById("cartItems").innerHTML = localStorage.getItem("cartcount");
-    </script>-->
-
+    <script src="../../script/sidebar.js"></script>
     <script src="../../script/shoppe/itemManager.js"></script>
 
 </html>

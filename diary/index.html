@@ -8,14 +8,17 @@
     </head>
 
     <body>
-        <div >[<a class="button" id="grid">Grid view</a>]<br></div>
-        <div id="scroller">[<a class="button" id="new">Newer</a> / <a class="button"  id="old">Older</a>]<br></div>
-        <br>
-        <div id="parent"></div>
-        <div id="gridparent" class="gridparent" style="display: none; max-width: 10vh;"></div>
-        <br>
+        <div id="sidebar">
+            <div><a class="button" id="grid">Grid view</a><br></div>
+            <div id="scroller"><a class="button" id="new">Newer</a><br><a class="button"  id="old">Older</a><br></div><br>
+        </div>
+        <div id="main">
+            <div id="parent"></div>
+            <div id="gridparent" class="gridparent" style="display: none; max-width: 10vh;"></div>
+        </div>
     </body>
 
+    <script src="../script/sidebar.js"></script>
     <script src="../script/diary/diary.js"></script>
 
 </html>

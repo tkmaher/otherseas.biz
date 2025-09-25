@@ -10,23 +10,25 @@
 
     <body>
 
-      <div style="height: 60vh; width: 60vh; max-width: 40%;">
-        <div id="clouds" style="position: absolute; top: 50%; left: 50%; height: 60vh; width: 60vh; max-width: 60vw; max-height: 60vw; transform: translate(-50%,-50%); 
-        background-image: url('../images/poetics/sky.png'); background-size: 100vh 100vh;">
-          <img style="width: 100%; position: absolute;" src="../images/poetics/window.png">
-        </div>
+      <div id="sidebar">
+        <a class="button" id="mute">Unmute</a>
       </div>
+      <div id="main">
+        <div style="height: 60vh; width: 60vh; max-width: 40%;">
+          <div id="clouds" style="position: absolute; top: 50%; left: 50%; height: 60vh; width: 60vh; max-width: 60vw; max-height: 60vw; transform: translate(-50%,-50%); 
+          background-image: url('../images/poetics/sky.png'); background-size: 100vh 100vh;">
+            <img style="width: 100%; position: absolute;" src="../images/poetics/window.png">
+          </div>
+        </div>
 
-      <div id="parent" style="height: 100%; width: 100%; top:0%; white-space: nowrap; position: absolute;"></div>
-      
-      <p class="home">
-        <a class="button" id="mute">[Unmute]</a>
-        <br>
-        <a href="../index.html">[Home]</a>
-      </p>
+        <div id="parent" style="height: 100%; width: 100%; top:0%; white-space: nowrap; position: absolute;"></div>
+        
+      </div>
 
     </body>
     
+    <script src="../script/sidebar.js"></script>
     <script src="../script/poetics/poetics.js"></script>
+
 
 </html>

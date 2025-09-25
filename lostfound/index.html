@@ -10,21 +10,20 @@
 
     </head>
     <body>
-        <div style="position: absolute; text-align: center; left: 50%; scale: 1;"> 
-            <div style="position: absolute; right:5vw;" id="lostParent" draggable="false"><a style="font-size: 5vh;">Lost:</a><br></div>
-            <div style="position: absolute; left:5vw;" id="foundParent" draggable="false"><a style="font-size: 5vh;">Found:</a> <br></div>
+        <div id="sidebar">
         </div>
-        <br>
-        <br>
+        <div id="main">
+            <div style=" text-align: center; left: 50%; scale: 1; display: flex;"> 
+                <div style="flex:0.5" id="lostParent" draggable="false"><a style="font-size: 5vh;">Lost:</a><br></div>
+                <div style="flex:0.5" id="foundParent" draggable="false"><a style="font-size: 5vh;">Found:</a> <br></div>
+            </div>
+        </div>
     </body>
 
     <script>
         itemize("",desc,"lostfound");
     </script>
 
-    <p class="home">
-        <a href="../index.html">[Home]</a>
-    </p>
-
+    <script src="../script/sidebar.js"></script>
 
 </html>

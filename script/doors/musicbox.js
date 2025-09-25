@@ -13,13 +13,13 @@ function sleep(ms) {
 
 function mute() {
   var elt = document.getElementById("mute");
-  if (elt.innerHTML == "[Unmute]") {
-    elt.innerHTML = "[Mute]";
+  if (elt.innerHTML == "Unmute") {
+    elt.innerHTML = "Mute";
     bg.muted = false;
     bg.play();
     audio.muted = false;
   } else {
-    elt.innerHTML = "[Unmute]";
+    elt.innerHTML = "Unmute";
     bg.muted = true;
     audio.muted = true;
   }

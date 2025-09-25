@@ -1,4 +1,4 @@
-var desc = ["innocent", "boring", "crazy", "amazing", "supine"];
+var desc = ["innocent", "boring", "crazy", "amazing", "supine", "old", "good", "real"];
 var label = document.getElementById("desc");
 var tick = 0;
 

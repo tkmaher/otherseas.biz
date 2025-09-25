@@ -264,7 +264,7 @@ function swap() {
 
 function reload(newpage) {
     newUrl = url + "?p=" + newpage.toString();
-    window.history.pushState({}, "", newUrl);
+    //window.history.pushState({}, "", newUrl); // todo: fix this and have better sharing
     document.title = "Diary | " + entries[newpage].title;
 }
 

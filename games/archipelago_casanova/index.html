@@ -27038,11 +27038,15 @@ exports.hackOptions = hackOptions;
 <!-- DOCUMENT BODY -->
 
 <body onload='startExportedGame()'>
-<!-- GAME CANVAS -->
-<canvas id='game'></canvas>
+    <div id="sidebar"></div>
+    <!-- GAME CANVAS -->
+    <div id="main">
+        <canvas id='game'></canvas>
+    </div>
 </body>
 
+<script src="../../script/sidebar.js"></script>
+
 <link rel="stylesheet" href="../../styles/otherseas.css">
-<a class="button" style="bottom:2vh; right:1vh; position: absolute; z-index: 1000;" href="../../index.html">[🏡]</a>
 
 </html>

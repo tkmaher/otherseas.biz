@@ -18677,8 +18677,13 @@ function getExitParams(parameters) {
 
 <!-- DOCUMENT BODY -->
 <body onload='startExportedGame()'>
-<!-- GAME CANVAS -->
-<canvas id='game'></canvas>
+  <div id="sidebar"></div>
+  <!-- GAME CANVAS -->
+  <div id="main">
+      <canvas id='game'></canvas>
+  </div>
+
+<script src="../../script/sidebar.js"></script>
 
 <audio id="Perlon -  Ricardo Villalobos - Frank Mueller Melodram-192.mp3" src="Perlon -  Ricardo Villalobos - Frank Mueller Melodram-192.mp3" autoplay loop></audio>
 
@@ -18694,6 +18699,5 @@ document.addEventListener('keydown', unmute);
 </body>
 
 <link rel="stylesheet" href="../../styles/otherseas.css">
-<a class="button" style="bottom:2vh; right:1vh; position: absolute; z-index: 1000;" href="../../index.html">[Home]</a>
 
 </html>

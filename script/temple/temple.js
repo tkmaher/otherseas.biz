@@ -1817,15 +1817,6 @@ function wheatfield(frame, tile) {
 
 //EventListeners
 
-//Begins the simulation
-function beginGame(e) {
-	document.getElementById('title').remove();
-	paused = false;
-	hover(e);
-}
-
-document.getElementById("Go").addEventListener("click", beginGame);
-
 function historyBack(e) {
 	if (gridSystem.historyPosition != 0) {
 		gridSystem.NPChistory[gridSystem.historyPosition] = gridSystem.npcLayer;
@@ -1858,10 +1849,10 @@ function pause(e) {
 	var p = document.getElementById("pause");
 	if (paused == false) {
 		paused = true
-		p.innerHTML = "[Play]";
+		p.innerHTML = "Play";
 	} 	else {
 		paused = false
-		p.innerHTML = "[Pause]";
+		p.innerHTML = "Pause";
 	}
 } 
 
@@ -1928,34 +1919,13 @@ function sleep(ms) {
 
 async function loop() {
 	var elt;
-	var icons = ["🚡", "🕕", "🇷🇸", "🉑", "📂","🌧️", "👽", "🍋", "🤒", "🤡", "🍫", "🦋", "💐", "🤸", "🕳️", "🗯", "💭", "💣", "💥", "💫", "🤣", "😇", "😵‍💫", "❤️", "👩‍🚀", "🌕", "🎭", "👾", "🍳", "🏵️", "🍧", "🔗", "🕋",]
 	var loadingTick = 0;
-	var parent = document.getElementsByClassName("titlepage")[0];
+	paused = false;
 
 	gridSystem.render(empty, 0);
 	gridSystem.history.push(JSON.parse(JSON.stringify(gridSystem.matrix)));
 	gridSystem.NPChistory.push([]);
 	while(true) {
-		if(parent && !isMobile) {
-			c = document.createElement("canvas");
-			c.id = "emoji" + loadingTick % 40;
-			c.className += "emojiParticle";
-			var speed = Math.random() * 5 + 2;
-			c.style.transition = "top " + speed + "s linear, opacity " + speed + "s";
-			c.style.top = window.innerHeight + "px"
-			c.style.left = (Math.random() * 100) + "%";
-			parent.appendChild(c);    
-			var ctx = c.getContext("2d");
-			ctx.font = (Math.random() * 50 + 50 - (speed * 4)) + "px serif";
-			ctx.fillText(icons[Math.floor(Math.random() * icons.length)], 0, 100);
-			c.style.top = "-20%";
-			c.style.opacity = "0";
-			loadingTick++;
-			elt = document.getElementById("emoji" + (loadingTick % 40));
-			if (elt) {
-				elt.remove();
-			}
-		}
 		await sleep(300);
 		if (!paused) {
 			tick++;
@@ -1965,4 +1935,7 @@ async function loop() {
 	}
 }
 
-loop();
+if (!isMobile)
+	loop();
+else
+	document.getElementById("warning").innerHTML = "<em>Unavailable on mobile devices :(</em>"

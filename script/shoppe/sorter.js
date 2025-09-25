@@ -1,16 +1,5 @@
 var check = document.getElementById("checkboxes");
 
-if (isMobile) {
-  check.style.position = "fixed";
-  check.style.zIndex = '1000';
-  check.style.left = '50%';
-  check.style.top = '50%';
-  check.style.bottom = "auto";
-  check.style.width = "90%";
-  check.style.transform = "translate(-50%,-50%)";
-  openSort();
-}
-
 function openSort(e) {
   if (check.style.opacity == '100') {
     check.style.opacity = '0';
@@ -21,8 +10,6 @@ function openSort(e) {
   }
 }
 
-document.getElementById("openSort").addEventListener("click", openSort);
-document.getElementById("closeSort").addEventListener("click", openSort);
 
 
 var children = document.getElementById("itemsParent").children;

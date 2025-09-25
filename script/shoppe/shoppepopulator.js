@@ -28,15 +28,15 @@ function itemize(text) {
     a.appendChild(img);
     elt.appendChild(a);
 
-    elt.innerHTML += elt.style.getPropertyValue('--name') + '<br><br>$' + elt.style.getPropertyValue('--price') + '<br><br><br><br>';
+    elt.innerHTML += elt.style.getPropertyValue('--name') + '<br><br>$' + elt.style.getPropertyValue('--price') + '<br><br><br>';
 
     parent.appendChild(elt);
 
   }
 
   if (isMobile) {
-    parent.style.right = "50%";
-    parent.style.transform = "translate(50%, 0%)";
     document.getElementById("headpic").hidden = true;
+  } else {
+    parent.style.setProperty('right', '2vh');
   }
 }
