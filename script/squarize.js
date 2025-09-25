@@ -44,13 +44,13 @@ function zoomimg(e) {
 function display(target) {
 	if (!games) {
 		var url = target.style.getPropertyValue("--url").toString();
+		console.log(url);
 		url = url.slice(4).slice(0,-1);
 		window.open(url, '_blank').focus();
 	} else {
 		var url = description[target.id];
-		window.open(url);
+		window.open(url,"_self");
 	}
-	
 	
 }
 
@@ -76,12 +76,10 @@ async function squarize(arr, info, channel) {
         arr = await arenaFetch(channel);
 	
 	const out = arr.split('\n').filter(x => x.length);
-	console.log(out);
 	if (info != undefined) {
 		games = true;
 		description = info.split('\n').filter(x => x.length > 0);
 	}
-	console.log(description);
 
 	for (let i = 0; i < out.length; i++) {
 		num++;
