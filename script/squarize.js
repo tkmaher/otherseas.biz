@@ -45,10 +45,12 @@ function display(target) {
 	if (!games) {
 		var url = target.style.getPropertyValue("--url").toString();
 		url = url.slice(4).slice(0,-1);
+		window.open(url, '_blank').focus();
 	} else {
 		var url = description[target.id];
+		window.open(url);
 	}
-	window.open(url, '_blank').focus();
+	
 	
 }
 
@@ -62,7 +64,7 @@ async function populateGrid(url, i) {
 	n.style.backgroundImage = 'url(' + url + ')';
 	n.className = "blogBlock";
 	n.id = i;
-	n.style.setProperty("--url", "url(" + url + ")");
+	n.style.setProperty("--url", url);
 	n.addEventListener("click", zoomimg);
 }
 
