@@ -41,7 +41,7 @@ if (buttons.length == 0 && localStorage.getItem("currRoute")) {
 } else {
     localStorage.clear();
 }
-if (buttons.length == 1) {
+if (buttons.length > 0) {
     let button = buttons[0]
     button.style.setProperty("font-weight", "bold");
     button.parentElement.style.setProperty("display", "block");
