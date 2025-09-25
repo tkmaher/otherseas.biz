@@ -44,8 +44,6 @@ function zoomimg(e) {
 function display(target) {
 	if (!games) {
 		var url = target.style.getPropertyValue("--url").toString();
-		console.log(url);
-		url = url.slice(4).slice(0,-1);
 		window.open(url, '_blank').focus();
 	} else {
 		var url = description[target.id];
@@ -76,7 +74,7 @@ async function squarize(arr, info, channel) {
         arr = await arenaFetch(channel);
 	
 	const out = arr.split('\n').filter(x => x.length);
-	if (info != undefined) {
+	if (info != "") {
 		games = true;
 		description = info.split('\n').filter(x => x.length > 0);
 	}

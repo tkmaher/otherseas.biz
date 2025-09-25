@@ -38,6 +38,8 @@ document.getElementById("sidebar").innerHTML = `
 let buttons = document.querySelectorAll('a[href*="' + window.location.pathname + '"');
 if (buttons.length == 0 && localStorage.getItem("currRoute")) {
     buttons = document.querySelectorAll('a[href*="' + localStorage.getItem("currRoute") + '"');
+} else {
+    localStorage.clear();
 }
 if (buttons.length == 1) {
     let button = buttons[0]
