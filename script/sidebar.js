@@ -13,7 +13,6 @@ document.getElementById("sidebar").innerHTML = `
                     <a class="button" href="/tech/index.html">Coding</a> <br> 
                     <a class="button" href="/music/index.html">Music</a> <br> 
                     <a class="button" href="/drawings/index.html">Drawings</a> <br> 
-                    <a class="button" href="/renders/index.html">Renders</a> <br> 
                     <a class="button" href="/other/index.html">Real life</a> <br> 
                     <a class="button" href="/games/index.html">Games</a> <br> 
                     <a class="button" href="/siris/index.html">Film</a> <br> 
@@ -35,6 +34,8 @@ document.getElementById("sidebar").innerHTML = `
                 <a class="button" href="/shoppe/index.html">Shoppe</a><br><br>
             </div>
             ` + document.getElementById("sidebar").innerHTML;
+
+            //<a class="button" href="/renders/index.html">Renders</a> <br> 
 
 let buttons = document.querySelectorAll('a[href*="' + window.location.pathname + '"');
 if (buttons.length == 0 && localStorage.getItem("currRoute")) {
