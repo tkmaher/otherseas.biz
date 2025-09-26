@@ -28,7 +28,7 @@ function itemize(text) {
     a.appendChild(img);
     elt.appendChild(a);
 
-    elt.innerHTML += elt.style.getPropertyValue('--name') + '<br><br>$' + elt.style.getPropertyValue('--price') + '<br><br><br>';
+    elt.innerHTML += '<br>' + elt.style.getPropertyValue('--name') + '<br><br>$' + elt.style.getPropertyValue('--price') + '<br><br><br>';
 
     parent.appendChild(elt);
 

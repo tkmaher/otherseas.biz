@@ -189,7 +189,7 @@ const entries = [
     <i>September 2024</i>`),
 ]
 
-const url = "https://www.otherseas1.com/diary"
+const url = window.location.protocol + '//' + window.location.host + window.location.pathname;
 const urlParams = new URLSearchParams(window.location.search);
 var page = parseInt(urlParams.get('p'));
 if (page == null) {
@@ -259,13 +259,20 @@ function swap() {
         gridparent.style.display = "contents"
         scroller.style.display = "none"
         grid.innerText = "Normal view"
+        reset();
     }
 }
 
 function reload(newpage) {
     newUrl = url + "?p=" + newpage.toString();
-    //window.history.pushState({}, "", newUrl); // todo: fix this and have better sharing
+    window.history.pushState({}, "", newUrl); 
     document.title = "Diary | " + entries[newpage].title;
+}
+
+function reset() {
+    newUrl = url;
+    window.history.pushState({}, "", newUrl); 
+    document.title = "Diary";
 }
 
 function goNew() {

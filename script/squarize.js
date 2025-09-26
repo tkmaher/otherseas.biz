@@ -67,7 +67,6 @@ async function populateGrid(url, i) {
 }
 
 async function squarize(arr, info, channel) {
-	//todo: make sure this works
 	var url;
 	
     if (channel != undefined)

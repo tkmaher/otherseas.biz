@@ -29,7 +29,8 @@ document.getElementById("sidebar").innerHTML = `
                 <div class="collapseDiv" style="display:none">
                     <a class="button" href="mailto:os@otherseas1.com" target="_blank">Email</a><br> 
                     <a class="button" href="https://github.com/tkmaher?tab=repositories" target="_blank">GitHub</a><br> 
-                    <a class="button" href="/social/index.html">Social</a> <br>
+                    <a class="button" href="https://x.com/otherseas_">Twitter</a> <br>
+                    <a class="button" href="https://www.instagram.com/otherseas1/">Instagram</a> <br>
                 </div>
                 <a class="button" href="/shoppe/index.html">Shoppe</a><br><br>
             </div>
