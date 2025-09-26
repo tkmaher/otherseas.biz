@@ -249,6 +249,19 @@ input {
     border: 1px solid black;
     padding: 0.5vh;
     float: left;
+    background-color: white;
+}
+
+.typesort {
+    width: 1.5vh;
+    height: 1.5vh;
+    accent-color: black;
+}
+
+.listsort {
+    width: 1.5vh;
+    height: 1.5vh;
+    accent-color: black;
 }
 
 #game {
