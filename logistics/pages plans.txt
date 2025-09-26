@@ -1,8 +1,0 @@
--video and real life: includes the discs also
--strawberry house: a rpgmaker style tilegrid thats cute and has strawberries
--minotaur: a foreboding schoolhouse you can explore point and click style
--put discs in shope
-
-incorporate more dumb ass videos that i took from phone
-
-make esc key get rid of popups

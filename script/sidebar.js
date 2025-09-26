@@ -25,7 +25,7 @@ document.getElementById("sidebar").innerHTML = `
                     <a class="button" href="/theruinedtemple/index.html">the ruined temple</a> <br> 
                     <a class="button" href="/doors/index.html">doors</a> <br> 
                 </div>
-                <span class="collapse">Contacts</span> <br> 
+                <span class="collapse">Contact</span> <br> 
                 <div class="collapseDiv" style="display:none">
                     <a class="button" href="mailto:os@otherseas1.com" target="_blank">Email</a><br> 
                     <a class="button" href="https://github.com/tkmaher?tab=repositories" target="_blank">GitHub</a><br> 
