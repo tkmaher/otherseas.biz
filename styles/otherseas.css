@@ -187,7 +187,7 @@ q {
     max-width: 40vh;
     scale: 0;
     transition: all 1s;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -0%);
     pointer-events: none;
     filter: drop-shadow(30px 10px 4px lightgray);
 }
