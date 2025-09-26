@@ -185,13 +185,11 @@ q {
 .piece {
     position: absolute;
     max-width: 40vh;
-    top: 5%;
-    left: 35%;
     scale: 0;
     transition: all 1s;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    filter: drop-shadow(30px 10px 4px black);
+    filter: drop-shadow(30px 10px 4px lightgray);
 }
 
 .shake:hover {
