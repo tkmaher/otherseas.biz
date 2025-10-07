@@ -187,6 +187,9 @@ const entries = [
     The thief rushed to pick it up, stumbling over his own ragged cloak. He looked down at his hands, and noticed for the first time how wizened and knotted their backs were. He took the crown off of the throne, placed it upon his head, and collapsed into the seat. His eyes closed like heavy doors. He felt that he would be sitting there for a long time to come.
     <br><br>
     <i>September 2024</i>`),
+
+    new entry("Im trying to update the links section of the website", "10-7-2025",
+    `<a href="https://www.otherseas1.com/halloffame/mind">Especially the pdf part</a><br>`),
 ]
 
 const url = window.location.protocol + '//' + window.location.host + window.location.pathname;

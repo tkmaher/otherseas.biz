@@ -69,6 +69,7 @@ function collapse(target) {
 }
 
 function collapseHandler(e) {
+    console.log("clicked");
     let target = e.target;
     collapse(target);
 }
