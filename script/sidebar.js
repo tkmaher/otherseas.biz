@@ -7,6 +7,7 @@ document.getElementById("sidebar").innerHTML = `
                     <a class="button" href="/cv/index.html">CV</a> <br> 
                     <a class="button" href="/diary/index.html">Diaries</a> <br> 
                     <a class="button" href="/halloffame/index.html">Links</a> <br> 
+                    <a class="button" href="/pdf/index.html">Library</a> <br> 
                 </div>
                 <span class="collapse">Work</span> <br> 
                 <div class="collapseDiv" style="display:none">

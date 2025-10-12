@@ -535,3 +535,11 @@ canvas {
     position: absolute;
     z-index: 1;
 }
+
+.pdfFile:hover {
+    text-decoration: underline;
+}
+
+.pdfFolder:hover {
+    text-decoration: underline;
+}
