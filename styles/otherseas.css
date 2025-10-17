@@ -444,7 +444,7 @@ li {
     display: inline;
 }
 
-.albumCover > a > img:hover {
+a > img:hover {
     outline: 1px solid black;
 }
 
