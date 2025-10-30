@@ -1,4 +1,5 @@
 var text = `
 --name: Windup WaterToy sticker {gray}; --price: 4; --type: sticker; --img1: ../images/shoppe/stickertoy1.png; --img2: ../images/shoppe/stickertoy1.png; --date: 20240720; --link: ../shoppe/items/windupStickerGray.html
 --name: Windup WaterToy sticker {b&w}; --price: 4; --type: sticker; --img1: ../images/shoppe/stickertoybw1.png; --img2: ../images/shoppe/stickertoybw1.png; --date: 20240720; --link: ../shoppe/items/windupStickerBW.html
+--name: Goodbye Seas Bundle; --price: 15; --type: music; --img1: ../images/shoppe/goodbye1.png; --img2: ../images/shoppe/goodbye2.png; --date: 20251030; --link: ../shoppe/items/goodbyeSeasBundle.html
 `
