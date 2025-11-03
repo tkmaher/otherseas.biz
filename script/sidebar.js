@@ -11,7 +11,7 @@ document.getElementById("sidebar").innerHTML = `
                 </div>
                 <span class="collapse">Work</span> <br> 
                 <div class="collapseDiv" style="display:none">
-                    <a class="button" href="/tech/index.html">Coding</a> <br> 
+                    <a class="button" href="/tech/index.html">Web Design</a> <br> 
                     <a class="button" href="/music/index.html">Music</a> <br> 
                     <a class="button" href="/drawings/index.html">Drawings</a> <br> 
                     <a class="button" href="/other/index.html">Real life</a> <br> 
