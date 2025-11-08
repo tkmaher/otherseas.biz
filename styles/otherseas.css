@@ -29,6 +29,11 @@ body {
     margin: 2vh;
 }
 
+ul {
+    padding-left: 0; /* Removes padding that causes indentation */
+    margin-left: 0;  /* Removes margin that causes indentation in some browsers */
+}
+
 #sidebar {
     flex: 0 0 10em;
 }
