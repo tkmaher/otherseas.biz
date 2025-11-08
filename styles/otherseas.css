@@ -20,13 +20,13 @@ body {
     flex-direction: row;
     font-family: 'Roboto', sans-serif; 
     font-weight: 300;
-    font-size: 2vh;
+    font-size: 1em;
     color: black;
     background-color: white;
 
     margin: 0px;
     padding: 0px;
-    margin: 2vh;
+    margin: 1em;
 }
 
 ul {
@@ -53,7 +53,7 @@ ul {
         flex-direction: column;
     }
     #sidebar {
-        flex: 0 0 2vh;
+        flex: 0 0 1em;
     }
 }
 
@@ -238,7 +238,7 @@ mark {
 }
 
 input {
-    font-size: 2vh;
+    font-size: 1em;
     font-family: 'Roboto', sans-serif; 
     font-weight: 300;
     border: 1px solid black;
@@ -520,13 +520,13 @@ a > img:hover {
 
 @media (any-pointer:none), (any-pointer:coarse) {
     #sirisdesc {
-        margin-top: 2vh;
+        margin-top: 1em;
     }
 }
 
 @media (any-pointer:fine) {
     #sirisdesc {
-        margin-left: 2vh;
+        margin-left: 1em;
     }
 }
 
