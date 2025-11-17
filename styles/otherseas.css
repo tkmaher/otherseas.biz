@@ -32,6 +32,13 @@ body {
 ul {
     padding-left: 0; /* Removes padding that causes indentation */
     margin-left: 0;  /* Removes margin that causes indentation in some browsers */
+    display: flex;
+    /* Optional, for wrapping items to new lines */
+    flex-wrap: wrap;
+    /* Optional, to remove default browser indentation/bullets */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
 }
 
 #sidebar {
@@ -46,18 +53,39 @@ ul {
         /* todo:sticky sidebar? */
         flex: 0 0 10em;
     }
+    #sirisdesc {
+        margin-left: 1em;
+    }
+    .webFlex {
+        width: 60vw; 
+        flex-direction: row;
+    }
 }
+
 
 @media (any-pointer:none), (any-pointer:coarse) {
     body {
         flex-direction: column;
+        font-size: 2em;
     }
     #sidebar {
         flex: 0 0 1em;
     }
+    .blogBlock {
+        width: 30vh;
+        background-size: 30vh;
+        max-width: 90%;
+        height: 30vh;
+    }
+    #sirisdesc {
+        margin-top: 1em;
+    }
+    .webFlex {
+        flex-direction: column;
+    }
 }
 
-.main {
+#main {
     flex: 1;
 }
 
@@ -91,19 +119,6 @@ ul {
    pointer-events: none;
 }
 
-.titlepage {
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%; 
-    background-color:#171717;
-    position: absolute;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
 
 .button {
     color: inherit;
@@ -281,13 +296,6 @@ input {
   	image-rendering: pixelated; /* Chrome, Safari */
 }
 
-.clockHand {
-    position: absolute;  
-    transform-origin: 50% 50%; 
-    transform: translate(-50%,-50%);
-    max-width: 75vh;
-    pointer-events: none;
-}
 
 .lostFoundImg {
     height: 10vh;
@@ -404,10 +412,6 @@ input {
     outline: 1px solid black;
 }
 
-hr {
-    border-top: 2px dotted gray
-}
-
 .sorter {
     transition: opacity 0.5s;
 }
@@ -477,16 +481,6 @@ a > img:hover {
     position: relative;
 }
 
-@media (any-pointer:none), (any-pointer:coarse) {
-    .blogBlock {
-        width: 30vh;
-        background-size: 30vh;
-        max-width: 90%;
-        height: 30vh;
-    }
-}
-
-
 .cycler {
     color: black;
     font-size: 1000vw; 
@@ -518,17 +512,7 @@ a > img:hover {
     max-width: 100%; 
 }
 
-@media (any-pointer:none), (any-pointer:coarse) {
-    #sirisdesc {
-        margin-top: 1em;
-    }
-}
 
-@media (any-pointer:fine) {
-    #sirisdesc {
-        margin-left: 1em;
-    }
-}
 
 
 .images {
@@ -547,4 +531,35 @@ canvas {
 
 .pdfFolder:hover {
     text-decoration: underline;
+}
+
+.webFlex {
+    
+    display: flex;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.webLink {
+    flex: 1;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.webLinkTitle {
+    font-size: 1.5em;
+    flex: 0.2;
+    position: absolute;
+    background-color: white;
+
+    div {
+        font-size: 0.8em;
+        font-style: italic;
+    }
 }
