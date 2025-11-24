@@ -32,7 +32,6 @@ body {
 ul {
     padding-left: 0; /* Removes padding that causes indentation */
     margin-left: 0;  /* Removes margin that causes indentation in some browsers */
-    display: flex;
     /* Optional, for wrapping items to new lines */
     flex-wrap: wrap;
     /* Optional, to remove default browser indentation/bullets */
@@ -420,14 +419,14 @@ input {
     transition: opacity 0.5s;
 }
 
-br {
-    display: block;
-    margin: 10px 0;
+ li {
+    margin-left: 1vh;
+    
  }
 
-li {
-    list-style: none;
-    margin-left: 1vh;
+.sorter > ul {
+    display: flex;
+    
 }
 
 .archaicPic {
